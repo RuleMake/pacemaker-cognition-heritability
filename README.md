@@ -80,11 +80,15 @@ Two audits added after the first review round:
 
 ## Citation
 
-*Citation to be added on publication.*
+The manuscript is under review; this section will be updated with the article
+citation on publication. To cite the code itself, use the archived release and
+its DOI.
 
 ## Contact
 
-*Corresponding author contact to be added.*
+Jianjun Li, Department of Cardiology, Jincheng People's Hospital Affiliated to
+Changzhi Medical College, Jincheng, Shanxi, People's Republic of China.
+Correspondence address is given in the published article.
 
 ## License
 
