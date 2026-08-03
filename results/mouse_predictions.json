@@ -1,0 +1,36 @@
+{
+  "P1_gate": {
+    "traits": [
+      "RestingHeartRate",
+      "HRV_SDNN",
+      "HRV_RMSSD"
+    ],
+    "claim": "AUC > 0.55 vs working_CM",
+    "falsifies": "whole cross-species test uninterpretable"
+  },
+  "P2_test": {
+    "traits": [
+      "EducationalAttainment",
+      "Intelligence",
+      "ReactionTime"
+    ],
+    "claim": "AUC > 0.55 vs working_CM",
+    "falsifies": "human cognitive result does not replicate in mouse"
+  },
+  "P3_negative": {
+    "traits": [
+      "RheumatoidArthritis"
+    ],
+    "claim": "0.45 < AUC < 0.55"
+  },
+  "P4_signed": {
+    "traits": [
+      "QTinterval"
+    ],
+    "claim": "AUC <= 0.55"
+  },
+  "comparator": "working_CM",
+  "focus": "nodal",
+  "stratum": "zone",
+  "bar": 0.55
+}

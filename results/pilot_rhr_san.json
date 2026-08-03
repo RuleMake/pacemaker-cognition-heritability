@@ -1,0 +1,50 @@
+{
+  "trait": "resting heart rate (GCST007609, n=458,969)",
+  "n_lead_snps": 387,
+  "n_trait_genes": 1151,
+  "canonical_recovered": [
+    "HCN4",
+    "MYH6",
+    "SCN5A",
+    "CACNA1D",
+    "RGS6",
+    "GNB4",
+    "NKX2-5",
+    "TBX5",
+    "MYH7"
+  ],
+  "slides": [
+    {
+      "slide": "SAN",
+      "n_spots": 27108,
+      "n_node_spots": 4505,
+      "n_genes_scored": 949,
+      "auc_node_vs_rest": 0.6851412620769748,
+      "null_auc_mean": 0.674657341970311,
+      "null_auc_sd": 0.0054941873567198206,
+      "z_auc": 1.90818394531834,
+      "emp_p_auc": 0.026986506746626688,
+      "spearman_vs_pacemaker": 0.4945516413908261,
+      "null_rho_mean": 0.44355563221137906,
+      "null_rho_sd": 0.008299885182590144,
+      "z_rho": 6.144182486574194,
+      "emp_p_rho": 0.0004997501249375312
+    },
+    {
+      "slide": "AVN",
+      "n_spots": 24026,
+      "n_node_spots": 246,
+      "n_genes_scored": 908,
+      "auc_node_vs_rest": 0.8218329264873809,
+      "null_auc_mean": 0.8243134537375126,
+      "null_auc_sd": 0.005930027786903998,
+      "z_auc": -0.4182994311780045,
+      "emp_p_auc": 0.6591704147926037,
+      "spearman_vs_pacemaker": NaN,
+      "null_rho_mean": NaN,
+      "null_rho_sd": NaN,
+      "z_rho": NaN,
+      "emp_p_rho": 0.0004997501249375312
+    }
+  ]
+}

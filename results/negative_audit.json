@@ -1,0 +1,177 @@
+{
+  "se_by_state": {
+    "SAN_P_cell": 0.020854913193733254,
+    "AVN_P_cell": 0.026022888615526166,
+    "AVN_bundle_cell": 0.048788314844942296,
+    "Purkinje": 0.03481193777290817
+  },
+  "mde": {
+    "SAN_P_cell": 0.5584268165285922,
+    "AVN_P_cell": 0.5729053400778583,
+    "AVN_bundle_cell": 0.6366846216862319,
+    "Purkinje": 0.5975286102784481
+  },
+  "scorecard": {
+    "AVblock|AVN_P_cell": {
+      "auc": 0.48890651760211906,
+      "z": -0.42629711719482866,
+      "mde": 0.5729053400778583,
+      "powered_for_060": true,
+      "top_state": "AVN_P_cell",
+      "verdict": "informative null"
+    },
+    "PRinterval|AVN_P_cell": {
+      "auc": 0.5721074166357639,
+      "z": 2.770922848001667,
+      "mde": 0.5729053400778583,
+      "powered_for_060": true,
+      "top_state": "SAN_P_cell",
+      "verdict": "enriched but outranked"
+    },
+    "Brugada|Purkinje": {
+      "auc": 0.5662386368363775,
+      "z": 1.902756383987527,
+      "mde": 0.5975286102784481,
+      "powered_for_060": true,
+      "top_state": "Purkinje",
+      "verdict": "informative null"
+    },
+    "Brugada|AVN_bundle_cell": {
+      "auc": 0.39654654224056746,
+      "z": -2.1204556477965184,
+      "mde": 0.6366846216862319,
+      "powered_for_060": false,
+      "top_state": "Purkinje",
+      "verdict": "UNDERPOWERED"
+    },
+    "BundleBranchBlock|Purkinje": {
+      "auc": 0.5228288328528874,
+      "z": 0.6557759870136737,
+      "mde": 0.5975286102784481,
+      "powered_for_060": true,
+      "top_state": "SAN_P_cell",
+      "verdict": "informative null"
+    },
+    "BundleBranchBlock|AVN_bundle_cell": {
+      "auc": 0.48031137957008224,
+      "z": -0.4035519671563087,
+      "mde": 0.6366846216862319,
+      "powered_for_060": false,
+      "top_state": "SAN_P_cell",
+      "verdict": "UNDERPOWERED"
+    },
+    "QRSduration|Purkinje": {
+      "auc": 0.45279712448512255,
+      "z": -1.3559393281350818,
+      "mde": 0.5975286102784481,
+      "powered_for_060": true,
+      "top_state": "SAN_P_cell",
+      "verdict": "informative null"
+    },
+    "QRSduration|AVN_bundle_cell": {
+      "auc": 0.3862729153208749,
+      "z": -2.3310312118909926,
+      "mde": 0.6366846216862319,
+      "powered_for_060": false,
+      "top_state": "SAN_P_cell",
+      "verdict": "UNDERPOWERED"
+    },
+    "HRV_RMSSD|SAN_P_cell": {
+      "auc": 0.6136037219625119,
+      "z": 5.44733612205343,
+      "mde": 0.5584268165285922,
+      "powered_for_060": true,
+      "top_state": "AVN_P_cell",
+      "verdict": "enriched but outranked"
+    },
+    "HRV_SDNN|SAN_P_cell": {
+      "auc": 0.6661936653774572,
+      "z": 7.969041339735579,
+      "mde": 0.5584268165285922,
+      "powered_for_060": true,
+      "top_state": "SAN_P_cell",
+      "verdict": "confirmed"
+    },
+    "RestingHeartRate|SAN_P_cell": {
+      "auc": 0.5833974091326594,
+      "z": 3.998933409980324,
+      "mde": 0.5584268165285922,
+      "powered_for_060": true,
+      "top_state": "AVN_P_cell",
+      "verdict": "enriched but outranked"
+    }
+  },
+  "depletion": {
+    "QTinterval|AVN_P_cell": {
+      "auc": 0.3540930945098517,
+      "z": -5.60686815540897
+    },
+    "QTinterval|AVN_bundle_cell": {
+      "auc": 0.3523018488121468,
+      "z": -3.0273263517558138
+    },
+    "Brugada|AVN_P_cell": {
+      "auc": 0.3970153594901542,
+      "z": -3.9574638323741476
+    },
+    "Brugada|AVN_bundle_cell": {
+      "auc": 0.39654654224056746,
+      "z": -2.1204556477965184
+    },
+    "QRSduration|AVN_bundle_cell": {
+      "auc": 0.3862729153208749,
+      "z": -2.3310312118909926
+    },
+    "AVblock|AVN_bundle_cell": {
+      "auc": 0.3294278029370301,
+      "z": -3.496169064356451
+    }
+  },
+  "interaction": {
+    "D": 0.10831075075019375,
+    "perm_p": 0.14285714285714285,
+    "perm_n": 21,
+    "p_floor": 0.047619047619047616
+  },
+  "rg_equivalence": {
+    "EducationalAttainment|AtrialFibrillation": {
+      "rg": -0.03494438412037456,
+      "se": 0.02523483189509919,
+      "upper": 0.08440465463476897,
+      "excludes_reference": true
+    },
+    "EducationalAttainment|QTinterval": {
+      "rg": 0.04134532401811228,
+      "se": 0.02997250663837715,
+      "upper": 0.10009143702933149,
+      "excludes_reference": true
+    },
+    "Intelligence|AtrialFibrillation": {
+      "rg": 0.032333317921951085,
+      "se": 0.02913956657089989,
+      "upper": 0.08944686840091487,
+      "excludes_reference": true
+    },
+    "Intelligence|QTinterval": {
+      "rg": 0.03409573744466302,
+      "se": 0.02927778408384145,
+      "upper": 0.09148019424899226,
+      "excludes_reference": true
+    },
+    "ReactionTime|AtrialFibrillation": {
+      "rg": 0.003579772351298147,
+      "se": 0.02953550629515365,
+      "upper": 0.0614693646897993,
+      "excludes_reference": true
+    },
+    "ReactionTime|QTinterval": {
+      "rg": 0.01412260545920177,
+      "se": 0.03807383853599913,
+      "upper": 0.08874732898976007,
+      "excludes_reference": true
+    }
+  },
+  "reference_rg": 0.23370867761686842,
+  "alpha": 0.05,
+  "power": 0.8
+}

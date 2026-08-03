@@ -1,0 +1,119 @@
+{
+  "overlap": {
+    "EducationalAttainment|RestingHeartRate": {
+      "human": 136,
+      "mouse": 123,
+      "jaccard": 0.08108108108108109
+    },
+    "EducationalAttainment|HRV_SDNN": {
+      "human": 93,
+      "mouse": 71,
+      "jaccard": 0.04826648538409246
+    },
+    "EducationalAttainment|HRV_RMSSD": {
+      "human": 98,
+      "mouse": 75,
+      "jaccard": 0.05126452494873548
+    },
+    "Intelligence|RestingHeartRate": {
+      "human": 134,
+      "mouse": 112,
+      "jaccard": 0.0733464309102816
+    },
+    "Intelligence|HRV_SDNN": {
+      "human": 93,
+      "mouse": 76,
+      "jaccard": 0.05187713310580205
+    },
+    "Intelligence|HRV_RMSSD": {
+      "human": 115,
+      "mouse": 91,
+      "jaccard": 0.06293222683264177
+    },
+    "ReactionTime|RestingHeartRate": {
+      "human": 103,
+      "mouse": 86,
+      "jaccard": 0.05491698595146871
+    },
+    "ReactionTime|HRV_SDNN": {
+      "human": 94,
+      "mouse": 81,
+      "jaccard": 0.054989816700611
+    },
+    "ReactionTime|HRV_RMSSD": {
+      "human": 95,
+      "mouse": 78,
+      "jaccard": 0.05298913043478261
+    }
+  },
+  "mean_jaccard": 0.05907375726105519,
+  "correlation": {
+    "EducationalAttainment|RestingHeartRate": {
+      "mouse": 0.3382407066617593,
+      "human": 0.20852080325502034
+    },
+    "EducationalAttainment|HRV_SDNN": {
+      "mouse": 0.20343077974656926,
+      "human": 0.27745767161044754
+    },
+    "EducationalAttainment|HRV_RMSSD": {
+      "mouse": 0.1261711972238288,
+      "human": 0.2726392664954156
+    },
+    "Intelligence|RestingHeartRate": {
+      "mouse": 0.2909406383090594,
+      "human": 0.22615472596703728
+    },
+    "Intelligence|HRV_SDNN": {
+      "mouse": 0.13994163731005838,
+      "human": 0.30021937637110224
+    },
+    "Intelligence|HRV_RMSSD": {
+      "mouse": 0.19794941900205057,
+      "human": 0.2945350908443178
+    },
+    "ReactionTime|RestingHeartRate": {
+      "mouse": 0.23723776223776225,
+      "human": 0.2422890143063394
+    },
+    "ReactionTime|HRV_SDNN": {
+      "mouse": 0.1338345864661654,
+      "human": 0.3132992706204414
+    },
+    "ReactionTime|HRV_RMSSD": {
+      "mouse": 0.20285766864714233,
+      "human": 0.3747929049556559
+    }
+  },
+  "subtraction": {
+    "EducationalAttainment": {
+      "full_auc": 0.7422361874098826,
+      "full_z": 11.854840302815985,
+      "disjoint_auc": 0.6629558463958105,
+      "disjoint_z": 7.974925448127871,
+      "n_genes": 615,
+      "n_removed": 191,
+      "survives": true
+    },
+    "Intelligence": {
+      "full_auc": 0.6261639124154215,
+      "full_z": 6.174358379957993,
+      "disjoint_auc": 0.5551490002452588,
+      "disjoint_z": 2.698946832668114,
+      "n_genes": 620,
+      "n_removed": 185,
+      "survives": true
+    },
+    "ReactionTime": {
+      "full_auc": 0.7591129944647579,
+      "full_z": 12.68077739585009,
+      "disjoint_auc": 0.6775595211782844,
+      "disjoint_z": 8.689617312426202,
+      "n_genes": 655,
+      "n_removed": 163,
+      "survives": true
+    }
+  },
+  "n_ctrl": 200,
+  "cardiac_union_size": 1752
+}

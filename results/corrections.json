@@ -1,0 +1,43 @@
+{
+  "fdr": {
+    "n_tests": 140,
+    "n_survive": 61,
+    "lost": [
+      "ReactionTime/AVN_bundle_cell",
+      "Brugada/AVN_bundle_cell"
+    ]
+  },
+  "shape_test": {
+    "mean_rg": 0.325977312335089,
+    "k": 3,
+    "k_eff": 1.8160305102804908,
+    "p_naive": 0.0002962962962962963,
+    "p_corrected": 0.007314462044962685
+  },
+  "spatial_power": {
+    "vs myocytes (wrong)|all node spots": {
+      "d_cell": 0.6073011746434449,
+      "d_spot": 0.03775062327698347,
+      "power": 0.129132387476467,
+      "p_6of8": 0.00010271185592319565
+    },
+    "vs myocytes (wrong)|top 1% abundance": {
+      "d_cell": 0.6073011746434449,
+      "d_spot": 0.1698702771679357,
+      "power": 0.16493108395050932,
+      "p_6of8": 0.00041574873082857254
+    },
+    "vs all cells (right)|all node spots": {
+      "d_cell": 1.388620151079529,
+      "d_spot": 0.0863184172647261,
+      "power": 0.4747385166873879,
+      "p_6of8": 0.1138549014287082
+    },
+    "vs all cells (right)|top 1% abundance": {
+      "d_cell": 1.388620151079529,
+      "d_spot": 0.3884156655605877,
+      "power": 0.6154642484076079,
+      "p_6of8": 0.34852994906840185
+    }
+  }
+}

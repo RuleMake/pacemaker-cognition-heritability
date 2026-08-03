@@ -1,0 +1,190 @@
+{
+  "magma": {
+    "AVblock": {
+      "rho_len": 0.01612365793867803,
+      "rho_nsnp": 0.015855060110863815,
+      "median_len_top": 45951.0,
+      "median_len_all": 44271.0
+    },
+    "AtrialFibrillation": {
+      "rho_len": 0.055049137109531396,
+      "rho_nsnp": 0.005544345362950761,
+      "median_len_top": 52427.5,
+      "median_len_all": 44503.5
+    },
+    "AtrialFlutter": {
+      "rho_len": 0.00080336359023011,
+      "rho_nsnp": -0.034091239100475124,
+      "median_len_top": 46255.5,
+      "median_len_all": 44271.0
+    },
+    "Brugada": {
+      "rho_len": -0.0075497404785867025,
+      "rho_nsnp": -0.020560343704700258,
+      "median_len_top": 47669.5,
+      "median_len_all": 45213.0
+    },
+    "BundleBranchBlock": {
+      "rho_len": 0.011154075209207116,
+      "rho_nsnp": -0.0011031580763417204,
+      "median_len_top": 44838.5,
+      "median_len_all": 44273.5
+    },
+    "EducationalAttainment": {
+      "rho_len": 0.05056019174401911,
+      "rho_nsnp": -0.03412887529829005,
+      "median_len_top": 52886.0,
+      "median_len_all": 44289.0
+    },
+    "HRV_RMSSD": {
+      "rho_len": 0.0020309903009838918,
+      "rho_nsnp": -0.005732161857106104,
+      "median_len_top": 43384.5,
+      "median_len_all": 44131.0
+    },
+    "HRV_RMSSDc": {
+      "rho_len": -0.00199091004515847,
+      "rho_nsnp": -0.002742100549542531,
+      "median_len_top": 44103.0,
+      "median_len_all": 44131.0
+    },
+    "HRV_SDNN": {
+      "rho_len": 0.012846162221302146,
+      "rho_nsnp": -0.00878042060587558,
+      "median_len_top": 48047.0,
+      "median_len_all": 44131.0
+    },
+    "HRV_SDNNc": {
+      "rho_len": 0.01573078177671456,
+      "rho_nsnp": -0.004093264291478085,
+      "median_len_top": 47986.5,
+      "median_len_all": 44131.0
+    },
+    "HeartFailure": {
+      "rho_len": 0.028127572650807755,
+      "rho_nsnp": 0.003488718120999332,
+      "median_len_top": 46049.0,
+      "median_len_all": 44189.0
+    },
+    "PRinterval": {
+      "rho_len": 0.037353681762599365,
+      "rho_nsnp": -0.015065652101983013,
+      "median_len_top": 51626.5,
+      "median_len_all": 44342.0
+    },
+    "QRSduration": {
+      "rho_len": -0.0020203952408087466,
+      "rho_nsnp": -0.005063516650614855,
+      "median_len_top": 44597.0,
+      "median_len_all": 44215.0
+    },
+    "QTinterval": {
+      "rho_len": -0.022003841269193677,
+      "rho_nsnp": -0.05260323179948834,
+      "median_len_top": 46054.5,
+      "median_len_all": 44006.0
+    },
+    "RestingHeartRate": {
+      "rho_len": 0.07243727985914726,
+      "rho_nsnp": 0.002063187365755912,
+      "median_len_top": 49933.0,
+      "median_len_all": 44345.0
+    },
+    "RheumatoidArthritis": {
+      "rho_len": -0.0036374558961414505,
+      "rho_nsnp": -0.0125828783142455,
+      "median_len_top": 36740.5,
+      "median_len_all": 44345.0
+    }
+  },
+  "expression": {
+    "SAN_P_cell": 0.4621165288841725,
+    "AVN_P_cell": 0.4171813937571893,
+    "AVN_bundle_cell": 0.466556959315936,
+    "Purkinje": 0.4350687825443602,
+    "working myocytes": 0.48153847492622875,
+    "all other cells": 0.43567867454964415
+  },
+  "rebuilt": {
+    "AVblock": {
+      "overlap_with_original": 0.988,
+      "n": 1000,
+      "median_len": 44399.0
+    },
+    "AtrialFibrillation": {
+      "overlap_with_original": 0.957,
+      "n": 1000,
+      "median_len": 48307.0
+    },
+    "AtrialFlutter": {
+      "overlap_with_original": 0.97,
+      "n": 1000,
+      "median_len": 44842.5
+    },
+    "Brugada": {
+      "overlap_with_original": 0.988,
+      "n": 1000,
+      "median_len": 46781.0
+    },
+    "BundleBranchBlock": {
+      "overlap_with_original": 0.973,
+      "n": 1000,
+      "median_len": 43134.5
+    },
+    "EducationalAttainment": {
+      "overlap_with_original": 0.917,
+      "n": 1000,
+      "median_len": 45845.0
+    },
+    "HRV_RMSSD": {
+      "overlap_with_original": 0.999,
+      "n": 1000,
+      "median_len": 43321.0
+    },
+    "HRV_RMSSDc": {
+      "overlap_with_original": 0.991,
+      "n": 1000,
+      "median_len": 43555.0
+    },
+    "HRV_SDNN": {
+      "overlap_with_original": 0.976,
+      "n": 1000,
+      "median_len": 46558.5
+    },
+    "HRV_SDNNc": {
+      "overlap_with_original": 0.974,
+      "n": 1000,
+      "median_len": 45772.5
+    },
+    "HeartFailure": {
+      "overlap_with_original": 0.97,
+      "n": 1000,
+      "median_len": 43553.5
+    },
+    "PRinterval": {
+      "overlap_with_original": 0.962,
+      "n": 1000,
+      "median_len": 49084.5
+    },
+    "QRSduration": {
+      "overlap_with_original": 0.992,
+      "n": 1000,
+      "median_len": 44597.0
+    },
+    "QTinterval": {
+      "overlap_with_original": 0.969,
+      "n": 1000,
+      "median_len": 46292.5
+    },
+    "RestingHeartRate": {
+      "overlap_with_original": 0.96,
+      "n": 1000,
+      "median_len": 46476.0
+    },
+    "RheumatoidArthritis": {
+      "overlap_with_original": 0.984,
+      "n": 1000,
+      "median_len": 37020.5
+    }
+  }
+}

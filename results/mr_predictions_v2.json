@@ -1,0 +1,198 @@
+{
+  "_file": "results/mr_predictions_v2.json",
+  "_written": "2026-08-03, before any v2 estimate is computed",
+  "_supersedes": "results/mr_bidirectional.json (v1, written 2026-08-01 23:10)",
+  "_status": "AWAITING APPROVAL — no v2 analysis may be run until this file is approved",
+
+  "primary_question": {
+    "statement": "Common-variant heritability for cognitive traits is enriched in cardiac nodal pacemaker cells relative to donor-, region- and chemistry-matched working myocardium, and at the population level the cognitive traits correlate genetically with heart rate variability (rg = +0.234 SDNN, +0.256 RMSSD) and not with myocyte traits. Cell-level co-expression cannot distinguish horizontal pleiotropy (the same variants act independently in brain and in pacemaker cells) from vertical pleiotropy (variants alter pacemaker function -> autonomic tone -> cognition). MR is asked to distinguish them.",
+    "what_MR_can_actually_do": "MR cannot test 'horizontal vs vertical' directly. It can test each arm of the proposed chain separately, and it can ask whether the estimated effect in each direction is large enough to account for the observed genetic correlation. Anything beyond that is not available from these data and will not be claimed.",
+    "explicit_non_goal": "A positive result is not the objective. An interpretable result is. If the honest conclusion is again 'uninterpretable', the manuscript wording stays as it is."
+  },
+
+  "v1_diagnosis_carried_forward": {
+    "confirmed": [
+      "The pre-declared negative-control criterion had a false-alarm rate of 26.5% (P(X>=1 | 6 negative-control tests, alpha=0.05)), not 5%. It was mis-calibrated.",
+      "7 of 24 v1 tests were nominally significant, not 3. P(X>=7 | n=24, p=0.05) = 1.3e-4 under independence. Multiplicity does not explain the v1 pattern.",
+      "Within the negative-control family, 3 of 6 hits: P = 2.2e-3 under independence; Fisher combined P = 6.1e-3. The tests are positively dependent (shared exposure instruments, shared outcome GWAS) so both figures are optimistic; the dependence is not quantified and v2 must quantify it by permutation.",
+      "Under a family-corrected threshold (0.05/6 = 0.0083) no single v1 negative-control test would have triggered (min p = 0.0246).",
+      "Q/df is a readout of outcome-GWAS power, not of instrument quality. Pooled regression of (Q/df - 1) on log10(N_outcome) across the 24 v1 tests: slope +1.43 (se 0.34), r = +0.67, p = 4.0e-4. Within every exposure, Q/df rises monotonically with outcome N (HRV N=46,075: Q/df 0.53-1.02; QT N=117,532: 1.07-1.69; RestingHeartRate N=458,969: 3.49-4.88).",
+      "Distance pruning is NOT the cause. Real r^2 clumping against 1000G EUR (489 samples, genotypes recovered from data/resource/gsMap_resource.tar.gz) leaves Q/df essentially unchanged (e.g. Intelligence->RestingHeartRate 3.86 -> 4.34 -> 3.90 under 1 Mb distance / r2<0.001 10 Mb / r2<0.01 1 Mb) and leaves random-effects standard errors essentially unchanged.",
+      "The Steiger filter as implemented (bare inequality r2x > r2y with beta = Z/sqrt(N)) reduces to |Z_outcome| < |Z_exposure| * sqrt(N_outcome / N_exposure). For EducationalAttainment -> HRV that bound is |Z| < 1.37, i.e. inside the bulk of the null: it deleted 21-25% of instruments, drove Q/df to 0.53-0.58 (significantly UNDER-dispersed), and moved the estimate from +0.231 (p=0.0014) to +0.074 (p=0.27). In the reverse direction the same bound is |Z| < 15-38 and the filter removed nothing at all.",
+      "The nominal-significance pattern is unstable: the number of nominally significant tests is 7 under 1 Mb distance pruning, 2 under r2<0.001/10 Mb, and 5 under r2<0.01/1 Mb.",
+      "EducationalAttainment summary statistics are genomic-control deflated (LDSC intercept 0.516, c = 1.392). Every ratio estimate with EA as exposure is inflated by ~1.39x on the SD-per-SD scale; every Q with EA as outcome is deflated by ~1.93x. p-values are unaffected.",
+      "AtrialFibrillation N in the sumstats is the nominal 2,339,188; its effective N is 545,988 (77,690/1,167,040 EUR + 67,864/1,026,594 JPN). beta = Z/sqrt(N) therefore understates the AF effect scale by 2.07x. p-values and Q are invariant.",
+      "Sample overlap is near-total but second-order. ReactionTime (N=432,297), RestingHeartRate (N=458,969), HRV_RMSSD/SDNN (N=46,075) are all UK Biobank; QTinterval includes UKB. With mean F = 40-78 the resulting bias is on the order of rho/F = 0.001-0.005 SD per SD, i.e. small relative to the reported estimates (0.003-0.109).",
+      "scripts/181_mr_bidirectional.py cannot be re-run: its REFDIR (~/cardio/resource/gsMap_resource/...) no longer exists on this machine and pd.concat would raise on an empty list. v1 is reproducible only through the cached log."
+    ],
+    "refuted": [
+      "'The criterion fired because 24 tests make firing inevitable.' The criterion only ever inspected 6 tests, and the observed excess of nominal hits is not explicable by chance.",
+      "'Distance pruning inflates Q and narrows the standard errors.' Real r^2 clumping changes neither materially. Perfectly correlated instruments in fact deflate Q/df rather than inflating it.",
+      "'Cognitive -> QT is mediated by heart rate.' Post hoc multivariable MR conditioning each instrument's QT effect on its own resting-heart-rate effect leaves the exposure term essentially unmoved (EA->QT +0.108 -> +0.096; RT->QT +0.101 -> +0.099; heart-rate term p = 0.37 and 0.67). This was my hypothesis and the data does not support it."
+    ],
+    "open_and_unresolved": [
+      "The cognitive instruments carry a broad excess of association with every cardiac trait tested (mean chi2 at instruments: RestingHeartRate 3.83-4.81, AtrialFibrillation 2.90-3.65, QTinterval 1.80-2.24, HRV_RMSSD 1.17-1.70). The genome-wide means of those same GWAS are 2.11, 1.71, 1.24, 1.08, so the enrichment is roughly 1.6-2.0x, not 4x. WITHOUT AN LD-SCORE- AND MAF-MATCHED NULL THIS IS NOT A TEST and it is not counted as evidence here. Building that null is a v2 deliverable (test N2 below)."
+    ]
+  },
+
+  "instrument_criteria": {
+    "p_threshold": "5e-8, i.e. |Z| > 5.4513",
+    "clumping_primary": "r^2 < 0.001 within 10 Mb, 1000 Genomes Phase 3 EUR, n = 489, computed locally from data/resource/plink/1000G_EUR_Phase3_plink",
+    "clumping_sensitivity": "r^2 < 0.01 within 1 Mb, same panel",
+    "clumping_caveat_declared_in_advance": "With 489 reference samples the sampling floor on an r^2 estimate is about 1/489 = 0.002. An r^2 < 0.001 threshold is therefore below what this panel can resolve, which is why the r^2 < 0.01 rule is run alongside it and any conclusion that holds under only one of the two is reported as unstable.",
+    "palindromic_snps": "removed (A/T and C/G), as in v1; allele frequencies are not in these files so palindromes cannot be resolved",
+    "harmonisation": "outcome effect oriented to the exposure A1, including strand complement. v1 audit: 0 allele mismatches across all 24 tests, so this step is not a suspect.",
+    "F_statistic": "mean and minimum per-SNP F = Z_x^2 reported for every instrument set. Sets with mean F < 10 are not interpreted. v1 values were 39.5-79.6, so this criterion is expected to pass and is reported for completeness rather than as a filter that discriminates.",
+    "I2_GX": "reported for every set. MR-Egger IS NOT REPORTED AT ALL when I2_GX < 0.9, because below that threshold the Egger slope is attenuated and the intercept test has little power. v1 values were 0.000-0.475 for all three cognitive exposures, which means every 'Egger intercept not significant, therefore no directional pleiotropy' reading in v1 was vacuous.",
+    "steiger": {
+      "primary": "NO Steiger filtering. All harmonised instruments are used.",
+      "sensitivity": "Steiger with a formal significance test (Hemani 2017), dropping an instrument only when r2_outcome exceeds r2_exposure at p < 0.05, not on the bare inequality.",
+      "always_reported": "the implied bound |Z_outcome| < |Z_exposure| * sqrt(N_outcome/N_exposure) and the fraction of a standard normal it excludes, so that a filter cutting into the bulk of the null is visible on the face of the table",
+      "reason": "the v1 bare inequality was not a direction test in either direction: it removed 21-25% of instruments in cognition -> HRV and exactly 0% in HRV -> cognition"
+    },
+    "minimum_instruments": {
+      "interpreted": 10,
+      "reported_descriptively": 5,
+      "note": "HRV_SDNN yields 7 instruments and HRV_RMSSD 14-17. Those tests will be reported but are pre-declared as descriptive, not as evidence."
+    }
+  },
+
+  "estimators": {
+    "primary": "IVW, multiplicative random effects",
+    "secondary": ["weighted median", "weighted mode", "MR-RAPS"],
+    "conditional": "MR-Egger, only where I2_GX >= 0.9",
+    "outlier": "MR-PRESSO global test and outlier test, with the null distribution generated by simulation rather than assumed",
+    "always_reported_per_test": ["n_instruments", "F_mean", "F_min", "I2_GX", "IVW beta", "fixed-effect se", "random-effects se", "p", "Q", "Q_df", "Q_p", "I2", "Steiger |Z| bound", "fraction of null excluded by Steiger", "minimum detectable effect at 80% power"],
+    "multiplicity": "Bonferroni 0.05/24 = 0.00208 for any primary claim; Benjamini-Hochberg reported alongside; nothing that fails Bonferroni is described as an effect"
+  },
+
+  "tests_and_directional_predictions": {
+    "_note": "Predictions are stated so that they can be wrong. 'No prediction' is written where the design genuinely does not imply one.",
+    "cognition_to_autonomic": {
+      "tests": ["EducationalAttainment->HRV_RMSSD", "EducationalAttainment->HRV_SDNN", "EducationalAttainment->RestingHeartRate", "Intelligence->HRV_RMSSD", "Intelligence->HRV_SDNN", "Intelligence->RestingHeartRate", "ReactionTime->HRV_RMSSD", "ReactionTime->HRV_SDNN", "ReactionTime->RestingHeartRate"],
+      "prediction": "If the cell-level result reflects a causal chain running from pacemaker biology outward, this direction is NOT the chain and no prediction follows from the hypothesis. If a positive cognition -> HRV effect appears, the most parsimonious reading is horizontal pleiotropy of cognitive instruments through socioeconomic and behavioural routes, not causation.",
+      "expected_power": "weak. v1 minimum detectable effects were 0.061-0.189 SD per SD; the effect implied by the genetic correlation is 0.028-0.291."
+    },
+    "autonomic_to_cognition": {
+      "tests": ["HRV_RMSSD->EducationalAttainment", "HRV_SDNN->EducationalAttainment", "RestingHeartRate->EducationalAttainment", "HRV_RMSSD->Intelligence", "HRV_SDNN->Intelligence", "RestingHeartRate->Intelligence", "HRV_RMSSD->ReactionTime", "HRV_SDNN->ReactionTime", "RestingHeartRate->ReactionTime"],
+      "prediction": "This IS the vertical-pleiotropy chain the manuscript describes (variant -> pacemaker function -> autonomic tone -> cognition). Under that model the estimate should be positive for HRV and non-zero, and large enough to account for a material share of the genetic correlation. Under horizontal pleiotropy it should be null.",
+      "expected_power": "this is the best-powered direction in the analysis, because the cognitive outcome GWAS are large. v1 minimum detectable effects were 0.020-0.059 SD per SD."
+    },
+    "negative_control_outcomes": {
+      "tests": ["EducationalAttainment->AtrialFibrillation", "EducationalAttainment->QTinterval", "Intelligence->AtrialFibrillation", "Intelligence->QTinterval", "ReactionTime->AtrialFibrillation", "ReactionTime->QTinterval"],
+      "prediction": "Under a clean instrument set these are null. Recorded limitation, declared now rather than after the fact: neither outcome is fully independent of the hypothesised pathway, because both atrial fibrillation and QT interval are modulated by autonomic tone. A positive result is therefore ambiguous between 'the instruments are pleiotropic' and 'the chain is real and extends past the mediator'. The v1 criterion did not acknowledge this. Test N4 below is the part of the design that can separate the two."
+    }
+  },
+
+  "redesigned_negative_control_criteria": {
+    "_design_rule": "Every criterion below must satisfy two conditions that the v1 criterion did not: its false-alarm rate under the null is 5% by construction, and there exists a realisable outcome under which it does not fire. Where a criterion is a positive control, the requirement is inverted: there must exist a realisable outcome under which it does fire.",
+
+    "N1_family_level_calibrated": {
+      "statement": "Across the 6 negative-control tests, declare instrument-level pleiotropy if min(p) < 0.05/6 = 0.00833, OR if a permutation-based family p-value is < 0.05.",
+      "permutation_scheme": "sign-flip the outcome effect of each instrument independently, 10,000 times, recomputing all 6 tests each time. This preserves the correlation induced by shared exposure instruments and shared outcome GWAS, which the binomial and Fisher calculations do not.",
+      "false_alarm_rate": "0.05 by construction",
+      "can_it_fail_to_fire": "yes. On v1 numbers, min p = 0.0246 > 0.00833, so the Bonferroni arm would not have fired. The permutation arm is the one at risk of firing and its behaviour is unknown in advance.",
+      "if_it_fires": "cardiac-direction estimates are not interpretable as causal effects"
+    },
+
+    "N2_instrument_pleiotropy_with_a_real_null": {
+      "statement": "For each cognitive exposure and each cardiac outcome, compute the mean chi-square of that exposure's instruments in the outcome GWAS, and compare it against 1,000 null sets of the same size drawn from the same GWAS and matched on LD score decile and MAF decile. Declare excess pleiotropic association if the observed mean chi-square exceeds the 95th percentile of the matched null, after Bonferroni correction across the outcomes tested.",
+      "why_this_exists": "This project has twice called something positive without a null distribution. The raw numbers already computed (mean chi2 3.83-4.81 at RestingHeartRate, against a genome-wide mean of 2.11) look alarming and mean nothing until matched: genome-wide significant SNPs of a polygenic trait sit preferentially in gene-dense, high-LD regions where every trait has elevated chi-square.",
+      "inputs_available": "MAF computable from the extracted 1000G EUR genotypes; LD scores available in the gsMap resource bundle",
+      "false_alarm_rate": "0.05 by construction (empirical null)",
+      "can_it_fail_to_fire": "yes — if the enrichment is entirely explained by LD and MAF matching, it does not fire"
+    },
+
+    "N3_positive_control_for_the_pleiotropy_detector": {
+      "statement": "Run the same N2 procedure with RheumatoidArthritis as the outcome. Educational attainment is genetically correlated with rheumatoid arthritis at rg = -0.283 (p = 3.2e-20) and rheumatoid arthritis has no cardiac-conduction route, so a working pleiotropy detector MUST show excess association there.",
+      "direction_of_the_requirement": "this control FAILS if it does NOT fire",
+      "why_it_exists": "N1 and N2 can only ever produce bad news. Without a control that produces good news when the machinery works, a null from N2 is indistinguishable from a broken test. This is the specific error the project made with the LDSC same-study positive control, with the glutamatergic call, and with the 35-trait SE check.",
+      "if_it_does_not_fire": "the pleiotropy detector is uninformative and N2 results, in either direction, are discarded"
+    },
+
+    "N4_specificity_contrast": {
+      "statement": "The cell-level result is not 'cognition affects the heart'; it is 'cognitive heritability is enriched in nodal pacemaker cells and QT-interval heritability is depleted in the same cells (AUC 0.354, z = -5.6)'. The corresponding MR prediction is comparative: for each cognitive exposure, |beta(exposure -> HRV)| should exceed |beta(exposure -> QT)|. Test the difference by bootstrapping over instruments, 10,000 resamples, one-sided at 0.05 with Bonferroni across the three exposures.",
+      "why_this_exists": "It converts the negative control from 'QT must be zero' — which the hypothesis does not actually require — into the contrast the cell-level claim does require.",
+      "can_it_fail": "yes, and on v1 numbers it would have failed for educational attainment (EA->QT +0.085 vs EA->HRV_RMSSD +0.074) and for reaction time (RT->QT +0.097 vs RT->HRV_RMSSD +0.056).",
+      "status": "this criterion is confirmatory for v2 but its motivation came from inspecting v1, so it is flagged post hoc in origin below"
+    },
+
+    "N5_stability": {
+      "statement": "Any test that is described as an effect must retain p < 0.05/24 under BOTH clumping rules (r2<0.001/10 Mb and r2<0.01/1 Mb) and with and without the Steiger sensitivity filter.",
+      "why_this_exists": "the v1 count of nominally significant tests swung between 2 and 7 across those same rules",
+      "can_it_fail": "yes"
+    }
+  },
+
+  "rg_consistency_comparison": {
+    "post_hoc_origin": true,
+    "statement": "For each direction, compare the MR estimate against beta_needed = rg * sqrt(h2_outcome / h2_exposure), the effect required for that direction alone to account for the whole genetic correlation, propagating se(rg) and both se(h2) into beta_needed.",
+    "declared_limitations": [
+      "This comparison was constructed after inspecting v1 and is therefore NOT confirmatory evidence. It is reported as descriptive.",
+      "The MR estimate and the LDSC quantities are computed from the same summary statistics and are correlated by an unknown amount, so the z-statistic is approximate.",
+      "beta_needed assumes full mediation through the single measured trait with no feedback. Rejecting beta_needed rejects 'this direction alone explains all of rg'; it does not reject partial mediation.",
+      "HRV measured in a 46,075-person GWAS is a narrow proxy for autonomic tone. A null does not exclude autonomic mechanisms that these instruments do not capture.",
+      "For the autonomic -> cognition direction the v2 numbers will be nearly identical to v1 (the Steiger filter removed 0 instruments there and clumping changes little), so this is the same data seen twice and must be labelled as such."
+    ],
+    "v1_values_recorded_now_so_that_v2_cannot_be_tuned": {
+      "HRV_RMSSD->EducationalAttainment": {"beta_needed": 0.225, "se_needed": 0.059, "ivw": 0.004, "se": 0.010, "z": -3.70},
+      "HRV_SDNN->EducationalAttainment": {"beta_needed": 0.210, "se_needed": 0.053, "ivw": -0.008, "se": 0.011, "z": -4.00},
+      "HRV_RMSSD->Intelligence": {"beta_needed": 0.211, "se_needed": 0.111, "ivw": -0.024, "se": 0.014, "z": -2.09},
+      "HRV_SDNN->Intelligence": {"beta_needed": 0.280, "se_needed": 0.109, "ivw": -0.029, "se": 0.021, "z": -2.79},
+      "HRV_RMSSD->ReactionTime": {"beta_needed": 0.129, "se_needed": 0.083, "ivw": -0.019, "se": 0.018, "z": -1.73},
+      "HRV_SDNN->ReactionTime": {"beta_needed": 0.165, "se_needed": 0.078, "ivw": -0.007, "se": 0.021, "z": -2.14},
+      "EducationalAttainment->HRV_RMSSD": {"beta_needed": 0.291, "se_needed": 0.076, "ivw_steiger_filtered": 0.074, "ivw_unfiltered": 0.231, "note": "the verdict flips with the invalid filter; unfiltered it is consistent with fully explaining rg"}
+    }
+  },
+
+  "stop_conditions_still_uninterpretable": {
+    "_meaning": "If ANY of these holds, v2 concludes that MR remains uninterpretable and the manuscript wording is left unchanged.",
+    "conditions": [
+      "mean F < 10 for any instrument set being interpreted",
+      "N1 fires (either arm)",
+      "N2 fires for any cognitive exposure after correction, AND N3 confirms the detector works",
+      "N3 fails to fire, in which case N2 is uninformative in both directions and cannot license an interpretable verdict on instrument cleanliness",
+      "N4 fails for two or more of the three cognitive exposures",
+      "N5 fails for any test that would otherwise be described as an effect",
+      "MR-PRESSO global p < 0.05 and outlier removal changes the sign of any estimate being interpreted",
+      "IVW and weighted median disagree in sign for any test being interpreted"
+    ]
+  },
+
+  "interpretable_outcomes_and_permitted_wording": {
+    "level_0_uninterpretable": {
+      "trigger": "any stop condition above",
+      "permitted_wording": "unchanged from the current manuscript: the MR analysis is uninterpretable by its own pre-declared criterion and no causal claim is made",
+      "additional_requirement": "the reason must be stated specifically (which criterion, which number), replacing the current sentence that attributes the failure to three nominal p-values"
+    },
+    "level_1_interpretable_no_causal_evidence": {
+      "trigger": "no stop condition fires and no test survives Bonferroni",
+      "permitted_wording": "'Mendelian randomization neither supports nor excludes a causal contribution in either direction. With <n> instruments and a minimum detectable effect of <MDE> SD per SD at 80% power, effects larger than <MDE> are excluded; the effect required for this direction alone to account for the observed genetic correlation is <beta_needed>.'",
+      "forbidden": "any sentence containing 'causal', 'leads to', 'drives' or 'influences' about these traits"
+    },
+    "level_2a_interpretable_with_a_directional_exclusion": {
+      "trigger": "no stop condition fires, and for the autonomic -> cognition direction the 95% CI excludes beta_needed with propagated uncertainty in at least two of the three cognitive traits",
+      "permitted_wording": "'Mendelian randomization does not support the specific vertical chain in which autonomic tone mediates the association with cognition: the estimated effect of genetically predicted heart rate variability on <trait> is <beta> (95% CI ...), whereas <beta_needed> would be required for that direction alone to account for the genetic correlation.' Followed immediately by the four declared limitations of the rg comparison.",
+      "forbidden": "'MR shows the association is horizontal pleiotropy'. Excluding one chain is not establishing the alternative.",
+      "note": "this is the outcome the data are most likely to support, and it is also the one whose motivation is post hoc in origin, so it must carry that label"
+    },
+    "level_2b_interpretable_with_directional_evidence": {
+      "trigger": "no stop condition fires, a test survives Bonferroni, IVW and weighted median and weighted mode agree in sign and rough size, MR-PRESSO does not overturn it, and N5 holds",
+      "permitted_wording": "'consistent with a causal contribution of <exposure> to <outcome> of <beta> SD per SD (95% CI ...)'; explicitly not 'demonstrates' or 'establishes'",
+      "additional_requirement": "the negative-control family result must be reported in the same sentence"
+    }
+  },
+
+  "what_v2_does_not_attempt": [
+    "Re-downloading the original GWAS to recover real beta and se. beta = Z/sqrt(N) with se = 1/sqrt(N) is an exact reparameterisation to genotype-SD units for a standardised continuous trait, and IVW, the weighted median and Q are all invariant to it. The two places it is genuinely wrong are recorded instead: the AtrialFibrillation scale (nominal N vs effective N, factor 2.07) and the MR-Egger intercept, which is not scale-invariant.",
+    "CAUSE or MRlap. Sample overlap is near-total but with mean F of 40-78 the implied bias is 0.001-0.005 SD per SD, an order of magnitude below the estimates in question. Overlap will be reported as a limitation with that number attached, not modelled.",
+    "Replacing UK Biobank HRV with the CHARGE meta-analysis (Nolte 2017; GCST004733 RMSSD n=26,523, GCST004734 SDNN n=27,850). This would break the overlap and give a genuinely independent replication, but it is a download and a decision for the user, and summary-statistic availability for those accessions has not been verified."
+  ],
+
+  "disk_and_environment": {
+    "new_files_on_disk": "data/resource/plink/1000G_EUR_Phase3_plink, 1.2 GB, .bed and .fam extracted from the gsMap resource bundle already present at data/resource/gsMap_resource.tar.gz. No download was required. Free space on C: fell from 7.9 GB to 6.5 GB. Delete after v2 completes.",
+    "cache": "work/mr_diag, small text files, safe to keep",
+    "python": "env/gsmap/Scripts/python.exe, Windows native, numpy 1.26.4 / pandas 2.3.3 / scipy 1.17.1",
+    "provenance_checked": "GCST90179115 (ReactionTime, 432,297 EUR from the UK, Hatoum 2022 Biol Psychiatry PMID 36150907) and GCST007609 (RestingHeartRate, 458,969 EUR from the UK, Zhu 2019 Respir Res PMID 30940143) both verified against the GWAS Catalog REST API and both match DATA-PROVENANCE.md exactly. Both are UK Biobank."
+  }
+}

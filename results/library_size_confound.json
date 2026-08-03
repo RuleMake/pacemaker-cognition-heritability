@@ -1,0 +1,94 @@
+{
+  "per_trait": {
+    "AtrialFibrillation": {
+      "total_umi": 0.6899395753673827,
+      "n_genes": 0.6820944304943735,
+      "mito_frac": 0.2902470237439073
+    },
+    "EducationalAttainment": {
+      "total_umi": 0.3515593182856519,
+      "n_genes": 0.37112772678177136,
+      "mito_frac": 0.06621691924178065
+    },
+    "HRV_RMSSD": {
+      "total_umi": 0.5524980798096457,
+      "n_genes": 0.5459328973783123,
+      "mito_frac": 0.23809961060243623
+    },
+    "HRV_RMSSDc": {
+      "total_umi": 0.4507471774220764,
+      "n_genes": 0.44809119272186293,
+      "mito_frac": 0.14970328659040344
+    },
+    "HRV_SDNN": {
+      "total_umi": 0.1890687587430293,
+      "n_genes": 0.22617545055113775,
+      "mito_frac": -0.13529417708138222
+    },
+    "HRV_SDNNc": {
+      "total_umi": 0.026058934682485473,
+      "n_genes": 0.07047271706312216,
+      "mito_frac": -0.25717114764151
+    },
+    "PRinterval": {
+      "total_umi": 0.7548090587593004,
+      "n_genes": 0.7333726277875683,
+      "mito_frac": 0.3499541177713294
+    },
+    "RestingHeartRate": {
+      "total_umi": 0.7611425431290627,
+      "n_genes": 0.7599727321999785,
+      "mito_frac": 0.2904325384657136
+    }
+  },
+  "ordering": [
+    {
+      "trait": "RestingHeartRate",
+      "mean_rho": 0.8461904761904762,
+      "min_rho": 0.3,
+      "n": 15
+    },
+    {
+      "trait": "AtrialFibrillation",
+      "mean_rho": 0.8733333333333334,
+      "min_rho": 0.3,
+      "n": 15
+    },
+    {
+      "trait": "PRinterval",
+      "mean_rho": 0.8252380952380953,
+      "min_rho": 0.19999999999999998,
+      "n": 15
+    },
+    {
+      "trait": "HRV_RMSSD",
+      "mean_rho": 0.8428571428571427,
+      "min_rho": 0.5428571428571429,
+      "n": 8
+    },
+    {
+      "trait": "HRV_RMSSDc",
+      "mean_rho": 0.825892857142857,
+      "min_rho": 0.5428571428571429,
+      "n": 8
+    },
+    {
+      "trait": "HRV_SDNN",
+      "mean_rho": 0.3660714285714286,
+      "min_rho": -0.09999999999999999,
+      "n": 8
+    },
+    {
+      "trait": "HRV_SDNNc",
+      "mean_rho": 0.16964285714285718,
+      "min_rho": -0.3,
+      "n": 8
+    },
+    {
+      "trait": "EducationalAttainment",
+      "mean_rho": 0.5961904761904762,
+      "min_rho": -0.39999999999999997,
+      "n": 15
+    }
+  ]
+}

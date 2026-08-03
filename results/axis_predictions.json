@@ -1,0 +1,119 @@
+{
+  "conduction_cells": [
+    "SAN_P_cell",
+    "AVN_P_cell",
+    "AVN_bundle_cell",
+    "Purkinje"
+  ],
+  "predictions": {
+    "HRV_RMSSD": {
+      "conduction": "SAN_P_cell",
+      "overall": "SAN_P_cell",
+      "why": "迷走调控窦房结"
+    },
+    "HRV_RMSSDc": {
+      "conduction": "SAN_P_cell",
+      "overall": "SAN_P_cell",
+      "why": "同上"
+    },
+    "HRV_SDNN": {
+      "conduction": "SAN_P_cell",
+      "overall": "SAN_P_cell",
+      "why": "同上"
+    },
+    "HRV_SDNNc": {
+      "conduction": "SAN_P_cell",
+      "overall": "SAN_P_cell",
+      "why": "同上"
+    },
+    "RestingHeartRate": {
+      "conduction": "SAN_P_cell",
+      "overall": "SAN_P_cell",
+      "why": "窦房结固有频率"
+    },
+    "PRinterval": {
+      "conduction": "AVN_P_cell",
+      "overall": "AVN_P_cell",
+      "why": "房室结传导延迟"
+    },
+    "AVblock": {
+      "conduction": "AVN_P_cell",
+      "overall": "AVN_P_cell",
+      "why": "房室结疾病本身"
+    },
+    "QRSduration": {
+      "conduction": [
+        "Purkinje",
+        "AVN_bundle_cell"
+      ],
+      "overall": [
+        "Purkinje",
+        "AVN_bundle_cell"
+      ],
+      "why": "希浦系统传导时间 —— 新预测，从未有性状命中"
+    },
+    "BundleBranchBlock": {
+      "conduction": [
+        "Purkinje",
+        "AVN_bundle_cell"
+      ],
+      "overall": [
+        "Purkinje",
+        "AVN_bundle_cell"
+      ],
+      "why": "束支/希浦系统疾病本身 —— 新预测"
+    },
+    "QTinterval": {
+      "conduction": null,
+      "overall": "vCM",
+      "why": "心室复极 —— 预测任何传导细胞都不进前 5"
+    },
+    "Brugada": {
+      "conduction": [
+        "Purkinje",
+        "AVN_bundle_cell"
+      ],
+      "overall": "vCM",
+      "why": "右室流出道传导；已知压低结区起搏细胞"
+    },
+    "AtrialFibrillation": {
+      "conduction": null,
+      "overall": "aCM",
+      "why": "心房肌 —— 阳性对照"
+    },
+    "AtrialFlutter": {
+      "conduction": null,
+      "overall": "aCM",
+      "why": "心房肌，峡部折返"
+    },
+    "HeartFailure": {
+      "conduction": null,
+      "overall": [
+        "vCM",
+        "SMC"
+      ],
+      "why": "心室肌/血管"
+    },
+    "EducationalAttainment": {
+      "conduction": null,
+      "overall": "neural",
+      "why": "阴性对照 —— 神经细胞"
+    },
+    "RheumatoidArthritis": {
+      "conduction": null,
+      "overall": "immune",
+      "why": "阴性对照 —— 免疫细胞"
+    },
+    "RheumatoidArthritis_noMHC": {
+      "conduction": null,
+      "overall": "immune",
+      "why": "同上，剔除 MHC"
+    }
+  },
+  "novel": [
+    "QRSduration",
+    "BundleBranchBlock",
+    "QTinterval"
+  ],
+  "registered_before_scoring": true
+}

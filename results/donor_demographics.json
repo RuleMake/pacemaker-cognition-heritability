@@ -1,0 +1,126 @@
+{
+  "n_donors_axis_dataset": 22,
+  "sex_all_donors": {
+    "female": 11,
+    "male": 11
+  },
+  "age_all_donors": {
+    "50-55": 4,
+    "55-60": 2,
+    "70-75": 4,
+    "65-70": 1,
+    "60-65": 4,
+    "40-45": 2,
+    "45-50": 4,
+    "20-25": 1
+  },
+  "ethnicity_all_donors": {
+    "unknown": 20,
+    "Asian": 1,
+    "South Asian": 1
+  },
+  "per_population": {
+    "SAN_P_cell": {
+      "n_donors": 6,
+      "donors": [
+        "A61",
+        "AH1",
+        "AH2",
+        "AV10",
+        "AV14",
+        "AV3"
+      ],
+      "sex": {
+        "female": 3,
+        "male": 3
+      },
+      "age": [
+        "20-25",
+        "40-45",
+        "45-50",
+        "60-65",
+        "70-75"
+      ],
+      "ethnicity": {
+        "unknown": 5,
+        "South Asian": 1
+      }
+    },
+    "AVN_P_cell": {
+      "n_donors": 3,
+      "donors": [
+        "A61",
+        "AH2",
+        "AV13"
+      ],
+      "sex": {
+        "female": 2,
+        "male": 1
+      },
+      "age": [
+        "40-45",
+        "70-75"
+      ],
+      "ethnicity": {
+        "unknown": 2,
+        "South Asian": 1
+      }
+    },
+    "AVN_bundle_cell": {
+      "n_donors": 4,
+      "donors": [
+        "A61",
+        "AH1",
+        "AH2",
+        "AV13"
+      ],
+      "sex": {
+        "female": 3,
+        "male": 1
+      },
+      "age": [
+        "40-45",
+        "45-50",
+        "70-75"
+      ],
+      "ethnicity": {
+        "unknown": 3,
+        "South Asian": 1
+      }
+    },
+    "Purkinje": {
+      "n_donors": 12,
+      "donors": [
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "D8",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6"
+      ],
+      "sex": {
+        "male": 8,
+        "female": 4
+      },
+      "age": [
+        "40-45",
+        "45-50",
+        "50-55",
+        "55-60",
+        "60-65",
+        "65-70",
+        "70-75"
+      ],
+      "ethnicity": {
+        "unknown": 11,
+        "Asian": 1
+      }
+    }
+  }
+}

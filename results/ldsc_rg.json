@@ -1,0 +1,284 @@
+{
+  "h2": {
+    "AtrialFibrillation": {
+      "h2": 0.0134326289486497,
+      "se": 0.0010490569550352746,
+      "intercept": 1.0365221798258022,
+      "n_snp": 891616
+    },
+    "EducationalAttainment": {
+      "h2": 0.05841602029657626,
+      "se": 0.0016800462680945816,
+      "intercept": 0.5156951404832462,
+      "n_snp": 1090667
+    },
+    "HRV_RMSSD": {
+      "h2": 0.07534691230445496,
+      "se": 0.019118615900896196,
+      "intercept": 1.0199774802183004,
+      "n_snp": 1141425
+    },
+    "HRV_SDNN": {
+      "h2": 0.07244799870255478,
+      "se": 0.016164423518524096,
+      "intercept": 1.0019842333057285,
+      "n_snp": 1141446
+    },
+    "Intelligence": {
+      "h2": 0.18164999915513816,
+      "se": 0.006505174385146253,
+      "intercept": 0.9349947490473709,
+      "n_snp": 1107691
+    },
+    "PRinterval": {
+      "h2": 0.11086997292845117,
+      "se": 0.008640502471555251,
+      "intercept": 1.009866524073172,
+      "n_snp": 1109569
+    },
+    "QTinterval": {
+      "h2": 0.1098337639727502,
+      "se": 0.010252000717102616,
+      "intercept": 1.0073842371683075,
+      "n_snp": 1091986
+    },
+    "ReactionTime": {
+      "h2": 0.08029264554634771,
+      "se": 0.0027790996898886646,
+      "intercept": 0.9761627118661602,
+      "n_snp": 1028306
+    },
+    "RestingHeartRate": {
+      "h2": 0.14021067135077223,
+      "se": 0.011708028995815887,
+      "intercept": 1.0148030445240768,
+      "n_snp": 656050
+    },
+    "RheumatoidArthritis": {
+      "h2": 0.05017881988039896,
+      "se": 0.00459972647002693,
+      "intercept": 1.0280941896707143,
+      "n_snp": 1125701
+    }
+  },
+  "rg": {
+    "HRV_RMSSD|HRV_SDNN": {
+      "rg": 1.1124627360105024,
+      "se": 0.3124657930486721,
+      "z": 3.560270470429435,
+      "p": 0.00037047301357522657,
+      "intercept": 0.8208574031088799,
+      "n_snp": 1141424,
+      "note": "same-study control \u2014 cannot fail, see below"
+    },
+    "RestingHeartRate|HRV_RMSSD": {
+      "rg": -0.8545883351019657,
+      "se": 0.12449040575307825,
+      "z": -6.864692342613194,
+      "p": 6.663470364127886e-12,
+      "intercept": -0.13520956459669417,
+      "n_snp": 655268,
+      "note": "QUANTITATIVE control, published -0.74 to -0.55"
+    },
+    "EducationalAttainment|HRV_RMSSD": {
+      "rg": 0.2559007867608231,
+      "se": 0.05842370839557384,
+      "z": 4.380084622978333,
+      "p": 1.1863322934912726e-05,
+      "intercept": -0.01209686284378251,
+      "n_snp": 1089713,
+      "note": "THE QUESTION"
+    },
+    "EducationalAttainment|HRV_SDNN": {
+      "rg": 0.23370867761686842,
+      "se": 0.053038047268114175,
+      "z": 4.4064344306539205,
+      "p": 1.050860993078001e-05,
+      "intercept": -0.003530835760526703,
+      "n_snp": 1089734,
+      "note": "THE QUESTION"
+    },
+    "EducationalAttainment|RestingHeartRate": {
+      "rg": -0.08211182577689512,
+      "se": 0.022238167217608604,
+      "z": -3.6923827837699417,
+      "p": 0.00022216274456030903,
+      "intercept": -0.026483821843575884,
+      "n_snp": 655666,
+      "note": "pacemaker output"
+    },
+    "EducationalAttainment|PRinterval": {
+      "rg": 0.06150334470940767,
+      "se": 0.02246733881097635,
+      "z": 2.7374557007775397,
+      "p": 0.006191645845008168,
+      "intercept": -0.013616174585743032,
+      "n_snp": 1086303,
+      "note": "conduction, not pacemaker"
+    },
+    "EducationalAttainment|AtrialFibrillation": {
+      "rg": -0.03494438412037456,
+      "se": 0.02523483189509919,
+      "z": -1.3847678583965937,
+      "p": 0.1661234620095049,
+      "intercept": -0.03303670781105378,
+      "n_snp": 886281,
+      "note": "myocyte disease \u2014 expect ~0"
+    },
+    "EducationalAttainment|QTinterval": {
+      "rg": 0.04134532401811228,
+      "se": 0.02997250663837715,
+      "z": 1.379441650207969,
+      "p": 0.16775862505771622,
+      "intercept": 0.003988671890401109,
+      "n_snp": 1090145,
+      "note": "myocyte repolarisation \u2014 expect ~0"
+    },
+    "Intelligence|HRV_RMSSD": {
+      "rg": 0.13565802042547837,
+      "se": 0.06966335421628064,
+      "z": 1.9473369026175094,
+      "p": 0.051494357275828836,
+      "intercept": -0.01028740492406946,
+      "n_snp": 1107128,
+      "note": "THE QUESTION"
+    },
+    "Intelligence|HRV_SDNN": {
+      "rg": 0.17685105722608965,
+      "se": 0.06574612645393747,
+      "z": 2.689908391028841,
+      "p": 0.007147163604061095,
+      "intercept": -0.01227371351282062,
+      "n_snp": 1107149,
+      "note": "THE QUESTION"
+    },
+    "Intelligence|RestingHeartRate": {
+      "rg": -0.03141706694685862,
+      "se": 0.026195407050430497,
+      "z": -1.199334940143345,
+      "p": 0.23039773421883702,
+      "intercept": 0.011526017754859,
+      "n_snp": 651704,
+      "note": "pacemaker output"
+    },
+    "Intelligence|PRinterval": {
+      "rg": 0.021933327381600507,
+      "se": 0.027680126759433953,
+      "z": 0.7923853663034683,
+      "p": 0.42813600944986796,
+      "intercept": -0.006885797303732734,
+      "n_snp": 1094534,
+      "note": "conduction, not pacemaker"
+    },
+    "Intelligence|AtrialFibrillation": {
+      "rg": 0.032333317921951085,
+      "se": 0.02913956657089989,
+      "z": 1.1096018824878686,
+      "p": 0.26717061972725664,
+      "intercept": -0.046439675841897114,
+      "n_snp": 885072,
+      "note": "myocyte disease \u2014 expect ~0"
+    },
+    "Intelligence|QTinterval": {
+      "rg": 0.03409573744466302,
+      "se": 0.02927778408384145,
+      "z": 1.1645600413960504,
+      "p": 0.2441971262979148,
+      "intercept": 0.00487286992737377,
+      "n_snp": 1080496,
+      "note": "myocyte repolarisation \u2014 expect ~0"
+    },
+    "ReactionTime|HRV_RMSSD": {
+      "rg": 0.12484422726584075,
+      "se": 0.0792519566066991,
+      "z": 1.57528258747479,
+      "p": 0.11519123136207743,
+      "intercept": -0.015671597915406323,
+      "n_snp": 1028279,
+      "note": "THE QUESTION"
+    },
+    "ReactionTime|HRV_SDNN": {
+      "rg": 0.15699381075603996,
+      "se": 0.07154811906669153,
+      "z": 2.1942409221086954,
+      "p": 0.028218094087317812,
+      "intercept": -0.01092493722238789,
+      "n_snp": 1028300,
+      "note": "THE QUESTION"
+    },
+    "ReactionTime|RestingHeartRate": {
+      "rg": 0.045621544461203846,
+      "se": 0.030454823432260792,
+      "z": 1.4980071896551188,
+      "p": 0.13413138250207984,
+      "intercept": -0.01628382204754223,
+      "n_snp": 625950,
+      "note": "pacemaker output"
+    },
+    "ReactionTime|PRinterval": {
+      "rg": -0.033959554104542225,
+      "se": 0.03221787420515577,
+      "z": -1.054059429504748,
+      "p": 0.2918557091584444,
+      "intercept": 0.00590159183676749,
+      "n_snp": 1028019,
+      "note": "conduction, not pacemaker"
+    },
+    "ReactionTime|AtrialFibrillation": {
+      "rg": 0.003579772351298147,
+      "se": 0.02953550629515365,
+      "z": 0.12120233577595843,
+      "p": 0.9035307740767671,
+      "intercept": 0.01564877372634404,
+      "n_snp": 850597,
+      "note": "myocyte disease \u2014 expect ~0"
+    },
+    "ReactionTime|QTinterval": {
+      "rg": 0.01412260545920177,
+      "se": 0.03807383853599913,
+      "z": 0.3709267571182435,
+      "p": 0.7106920852608252,
+      "intercept": 0.0032928771463952367,
+      "n_snp": 1019867,
+      "note": "myocyte repolarisation \u2014 expect ~0"
+    },
+    "EducationalAttainment|RheumatoidArthritis": {
+      "rg": -0.2831421581883565,
+      "se": 0.030734109072066227,
+      "z": -9.212635951946307,
+      "p": 3.1821274011492435e-20,
+      "intercept": -0.0024656170114415775,
+      "n_snp": 1087984,
+      "note": "reference only \u2014 education is pleiotropic, not a valid null"
+    },
+    "EducationalAttainment|Intelligence": {
+      "rg": 0.7380235248104685,
+      "se": 0.04887620611394343,
+      "z": 15.099852944599249,
+      "p": 1.6229494354682365e-51,
+      "intercept": 0.023506400420235996,
+      "n_snp": 1080425,
+      "note": "how independent are the cognitive traits?"
+    },
+    "EducationalAttainment|ReactionTime": {
+      "rg": 0.054926125637071284,
+      "se": 0.034157410133270664,
+      "z": 1.608029573166353,
+      "p": 0.10782870202054162,
+      "intercept": 0.0693236056223986,
+      "n_snp": 1020035,
+      "note": "how independent are the cognitive traits?"
+    },
+    "Intelligence|ReactionTime": {
+      "rg": 0.18498228655772708,
+      "se": 0.034280760851331075,
+      "z": 5.396096293193693,
+      "p": 6.810640467857142e-08,
+      "intercept": 0.09928848062323928,
+      "n_snp": 1028040,
+      "note": "how independent are the cognitive traits?"
+    }
+  },
+  "controls_ok": true,
+  "M": 1066515
+}

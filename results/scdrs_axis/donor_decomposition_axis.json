@@ -1,0 +1,401 @@
+{
+  "stratum_key": [
+    "donor_id",
+    "region",
+    "assay"
+  ],
+  "verdict": {
+    "SAN_P_cell": {
+      "n_strata": 6,
+      "median_auc_cardiac": 0.849876650522192,
+      "median_auc_control": 0.33259110441793815,
+      "median_pct_cardiac": 97.14285714285714,
+      "median_pct_control": 26.0,
+      "replicated_traits": [
+        "AVblock",
+        "AtrialFibrillation",
+        "AtrialFlutter",
+        "Brugada",
+        "BundleBranchBlock",
+        "HRV_RMSSD",
+        "HRV_RMSSDc",
+        "HRV_SDNN",
+        "HRV_SDNNc",
+        "HeartFailure",
+        "PRinterval",
+        "QRSduration",
+        "QTinterval",
+        "RestingHeartRate"
+      ]
+    },
+    "AVN_P_cell": {
+      "n_strata": 2,
+      "median_auc_cardiac": 0.7855014160460538,
+      "median_auc_control": 0.35187005723773324,
+      "median_pct_cardiac": 93.10344827586206,
+      "median_pct_control": 34.48275862068966,
+      "replicated_traits": [
+        "AtrialFibrillation",
+        "AtrialFlutter",
+        "BundleBranchBlock",
+        "HRV_RMSSD",
+        "HRV_RMSSDc",
+        "HRV_SDNN",
+        "PRinterval",
+        "QRSduration",
+        "QTinterval",
+        "RestingHeartRate"
+      ]
+    },
+    "AVN_bundle_cell": {
+      "n_strata": 1,
+      "median_auc_cardiac": 0.6984748729060755,
+      "median_auc_control": 0.2373531127593966,
+      "median_pct_cardiac": 87.87878787878788,
+      "median_pct_control": 0.0,
+      "replicated_traits": []
+    }
+  },
+  "balanced": {
+    "AVblock": {
+      "SAN_P_cell": {
+        "balanced_rank": 3,
+        "n_states": 61,
+        "original_rank": 12,
+        "mean_z": 1.3264609149950177
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 11,
+        "n_states": 61,
+        "original_rank": 3,
+        "mean_z": 0.9920212568544943
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 14,
+        "n_states": 61,
+        "original_rank": 17,
+        "mean_z": 0.3425911782865231
+      }
+    },
+    "AtrialFibrillation": {
+      "SAN_P_cell": {
+        "balanced_rank": 5,
+        "n_states": 61,
+        "original_rank": 8,
+        "mean_z": 1.841207579114822
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 10,
+        "n_states": 61,
+        "original_rank": 2,
+        "mean_z": 1.6071137207728627
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 15,
+        "n_states": 61,
+        "original_rank": 13,
+        "mean_z": 0.5649171723804319
+      }
+    },
+    "AtrialFlutter": {
+      "SAN_P_cell": {
+        "balanced_rank": 7,
+        "n_states": 61,
+        "original_rank": 12,
+        "mean_z": 1.55878335946123
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 8,
+        "n_states": 61,
+        "original_rank": 3,
+        "mean_z": 1.524423329063466
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 15,
+        "n_states": 61,
+        "original_rank": 15,
+        "mean_z": 0.624153632552949
+      }
+    },
+    "Brugada": {
+      "SAN_P_cell": {
+        "balanced_rank": 6,
+        "n_states": 61,
+        "original_rank": 9,
+        "mean_z": 0.9718013577731712
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 11,
+        "n_states": 61,
+        "original_rank": 11,
+        "mean_z": 0.5998339756426705
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 14,
+        "n_states": 61,
+        "original_rank": 5,
+        "mean_z": 0.4169087813842317
+      }
+    },
+    "BundleBranchBlock": {
+      "SAN_P_cell": {
+        "balanced_rank": 5,
+        "n_states": 61,
+        "original_rank": 9,
+        "mean_z": 0.9915481858847591
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 12,
+        "n_states": 61,
+        "original_rank": 10,
+        "mean_z": 0.8202445324460572
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 11,
+        "n_states": 61,
+        "original_rank": 14,
+        "mean_z": 0.8383830846026382
+      }
+    },
+    "HRV_RMSSD": {
+      "SAN_P_cell": {
+        "balanced_rank": 1,
+        "n_states": 61,
+        "original_rank": 1,
+        "mean_z": 1.807734705052433
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 3,
+        "n_states": 61,
+        "original_rank": 3,
+        "mean_z": 1.3281010789082364
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 11,
+        "n_states": 61,
+        "original_rank": 9,
+        "mean_z": 0.8254361149218462
+      }
+    },
+    "HRV_RMSSDc": {
+      "SAN_P_cell": {
+        "balanced_rank": 1,
+        "n_states": 61,
+        "original_rank": 1,
+        "mean_z": 1.5299366163845178
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 2,
+        "n_states": 61,
+        "original_rank": 3,
+        "mean_z": 1.016966430718888
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 6,
+        "n_states": 61,
+        "original_rank": 9,
+        "mean_z": 0.735465374557075
+      }
+    },
+    "HRV_SDNN": {
+      "SAN_P_cell": {
+        "balanced_rank": 1,
+        "n_states": 61,
+        "original_rank": 1,
+        "mean_z": 1.4031619200137
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 7,
+        "n_states": 61,
+        "original_rank": 3,
+        "mean_z": 0.7862059814232101
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 9,
+        "n_states": 61,
+        "original_rank": 8,
+        "mean_z": 0.5461526866667861
+      }
+    },
+    "HRV_SDNNc": {
+      "SAN_P_cell": {
+        "balanced_rank": 3,
+        "n_states": 61,
+        "original_rank": 1,
+        "mean_z": 0.7837238008881994
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 10,
+        "n_states": 61,
+        "original_rank": 10,
+        "mean_z": 0.2850727033190864
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 29,
+        "n_states": 61,
+        "original_rank": 19,
+        "mean_z": 0.0024094143764223663
+      }
+    },
+    "HeartFailure": {
+      "SAN_P_cell": {
+        "balanced_rank": 2,
+        "n_states": 61,
+        "original_rank": 3,
+        "mean_z": 0.883659889062313
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 8,
+        "n_states": 61,
+        "original_rank": 2,
+        "mean_z": 0.6714533126341722
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 3,
+        "n_states": 61,
+        "original_rank": 1,
+        "mean_z": 0.8054302761091474
+      }
+    },
+    "PRinterval": {
+      "SAN_P_cell": {
+        "balanced_rank": 2,
+        "n_states": 61,
+        "original_rank": 3,
+        "mean_z": 2.143028392171774
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 7,
+        "n_states": 61,
+        "original_rank": 2,
+        "mean_z": 1.8185261646973496
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 12,
+        "n_states": 61,
+        "original_rank": 7,
+        "mean_z": 1.1028370394808162
+      }
+    },
+    "QRSduration": {
+      "SAN_P_cell": {
+        "balanced_rank": 5,
+        "n_states": 61,
+        "original_rank": 7,
+        "mean_z": 1.200452458928148
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 11,
+        "n_states": 61,
+        "original_rank": 9,
+        "mean_z": 0.8645153165063175
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 14,
+        "n_states": 61,
+        "original_rank": 2,
+        "mean_z": 0.5639597371489343
+      }
+    },
+    "QTinterval": {
+      "SAN_P_cell": {
+        "balanced_rank": 6,
+        "n_states": 61,
+        "original_rank": 14,
+        "mean_z": 1.3240786292242235
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 11,
+        "n_states": 61,
+        "original_rank": 12,
+        "mean_z": 1.008590854747574
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 12,
+        "n_states": 61,
+        "original_rank": 8,
+        "mean_z": 0.6118730721082106
+      }
+    },
+    "RestingHeartRate": {
+      "SAN_P_cell": {
+        "balanced_rank": 4,
+        "n_states": 61,
+        "original_rank": 3,
+        "mean_z": 1.8194959274512905
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 5,
+        "n_states": 61,
+        "original_rank": 2,
+        "mean_z": 1.7600525303138657
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 13,
+        "n_states": 61,
+        "original_rank": 14,
+        "mean_z": 0.9610548457683906
+      }
+    },
+    "EducationalAttainment": {
+      "SAN_P_cell": {
+        "balanced_rank": 1,
+        "n_states": 61,
+        "original_rank": 1,
+        "mean_z": 1.4399152238102648
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 15,
+        "n_states": 61,
+        "original_rank": 11,
+        "mean_z": 0.5459722727152138
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 9,
+        "n_states": 61,
+        "original_rank": 20,
+        "mean_z": 0.7050976352252332
+      }
+    },
+    "RheumatoidArthritis": {
+      "SAN_P_cell": {
+        "balanced_rank": 54,
+        "n_states": 61,
+        "original_rank": 59,
+        "mean_z": -0.8921877755377797
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 44,
+        "n_states": 61,
+        "original_rank": 51,
+        "mean_z": -0.7111739461298379
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 60,
+        "n_states": 61,
+        "original_rank": 46,
+        "mean_z": -1.1961429641164911
+      }
+    },
+    "RheumatoidArthritis_noMHC": {
+      "SAN_P_cell": {
+        "balanced_rank": 55,
+        "n_states": 61,
+        "original_rank": 45,
+        "mean_z": -0.7175847847603625
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 41,
+        "n_states": 61,
+        "original_rank": 41,
+        "mean_z": -0.5466642884018316
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 60,
+        "n_states": 61,
+        "original_rank": 47,
+        "mean_z": -0.8635961758411885
+      }
+    }
+  }
+}

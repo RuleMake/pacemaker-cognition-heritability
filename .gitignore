@@ -1,0 +1,37 @@
+﻿# Raw and third-party data are NOT redistributed from here. Every source is
+# public and is cited by accession in the manuscript and in DATA-SOURCES.md.
+# Redistributing GWAS summary statistics and the cell atlas is not ours to do.
+data/
+env/
+work/
+work_dm/
+logs/
+figures/
+
+# Large derived matrices. These are results, but they are hundreds of megabytes
+# of per-cell scores; they belong in the Zenodo archive, not in git history.
+results/scdrs/*.score.tsv
+results/scdrs_axis/*.score.tsv
+results/scdrs_mouse/*.score.tsv
+results/obs_axis.tsv
+results/obs_node.tsv
+results/gsmap/
+results/spotlevel/
+results/spotlevel_depthmatched/
+results/genediag/
+
+# Working notes, self-critique logs and manuscript drafts. These are internal
+# deliberation, not the record of the analysis, and several contain claims that
+# were later withdrawn. Publishing them would misrepresent the study.
+*.md
+!README.md
+!PREREGISTRATION.md
+!DATA-SOURCES.md
+
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+

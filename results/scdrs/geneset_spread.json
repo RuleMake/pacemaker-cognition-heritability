@@ -1,0 +1,128 @@
+{
+  "AVblock": {
+    "n_genes": 1000,
+    "n_chr": 22,
+    "n_loci": 387,
+    "largest_locus": 0.027166201964614455,
+    "top_chr_share": 0.10427043506071927,
+    "mhc_share": 0.02828720690017214,
+    "ok": true
+  },
+  "AtrialFibrillation": {
+    "n_genes": 1000,
+    "n_chr": 22,
+    "n_loci": 323,
+    "largest_locus": 0.046420378982724095,
+    "top_chr_share": 0.1298743614323543,
+    "mhc_share": 0.024492186805040096,
+    "ok": true
+  },
+  "AtrialFlutter": {
+    "n_genes": 1000,
+    "n_chr": 22,
+    "n_loci": 328,
+    "largest_locus": 0.05644343633603839,
+    "top_chr_share": 0.17394769104405938,
+    "mhc_share": 0.005560236605267276,
+    "ok": false
+  },
+  "Brugada": {
+    "n_genes": 1000,
+    "n_chr": 22,
+    "n_loci": 395,
+    "largest_locus": 0.03782315679680989,
+    "top_chr_share": 0.09526227707317307,
+    "mhc_share": 0.03293860295394892,
+    "ok": true
+  },
+  "EducationalAttainment": {
+    "n_genes": 1000,
+    "n_chr": 22,
+    "n_loci": 353,
+    "largest_locus": 0.08963690934017057,
+    "top_chr_share": 0.12113337200929868,
+    "mhc_share": 0.03263305097751966,
+    "ok": false
+  },
+  "HRV_RMSSD": {
+    "n_genes": 1000,
+    "n_chr": 22,
+    "n_loci": 396,
+    "largest_locus": 0.03100296242702734,
+    "top_chr_share": 0.10655586866309753,
+    "mhc_share": 0.014970025740916168,
+    "ok": true
+  },
+  "HRV_RMSSDc": {
+    "n_genes": 1000,
+    "n_chr": 22,
+    "n_loci": 412,
+    "largest_locus": 0.04275484788701119,
+    "top_chr_share": 0.11514835344637096,
+    "mhc_share": 0.016055757008935734,
+    "ok": true
+  },
+  "HRV_SDNN": {
+    "n_genes": 1000,
+    "n_chr": 22,
+    "n_loci": 405,
+    "largest_locus": 0.023538268412941273,
+    "top_chr_share": 0.0879938862546719,
+    "mhc_share": 0.006254411507974211,
+    "ok": true
+  },
+  "HRV_SDNNc": {
+    "n_genes": 1000,
+    "n_chr": 22,
+    "n_loci": 423,
+    "largest_locus": 0.026419462261502782,
+    "top_chr_share": 0.09436962056881032,
+    "mhc_share": 0.007174628078329774,
+    "ok": true
+  },
+  "HeartFailure": {
+    "n_genes": 1000,
+    "n_chr": 22,
+    "n_loci": 365,
+    "largest_locus": 0.028306327256458153,
+    "top_chr_share": 0.08614893763280766,
+    "mhc_share": 0.03027847166637085,
+    "ok": true
+  },
+  "PRinterval": {
+    "n_genes": 1000,
+    "n_chr": 22,
+    "n_loci": 329,
+    "largest_locus": 0.044886819428464876,
+    "top_chr_share": 0.12224634240130261,
+    "mhc_share": 0.0044309143202745415,
+    "ok": true
+  },
+  "RestingHeartRate": {
+    "n_genes": 1000,
+    "n_chr": 22,
+    "n_loci": 293,
+    "largest_locus": 0.0794350218096258,
+    "top_chr_share": 0.13738735993534362,
+    "mhc_share": 0.010566480769779035,
+    "ok": false
+  },
+  "RheumatoidArthritis": {
+    "n_genes": 1000,
+    "n_chr": 22,
+    "n_loci": 247,
+    "largest_locus": 0.34300848822452307,
+    "top_chr_share": 0.36687156724840175,
+    "mhc_share": 0.34166155956801675,
+    "ok": false
+  },
+  "RheumatoidArthritis_noMHC": {
+    "n_genes": 1000,
+    "n_chr": 22,
+    "n_loci": 329,
+    "largest_locus": 0.04513499979841687,
+    "top_chr_share": 0.14086771318781813,
+    "mhc_share": 0.0,
+    "ok": true
+  }
+}

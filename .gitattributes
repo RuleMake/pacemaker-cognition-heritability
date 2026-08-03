@@ -1,0 +1,13 @@
+# Shell scripts must check out with LF on every platform. Without this, a clone
+# on Windows with core.autocrlf=true produces CRLF scripts that bash rejects
+# with "syntax error near unexpected token $'do\r'".
+*.sh text eol=lf
+
+# Keep the rest deterministic too.
+*.py text
+*.md text
+*.json text
+*.tsv text
+LICENSE text
+
+*.png binary

@@ -1,0 +1,272 @@
+{
+  "RheumatoidArthritis": {
+    "ranks": {
+      "SAN_P_cell": 61,
+      "AVN_P_cell": 48,
+      "AVN_bundle_cell": 57
+    },
+    "top5": [
+      "DC",
+      "unclassified",
+      "B",
+      "CD4+T_naive",
+      "CD4+T_act"
+    ],
+    "n_gws": 33908,
+    "lam": 1.1402338122862168
+  },
+  "RestingHeartRate": {
+    "ranks": {
+      "SAN_P_cell": 5,
+      "AVN_P_cell": 2,
+      "AVN_bundle_cell": 9
+    },
+    "top5": [
+      "unclassified",
+      "AVN_P_cell",
+      "aCM4",
+      "vCM4",
+      "SAN_P_cell"
+    ],
+    "n_gws": 21717,
+    "lam": 1.626543841479446
+  },
+  "PRinterval": {
+    "ranks": {
+      "SAN_P_cell": 3,
+      "AVN_P_cell": 2,
+      "AVN_bundle_cell": 11
+    },
+    "top5": [
+      "unclassified",
+      "AVN_P_cell",
+      "SAN_P_cell",
+      "aCM4",
+      "vCM4"
+    ],
+    "n_gws": 20063,
+    "lam": 1.2172389879643877
+  },
+  "AtrialFibrillation": {
+    "ranks": {
+      "SAN_P_cell": 8,
+      "AVN_P_cell": 4,
+      "AVN_bundle_cell": 12
+    },
+    "top5": [
+      "unclassified",
+      "vCM4",
+      "aCM4",
+      "AVN_P_cell",
+      "vCM1"
+    ],
+    "n_gws": 11890,
+    "lam": 1.3488911604506482
+  },
+  "EducationalAttainment": {
+    "ranks": {
+      "SAN_P_cell": 2,
+      "AVN_P_cell": 11,
+      "AVN_bundle_cell": 23
+    },
+    "top5": [
+      "NC1_glial",
+      "SAN_P_cell",
+      "NC2_glial_NGF+",
+      "B",
+      "aCM2"
+    ],
+    "n_gws": 11099,
+    "lam": 1.0964806825675972
+  },
+  "QTinterval": {
+    "ranks": {
+      "SAN_P_cell": 11,
+      "AVN_P_cell": 10,
+      "AVN_bundle_cell": 7
+    },
+    "top5": [
+      "unclassified",
+      "vCM4",
+      "vCM1",
+      "vCM2",
+      "vCM3_stressed"
+    ],
+    "n_gws": 7295,
+    "lam": 1.121977057366454
+  },
+  "AtrialFlutter": {
+    "ranks": {
+      "SAN_P_cell": 10,
+      "AVN_P_cell": 4,
+      "AVN_bundle_cell": 13
+    },
+    "top5": [
+      "unclassified",
+      "aCM4",
+      "vCM4",
+      "AVN_P_cell",
+      "aCM1"
+    ],
+    "n_gws": 3663,
+    "lam": 1.0188713018443614
+  },
+  "HRV_RMSSD": {
+    "ranks": {
+      "SAN_P_cell": 1,
+      "AVN_P_cell": 3,
+      "AVN_bundle_cell": 11
+    },
+    "top5": [
+      "SAN_P_cell",
+      "aCM4",
+      "AVN_P_cell",
+      "aCM2",
+      "aCM1"
+    ],
+    "n_gws": 2459,
+    "lam": 1.0641350187403824
+  },
+  "HRV_RMSSDc": {
+    "ranks": {
+      "SAN_P_cell": 1,
+      "AVN_P_cell": 2,
+      "AVN_bundle_cell": 7
+    },
+    "top5": [
+      "SAN_P_cell",
+      "AVN_P_cell",
+      "aCM2",
+      "aCM4",
+      "aCM1"
+    ],
+    "n_gws": 1585,
+    "lam": 1.0576813017454385
+  },
+  "QRSduration": {
+    "ranks": {
+      "SAN_P_cell": 6,
+      "AVN_P_cell": 4,
+      "AVN_bundle_cell": 5
+    },
+    "top5": [
+      "unclassified",
+      "vCM4",
+      "vCM1",
+      "AVN_P_cell",
+      "AVN_bundle_cell"
+    ],
+    "n_gws": 1285,
+    "lam": 1.0284268549659263
+  },
+  "Brugada": {
+    "ranks": {
+      "SAN_P_cell": 8,
+      "AVN_P_cell": 12,
+      "AVN_bundle_cell": 5
+    },
+    "top5": [
+      "unclassified",
+      "vCM4",
+      "vCM1",
+      "vCM2",
+      "AVN_bundle_cell"
+    ],
+    "n_gws": 1266,
+    "lam": 1.0536169858518356
+  },
+  "HeartFailure": {
+    "ranks": {
+      "SAN_P_cell": 4,
+      "AVN_P_cell": 3,
+      "AVN_bundle_cell": 5
+    },
+    "top5": [
+      "SMC2_art",
+      "SMC1_basic",
+      "AVN_P_cell",
+      "SAN_P_cell",
+      "AVN_bundle_cell"
+    ],
+    "n_gws": 923,
+    "lam": 1.1751311538382063
+  },
+  "HRV_SDNN": {
+    "ranks": {
+      "SAN_P_cell": 1,
+      "AVN_P_cell": 2,
+      "AVN_bundle_cell": 11
+    },
+    "top5": [
+      "SAN_P_cell",
+      "AVN_P_cell",
+      "aCM2",
+      "aCM4",
+      "vCM2"
+    ],
+    "n_gws": 920,
+    "lam": 1.0400552082743457
+  },
+  "AVblock": {
+    "ranks": {
+      "SAN_P_cell": 9,
+      "AVN_P_cell": 3,
+      "AVN_bundle_cell": 15
+    },
+    "top5": [
+      "unclassified",
+      "aCM4",
+      "AVN_P_cell",
+      "aCM1",
+      "vCM4"
+    ],
+    "n_gws": 436,
+    "lam": 1.0099145500197846
+  },
+  "HRV_SDNNc": {
+    "ranks": {
+      "SAN_P_cell": 3,
+      "AVN_P_cell": 22,
+      "AVN_bundle_cell": 26
+    },
+    "top5": [
+      "B",
+      "NK_CD56hi",
+      "SAN_P_cell",
+      "NK_CD16hi",
+      "PC1_vent"
+    ],
+    "n_gws": 362,
+    "lam": 1.03096346587162
+  },
+  "BundleBranchBlock": {
+    "ranks": {
+      "SAN_P_cell": 8,
+      "AVN_P_cell": 10,
+      "AVN_bundle_cell": 12
+    },
+    "top5": [
+      "unclassified",
+      "vCM4",
+      "aCM4",
+      "vCM1",
+      "vCM3_stressed"
+    ],
+    "n_gws": 218,
+    "lam": 1.0674718707957793
+  },
+  "RheumatoidArthritis_noMHC": {
+    "ranks": {
+      "SAN_P_cell": 49,
+      "AVN_P_cell": 45,
+      "AVN_bundle_cell": 54
+    },
+    "top5": [
+      "CD4+T_act",
+      "CD4+T_naive",
+      "CD8+T_te",
+      "unclassified",
+      "CD8+T_em"
+    ]
+  }
+}

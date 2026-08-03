@@ -1,0 +1,328 @@
+{
+  "verdict": {
+    "SAN_P_cell": {
+      "n_strata": 6,
+      "median_auc_cardiac": 0.8523172636829556,
+      "median_auc_control": 0.2990939318359467,
+      "median_pct_cardiac": 100.0,
+      "median_pct_control": 13.166894664842683,
+      "replicated_traits": [
+        "AVblock",
+        "AtrialFibrillation",
+        "AtrialFlutter",
+        "Brugada",
+        "HRV_RMSSD",
+        "HRV_RMSSDc",
+        "HRV_SDNN",
+        "HRV_SDNNc",
+        "HeartFailure",
+        "PRinterval",
+        "RestingHeartRate"
+      ]
+    },
+    "AVN_P_cell": {
+      "n_strata": 2,
+      "median_auc_cardiac": 0.7654555086402814,
+      "median_auc_control": 0.39391500252011746,
+      "median_pct_cardiac": 94.53578336557061,
+      "median_pct_control": 38.63636363636363,
+      "replicated_traits": [
+        "AtrialFibrillation",
+        "AtrialFlutter",
+        "HRV_RMSSD",
+        "PRinterval",
+        "RestingHeartRate"
+      ]
+    },
+    "AVN_bundle_cell": {
+      "n_strata": 1,
+      "median_auc_cardiac": 0.6450401141611977,
+      "median_auc_control": 0.2703074501920417,
+      "median_pct_cardiac": 87.2340425531915,
+      "median_pct_control": 0.0,
+      "replicated_traits": []
+    }
+  },
+  "balanced": {
+    "AVblock": {
+      "SAN_P_cell": {
+        "balanced_rank": 2,
+        "n_states": 58,
+        "original_rank": 9,
+        "mean_z": 1.4256815109999001
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 11,
+        "n_states": 58,
+        "original_rank": 3,
+        "mean_z": 0.8176490353123445
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 30,
+        "n_states": 58,
+        "original_rank": 15,
+        "mean_z": -0.06917859446768526
+      }
+    },
+    "AtrialFibrillation": {
+      "SAN_P_cell": {
+        "balanced_rank": 1,
+        "n_states": 58,
+        "original_rank": 8,
+        "mean_z": 1.7990550584116247
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 9,
+        "n_states": 58,
+        "original_rank": 4,
+        "mean_z": 1.1380543974710053
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 29,
+        "n_states": 58,
+        "original_rank": 12,
+        "mean_z": 0.11482317076423501
+      }
+    },
+    "AtrialFlutter": {
+      "SAN_P_cell": {
+        "balanced_rank": 2,
+        "n_states": 58,
+        "original_rank": 10,
+        "mean_z": 1.5227656900206157
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 8,
+        "n_states": 58,
+        "original_rank": 4,
+        "mean_z": 1.1650346159511167
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 17,
+        "n_states": 58,
+        "original_rank": 13,
+        "mean_z": 0.23433977693631286
+      }
+    },
+    "Brugada": {
+      "SAN_P_cell": {
+        "balanced_rank": 1,
+        "n_states": 58,
+        "original_rank": 8,
+        "mean_z": 0.9099353050963179
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 12,
+        "n_states": 58,
+        "original_rank": 12,
+        "mean_z": 0.2829120456433013
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 24,
+        "n_states": 58,
+        "original_rank": 5,
+        "mean_z": 0.02105033784402411
+      }
+    },
+    "HRV_RMSSD": {
+      "SAN_P_cell": {
+        "balanced_rank": 1,
+        "n_states": 58,
+        "original_rank": 1,
+        "mean_z": 1.7387654644529442
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 5,
+        "n_states": 58,
+        "original_rank": 3,
+        "mean_z": 1.1423096224463254
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 11,
+        "n_states": 58,
+        "original_rank": 11,
+        "mean_z": 0.5579517995023632
+      }
+    },
+    "HRV_RMSSDc": {
+      "SAN_P_cell": {
+        "balanced_rank": 1,
+        "n_states": 58,
+        "original_rank": 1,
+        "mean_z": 1.3724483399593836
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 5,
+        "n_states": 58,
+        "original_rank": 2,
+        "mean_z": 0.8325197477854765
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 13,
+        "n_states": 58,
+        "original_rank": 7,
+        "mean_z": 0.49047670462185977
+      }
+    },
+    "HRV_SDNN": {
+      "SAN_P_cell": {
+        "balanced_rank": 1,
+        "n_states": 58,
+        "original_rank": 1,
+        "mean_z": 1.347465574757428
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 5,
+        "n_states": 58,
+        "original_rank": 2,
+        "mean_z": 0.7773086161327103
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 13,
+        "n_states": 58,
+        "original_rank": 11,
+        "mean_z": 0.5166664701339196
+      }
+    },
+    "HRV_SDNNc": {
+      "SAN_P_cell": {
+        "balanced_rank": 6,
+        "n_states": 58,
+        "original_rank": 3,
+        "mean_z": 0.8278008276870615
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 14,
+        "n_states": 58,
+        "original_rank": 22,
+        "mean_z": 0.4679923544255749
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 40,
+        "n_states": 58,
+        "original_rank": 26,
+        "mean_z": 0.02272317510713783
+      }
+    },
+    "HeartFailure": {
+      "SAN_P_cell": {
+        "balanced_rank": 1,
+        "n_states": 58,
+        "original_rank": 4,
+        "mean_z": 0.961524741581787
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 3,
+        "n_states": 58,
+        "original_rank": 3,
+        "mean_z": 0.6875547920386142
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 4,
+        "n_states": 58,
+        "original_rank": 5,
+        "mean_z": 0.6711304116602327
+      }
+    },
+    "PRinterval": {
+      "SAN_P_cell": {
+        "balanced_rank": 1,
+        "n_states": 58,
+        "original_rank": 3,
+        "mean_z": 2.2186368167433397
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 8,
+        "n_states": 58,
+        "original_rank": 2,
+        "mean_z": 1.4471250714849357
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 11,
+        "n_states": 58,
+        "original_rank": 11,
+        "mean_z": 0.8113979432021157
+      }
+    },
+    "RestingHeartRate": {
+      "SAN_P_cell": {
+        "balanced_rank": 1,
+        "n_states": 58,
+        "original_rank": 5,
+        "mean_z": 2.0322133857262217
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 5,
+        "n_states": 58,
+        "original_rank": 2,
+        "mean_z": 1.4904518240522828
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 11,
+        "n_states": 58,
+        "original_rank": 9,
+        "mean_z": 0.7143853024995271
+      }
+    },
+    "EducationalAttainment": {
+      "SAN_P_cell": {
+        "balanced_rank": 1,
+        "n_states": 58,
+        "original_rank": 2,
+        "mean_z": 1.461817097373056
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 11,
+        "n_states": 58,
+        "original_rank": 11,
+        "mean_z": 0.5648562413961747
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 10,
+        "n_states": 58,
+        "original_rank": 23,
+        "mean_z": 0.5957004539377307
+      }
+    },
+    "RheumatoidArthritis": {
+      "SAN_P_cell": {
+        "balanced_rank": 56,
+        "n_states": 58,
+        "original_rank": 61,
+        "mean_z": -0.9733697127499887
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 52,
+        "n_states": 58,
+        "original_rank": 48,
+        "mean_z": -0.6906300896898646
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 58,
+        "n_states": 58,
+        "original_rank": 57,
+        "mean_z": -1.2534517585749592
+      }
+    },
+    "RheumatoidArthritis_noMHC": {
+      "SAN_P_cell": {
+        "balanced_rank": 56,
+        "n_states": 58,
+        "original_rank": 49,
+        "mean_z": -0.601134607236965
+      },
+      "AVN_P_cell": {
+        "balanced_rank": 54,
+        "n_states": 58,
+        "original_rank": 45,
+        "mean_z": -0.4549026158964717
+      },
+      "AVN_bundle_cell": {
+        "balanced_rank": 58,
+        "n_states": 58,
+        "original_rank": 54,
+        "mean_z": -0.8132792396123413
+      }
+    }
+  }
+}

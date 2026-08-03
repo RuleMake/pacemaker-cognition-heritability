@@ -1,0 +1,140 @@
+{
+  "HRV_RMSSDc": {
+    "comp": {
+      "mean": -0.35877575377271403,
+      "pos": 1,
+      "n": 8,
+      "p": 0.0546875
+    },
+    "cell": {
+      "mean": -0.08062131527462217,
+      "pos": 0,
+      "n": 8,
+      "p": 0.0078125
+    }
+  },
+  "HRV_RMSSD": {
+    "comp": {
+      "mean": -0.29427089882069185,
+      "pos": 1,
+      "n": 8,
+      "p": 0.078125
+    },
+    "cell": {
+      "mean": -0.04031313199164867,
+      "pos": 2,
+      "n": 8,
+      "p": 0.0546875
+    }
+  },
+  "HRV_SDNNc": {
+    "comp": {
+      "mean": -0.2963213120613897,
+      "pos": 2,
+      "n": 8,
+      "p": 0.1953125
+    },
+    "cell": {
+      "mean": -0.06191627152841261,
+      "pos": 2,
+      "n": 8,
+      "p": 0.0546875
+    }
+  },
+  "HRV_SDNN": {
+    "comp": {
+      "mean": -0.25216680177832496,
+      "pos": 2,
+      "n": 8,
+      "p": 0.1953125
+    },
+    "cell": {
+      "mean": -0.035568550645860994,
+      "pos": 2,
+      "n": 8,
+      "p": 0.109375
+    }
+  },
+  "RestingHeartRate": {
+    "comp": {
+      "mean": 1.066851698571323,
+      "pos": 7,
+      "n": 8,
+      "p": 0.0390625
+    },
+    "cell": {
+      "mean": 0.10365533150754387,
+      "pos": 8,
+      "n": 8,
+      "p": 0.0078125
+    }
+  },
+  "PRinterval": {
+    "comp": {
+      "mean": -0.24740877523882543,
+      "pos": 4,
+      "n": 8,
+      "p": 0.546875
+    },
+    "cell": {
+      "mean": 0.0001750535541611524,
+      "pos": 4,
+      "n": 8,
+      "p": 0.9453125
+    }
+  },
+  "AtrialFibrillation": {
+    "comp": {
+      "mean": -0.05010634583097534,
+      "pos": 4,
+      "n": 8,
+      "p": 0.9453125
+    },
+    "cell": {
+      "mean": 0.02188874702200348,
+      "pos": 5,
+      "n": 8,
+      "p": 0.640625
+    }
+  },
+  "EducationalAttainment": {
+    "comp": {
+      "mean": 0.43219818893159845,
+      "pos": 7,
+      "n": 8,
+      "p": 0.0234375
+    },
+    "cell": {
+      "mean": 0.09270013735683594,
+      "pos": 8,
+      "n": 8,
+      "p": 0.0078125
+    }
+  },
+  "_ordering": {
+    "comp": {
+      "rho": -0.6571428571428573,
+      "p": 0.1561749271137024,
+      "observed": [
+        "RestingHeartRate",
+        "EducationalAttainment",
+        "AtrialFibrillation",
+        "PRinterval",
+        "HRV_RMSSD",
+        "HRV_RMSSDc"
+      ]
+    },
+    "cell": {
+      "rho": -0.6571428571428573,
+      "p": 0.1561749271137024,
+      "observed": [
+        "RestingHeartRate",
+        "EducationalAttainment",
+        "AtrialFibrillation",
+        "PRinterval",
+        "HRV_RMSSD",
+        "HRV_RMSSDc"
+      ]
+    }
+  }
+}

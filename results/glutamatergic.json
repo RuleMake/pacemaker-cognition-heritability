@@ -1,0 +1,109 @@
+{
+  "genes": [
+    "DLG4",
+    "DLGAP1",
+    "GLS",
+    "GLS2",
+    "GLUL",
+    "GOT1",
+    "GOT2",
+    "GRIA1",
+    "GRIA2",
+    "GRIA3",
+    "GRIA4",
+    "GRIK1",
+    "GRIK2",
+    "GRIK3",
+    "GRIK4",
+    "GRIK5",
+    "GRIN1",
+    "GRIN2A",
+    "GRIN2B",
+    "GRIN2C",
+    "GRIN2D",
+    "GRIN3A",
+    "GRIN3B",
+    "GRM1",
+    "GRM2",
+    "GRM3",
+    "GRM4",
+    "GRM5",
+    "GRM6",
+    "GRM7",
+    "GRM8",
+    "HOMER1",
+    "HOMER2",
+    "SHANK1",
+    "SHANK2",
+    "SHANK3",
+    "SLC17A6",
+    "SLC17A7",
+    "SLC17A8",
+    "SLC1A1",
+    "SLC1A2",
+    "SLC1A3",
+    "SLC1A6",
+    "SLC1A7"
+  ],
+  "expression": {
+    "SAN_P_cell": {
+      "auc": 0.6084903792797308,
+      "z": 5.202149645596764
+    },
+    "AVN_P_cell": {
+      "auc": 0.5769197568978669,
+      "z": 2.939392585094138
+    },
+    "AVN_bundle_cell": {
+      "auc": 0.6947970941392225,
+      "z": 3.9684290576681933
+    },
+    "Purkinje": {
+      "auc": 0.6800272748239826,
+      "z": 5.171423550115789
+    }
+  },
+  "knockout": {
+    "EducationalAttainment": {
+      "n_in_set": 4,
+      "auc": 0.6322915269293586,
+      "auc_dropped": 0.6322372954202363,
+      "delta": -5.423150912231556e-05,
+      "frac_of_excess": 0.0004099393996054958,
+      "p": 0.41
+    },
+    "HRV_RMSSD": {
+      "n_in_set": 2,
+      "auc": 0.6401091668304709,
+      "auc_dropped": 0.6445982464874173,
+      "delta": 0.004489079656946338,
+      "frac_of_excess": 0.03203987118400345,
+      "p": 0.99
+    },
+    "RestingHeartRate": {
+      "n_in_set": 3,
+      "auc": 0.6042873329597651,
+      "auc_dropped": 0.6035487220239697,
+      "delta": -0.000738610935795414,
+      "frac_of_excess": 0.007082460686576155,
+      "p": 0.195
+    },
+    "AtrialFibrillation": {
+      "n_in_set": 3,
+      "auc": 0.5730215795087755,
+      "auc_dropped": 0.5724049480943222,
+      "delta": -0.0006166314144533391,
+      "frac_of_excess": 0.008444509398474928,
+      "p": 0.135
+    },
+    "RheumatoidArthritis": {
+      "n_in_set": 2,
+      "auc": 0.5824485905367169,
+      "auc_dropped": 0.5810843870045175,
+      "delta": -0.0013642035321994594,
+      "frac_of_excess": 0.016546111016803096,
+      "p": 0.04
+    }
+  },
+  "supported": false
+}

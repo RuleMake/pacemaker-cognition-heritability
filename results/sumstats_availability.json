@@ -1,0 +1,44 @@
+{
+  "GCST90084003": {
+    "label": "Sick sinus syndrome ICD10 I49.5",
+    "why": "备选，UKB PheWAS",
+    "url": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90084001-GCST90085000/GCST90084003/GCST90084003_buildGRCh38.tsv.gz",
+    "size_mb": "5"
+  },
+  "GCST90480156": {
+    "label": "AV block (PheCode 426.2, N=617,488)",
+    "why": "房室结衰竭 — 对应 AVN 切片",
+    "url": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90480001-GCST90481000/GCST90480156/GCST90480156.tsv.gz",
+    "size_mb": "861"
+  },
+  "GCST90480154": {
+    "label": "Complete AV block (N=630,658)",
+    "why": "完全性阻滞，表型更纯",
+    "url": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90480001-GCST90481000/GCST90480154/GCST90480154.tsv.gz",
+    "size_mb": "867"
+  },
+  "GCST90480169": {
+    "label": "Atrial flutter (PheCode 427.22)",
+    "why": "峡部依赖折返，解剖定位明确",
+    "url": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90480001-GCST90481000/GCST90480169/GCST90480169.tsv.gz",
+    "size_mb": "859"
+  },
+  "GCST90086158": {
+    "label": "Brugada syndrome (N=12,821)",
+    "why": "右室流出道传导",
+    "url": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90086001-GCST90087000/GCST90086158/GCST90086158_buildGRCh37.tsv.gz",
+    "size_mb": "272"
+  },
+  "GCST90162626": {
+    "label": "Heart failure (N=1,665,481)",
+    "why": "大性状，作阳性对照",
+    "url": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90162001-GCST90163000/GCST90162626/GCST90162626_buildGRCh37.tsv.gz",
+    "size_mb": "411"
+  },
+  "GCST90018834": {
+    "label": "Dilated cardiomyopathy (N=533,543)",
+    "why": "心肌病 — 应定位到心室肌",
+    "url": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90018001-GCST90019000/GCST90018834/GCST90018834_buildGRCh37.tsv.gz",
+    "size_mb": "447"
+  }
+}

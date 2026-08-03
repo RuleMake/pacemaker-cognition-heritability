@@ -1,0 +1,13 @@
+{
+  "Height": {
+    "status": "rejected",
+    "reason": "listing failed"
+  },
+  "RheumatoidArthritis": {
+    "status": "accepted",
+    "n_snp": 12657611,
+    "n_gws": 34164,
+    "lambda_gc": 1.1402339001442432,
+    "accession": "GCST90132223"
+  }
+}

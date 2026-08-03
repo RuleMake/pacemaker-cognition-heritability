@@ -1,0 +1,136 @@
+{
+  "zones": {
+    "GSM3885058_SAN": "sinoatrial",
+    "GSM3885059_AVN": "atrioventricular",
+    "GSM3885060_LPF": "purkinje_left",
+    "GSM3885061_RPF": "purkinje_right"
+  },
+  "panels": {
+    "cardiomyocyte": [
+      "Tnnt2",
+      "Actc1",
+      "Myh6",
+      "Ttn",
+      "Ryr2"
+    ],
+    "nodal": [
+      "Hcn4",
+      "Shox2",
+      "Tbx3",
+      "Isl1",
+      "Vsnl1"
+    ],
+    "purkinje": [
+      "Cntn2",
+      "Etv1",
+      "Slit2",
+      "Irx3"
+    ],
+    "ventricular": [
+      "Myl2",
+      "Myh7",
+      "Irx4"
+    ],
+    "atrial": [
+      "Nppa",
+      "Myl7",
+      "Sln"
+    ],
+    "fibroblast": [
+      "Col1a1",
+      "Postn",
+      "Dcn"
+    ],
+    "endothelium": [
+      "Pecam1",
+      "Cdh5",
+      "Egfl7"
+    ],
+    "immune": [
+      "Ptprc",
+      "C1qa",
+      "Cd68"
+    ],
+    "erythroid": [
+      "Hba-a1",
+      "Hbb-bs",
+      "Alas2"
+    ]
+  },
+  "n_cells": 15193,
+  "n_genes": 18432,
+  "leiden_res": 1.2,
+  "classes": {
+    "atrioventricular": {
+      "endothelium": 489,
+      "erythroid": 75,
+      "fibroblast": 1608,
+      "immune": 79,
+      "nodal": 77,
+      "non_myocyte_nodal": 6,
+      "non_myocyte_purkinje": 528,
+      "working_CM": 1449
+    },
+    "purkinje_left": {
+      "endothelium": 319,
+      "erythroid": 45,
+      "fibroblast": 147,
+      "immune": 21,
+      "nodal": 13,
+      "non_myocyte_nodal": 1,
+      "non_myocyte_purkinje": 266,
+      "working_CM": 2345
+    },
+    "purkinje_right": {
+      "endothelium": 527,
+      "erythroid": 97,
+      "fibroblast": 237,
+      "immune": 82,
+      "nodal": 3,
+      "non_myocyte_nodal": 0,
+      "non_myocyte_purkinje": 547,
+      "working_CM": 940
+    },
+    "sinoatrial": {
+      "endothelium": 748,
+      "erythroid": 100,
+      "fibroblast": 1591,
+      "immune": 209,
+      "nodal": 116,
+      "non_myocyte_nodal": 64,
+      "non_myocyte_purkinje": 63,
+      "working_CM": 2401
+    }
+  },
+  "cluster_labels": {
+    "0": "working_CM",
+    "1": "working_CM",
+    "2": "working_CM",
+    "3": "fibroblast",
+    "4": "erythroid",
+    "5": "working_CM",
+    "6": "non_myocyte_nodal",
+    "7": "nodal",
+    "8": "fibroblast",
+    "9": "fibroblast",
+    "10": "endothelium",
+    "11": "fibroblast",
+    "12": "immune",
+    "13": "endothelium",
+    "14": "fibroblast",
+    "15": "non_myocyte_purkinje",
+    "16": "non_myocyte_purkinje",
+    "17": "endothelium",
+    "18": "endothelium",
+    "19": "non_myocyte_purkinje",
+    "20": "fibroblast",
+    "21": "working_CM",
+    "22": "working_CM",
+    "23": "working_CM",
+    "24": "working_CM",
+    "25": "working_CM",
+    "26": "working_CM",
+    "27": "working_CM",
+    "28": "working_CM"
+  }
+}

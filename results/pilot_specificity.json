@@ -1,0 +1,48 @@
+{
+  "trait": "resting heart rate (GCST007609, n=458,969)",
+  "n_lead_snps": 387,
+  "n_trait_genes": 1151,
+  "slides": [
+    {
+      "slide": "SAN",
+      "compartment": [
+        "node"
+      ],
+      "n_spots": 27108,
+      "n_compartment_spots": 4505,
+      "n_genes": 949,
+      "auc": 0.6851412620769748,
+      "null_auc_mean": 0.674657341970311,
+      "null_auc_sd": 0.0054941873567198206,
+      "z_auc": 1.90818394531834,
+      "emp_p_auc": 0.026986506746626688,
+      "cellcol": "SAN_P_cell",
+      "rho": 0.4945516413908261,
+      "null_rho_mean": 0.44355563221137906,
+      "null_rho_sd": 0.008299885182590144,
+      "z_rho": 6.144182486574194,
+      "emp_p_rho": 0.0004997501249375312
+    },
+    {
+      "slide": "AVN",
+      "compartment": [
+        "AV_bundle",
+        "node"
+      ],
+      "n_spots": 24026,
+      "n_compartment_spots": 1565,
+      "n_genes": 908,
+      "auc": 0.6523623695342428,
+      "null_auc_mean": 0.6606661321228005,
+      "null_auc_sd": 0.007154336773581009,
+      "z_auc": -1.16066140738876,
+      "emp_p_auc": 0.8730634682658671,
+      "cellcol": "AVN_bundle_cell",
+      "rho": 0.017131026066270434,
+      "null_rho_mean": -0.01644402778400554,
+      "null_rho_sd": 0.010432991699600356,
+      "z_rho": 3.218161656503771,
+      "emp_p_rho": 0.0014992503748125937
+    }
+  ]
+}

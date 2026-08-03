@@ -1,0 +1,34 @@
+{
+  "AVblock": {
+    "status": "rejected",
+    "reason": "no beta/se"
+  },
+  "AVblockComplete": {
+    "status": "rejected",
+    "reason": "no beta/se"
+  },
+  "AtrialFlutter": {
+    "status": "rejected",
+    "reason": "no beta/se"
+  },
+  "Brugada": {
+    "status": "accepted",
+    "n_snp": 6970246,
+    "n_gws": 1266,
+    "n_eff": 8798.945480071756,
+    "lambda_gc": 1.0536160493040279,
+    "accession": "GCST90086158"
+  },
+  "HeartFailure": {
+    "status": "accepted",
+    "n_snp": 18466099,
+    "n_gws": 924,
+    "n_eff": NaN,
+    "lambda_gc": 1.1750703647111804,
+    "accession": "GCST90162626"
+  },
+  "DCM": {
+    "status": "rejected",
+    "reason": "variant_id not rsID"
+  }
+}

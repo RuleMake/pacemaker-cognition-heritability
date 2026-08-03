@@ -1,0 +1,80 @@
+[
+  {
+    "acc": "GCST90480156",
+    "label": "AV block (PheCode 426.2)",
+    "cases": null,
+    "controls": null,
+    "total": null,
+    "n_eff": null,
+    "build": "GRCh38",
+    "note": ""
+  },
+  {
+    "acc": "GCST90480154",
+    "label": "Complete AV block (PheCode 426.21)",
+    "cases": null,
+    "controls": null,
+    "total": null,
+    "n_eff": null,
+    "build": "GRCh38",
+    "note": ""
+  },
+  {
+    "acc": "GCST90481992",
+    "label": "Mobitz II AV block",
+    "cases": null,
+    "controls": null,
+    "n_eff": null,
+    "note": "no metadata file"
+  },
+  {
+    "acc": "GCST90480169",
+    "label": "Atrial flutter (PheCode 427.22)",
+    "cases": null,
+    "controls": null,
+    "total": null,
+    "n_eff": null,
+    "build": "GRCh38",
+    "note": ""
+  },
+  {
+    "acc": "GCST90086158",
+    "label": "Brugada syndrome (Barc 2022)",
+    "cases": null,
+    "controls": null,
+    "total": null,
+    "n_eff": null,
+    "build": "GRCh37",
+    "note": ""
+  },
+  {
+    "acc": "GCST90162626",
+    "label": "Heart failure (Levin 2022)",
+    "cases": null,
+    "controls": null,
+    "total": null,
+    "n_eff": null,
+    "build": "GRCh37",
+    "note": ""
+  },
+  {
+    "acc": "GCST90018834",
+    "label": "Dilated cardiomyopathy",
+    "cases": null,
+    "controls": null,
+    "total": null,
+    "n_eff": null,
+    "build": "GRCh37",
+    "note": ""
+  },
+  {
+    "acc": "GCST90084003",
+    "label": "Sick sinus syndrome ICD10 I49.5",
+    "cases": null,
+    "controls": null,
+    "total": null,
+    "n_eff": null,
+    "build": "GRCh38",
+    "note": ""
+  }
+]

@@ -1,0 +1,108 @@
+{
+  "missing_markers": [],
+  "marker_percentiles": {
+    "pacemaker": {
+      "AtrialFibrillation": 30.20831572005884,
+      "EducationalAttainment": 27.710894303444313,
+      "HRV_RMSSD": 27.15206033039685,
+      "HRV_RMSSDc": 27.721039549551072,
+      "HRV_SDNN": 40.169256522547805,
+      "HRV_SDNNc": 52.34017010195973,
+      "PRinterval": 32.89004244094622,
+      "RestingHeartRate": 29.992729240290156
+    },
+    "myocardium": {
+      "AtrialFibrillation": 11.928889580456305,
+      "EducationalAttainment": 19.476591523544627,
+      "HRV_RMSSD": 14.145255091124811,
+      "HRV_RMSSDc": 18.664540096862662,
+      "HRV_SDNN": 50.333102247172015,
+      "HRV_SDNNc": 81.80226790889465,
+      "PRinterval": 12.286775718203568,
+      "RestingHeartRate": 12.222589617411938
+    }
+  },
+  "top100_overlap": {
+    "AtrialFibrillation": 13.25,
+    "HRV_RMSSD": 16.25,
+    "HRV_RMSSDc": 20.75,
+    "HRV_SDNN": 12.0,
+    "HRV_SDNNc": 9.375,
+    "PRinterval": 3.5,
+    "RestingHeartRate": 22.625
+  },
+  "pcc_corr_vs_control": 0.6692681151162775,
+  "pcc_corr_within_cardiac": 0.5025929764337724,
+  "top_genes": {
+    "RestingHeartRate": [
+      "PTP4A3",
+      "ITGA7",
+      "HSPB8",
+      "POPDC2",
+      "MYOM2",
+      "ACO2",
+      "MDH2",
+      "SRL",
+      "LDB3",
+      "ATP5IF1",
+      "PLN",
+      "LAPTM4B"
+    ],
+    "AtrialFibrillation": [
+      "PDLIM5",
+      "ATP5MC2",
+      "HSPB8",
+      "ATP5IF1",
+      "POPDC2",
+      "LDB3",
+      "PTP4A3",
+      "MYOM2",
+      "TGM2",
+      "MDH1",
+      "NEBL",
+      "ITGA7"
+    ],
+    "PRinterval": [
+      "HSPB8",
+      "MYOZ2",
+      "POPDC2",
+      "ASAH1",
+      "NEBL",
+      "CASQ2",
+      "MDH1",
+      "CKMT2",
+      "SORBS2",
+      "EIF1B",
+      "MYZAP",
+      "NDUFAB1"
+    ],
+    "HRV_RMSSDc": [
+      "PTP4A3",
+      "AGT",
+      "TMT1B",
+      "HSPA1A",
+      "CCN2",
+      "GUK1",
+      "COPS9",
+      "PSMB6",
+      "SERPINB6",
+      "GPI",
+      "PKIG",
+      "PFKM"
+    ],
+    "EducationalAttainment": [
+      "SELENOW",
+      "MAP4",
+      "GSTP1",
+      "TPI1",
+      "AEBP1",
+      "FN1",
+      "BGN",
+      "TGM2",
+      "PTMS",
+      "CRIP2",
+      "FXYD1",
+      "CAPNS1"
+    ]
+  }
+}

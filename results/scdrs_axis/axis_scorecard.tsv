@@ -1,0 +1,35 @@
+trait	predicted	observed	rank	n_states	passed	novel	criterion	auc	z	n_elevated
+AVblock	AVN_P_cell	SAN_P_cell	1.0	75.0	False	False	registered			
+AtrialFibrillation	none in the top 5	SAN_P_cell	2.0	75.0	False	False	registered			
+AtrialFlutter	none in the top 5	SAN_P_cell	2.0	75.0	False	False	registered			
+Brugada	Purkinje or AVN_bundle_cell	Purkinje	1.0	75.0	True	False	registered			
+BundleBranchBlock	Purkinje or AVN_bundle_cell	SAN_P_cell	2.0	75.0	False	True	registered			
+EducationalAttainment	none in the top 5	SAN_P_cell	1.0	75.0	False	False	registered			
+HRV_RMSSD	SAN_P_cell	SAN_P_cell	1.0	75.0	True	False	registered			
+HRV_RMSSDc	SAN_P_cell	SAN_P_cell	1.0	75.0	True	False	registered			
+HRV_SDNN	SAN_P_cell	SAN_P_cell	1.0	75.0	True	False	registered			
+HRV_SDNNc	SAN_P_cell	SAN_P_cell	2.0	75.0	True	False	registered			
+HeartFailure	none in the top 5	SAN_P_cell	1.0	75.0	False	False	registered			
+PRinterval	AVN_P_cell	SAN_P_cell	1.0	75.0	False	False	registered			
+QRSduration	Purkinje or AVN_bundle_cell	SAN_P_cell	2.0	75.0	False	True	registered			
+QTinterval	none in the top 5	Purkinje	5.0	75.0	False	True	registered			
+RestingHeartRate	SAN_P_cell	SAN_P_cell	1.0	75.0	True	False	registered			
+RheumatoidArthritis	none in the top 5	Purkinje	59.0	75.0	True	False	registered			
+RheumatoidArthritis_noMHC	none in the top 5	Purkinje	46.0	75.0	True	False	registered			
+AVblock	AVN_P_cell	AVN_P_cell			False	False	post_hoc	0.48890651760211906	-0.42629711719482866	0.0
+AtrialFibrillation	none above the myocytes	AVN_P_cell			True	False	post_hoc	0.49713333921810726	-0.11015920731346064	0.0
+AtrialFlutter	none above the myocytes	AVN_P_cell			False	False	post_hoc	0.5687423554598524	2.64161125521009	1.0
+Brugada	Purkinje or AVN_bundle_cell	Purkinje			False	False	post_hoc	0.5662386368363775	1.902756383987527	0.0
+BundleBranchBlock	Purkinje or AVN_bundle_cell	SAN_P_cell			False	True	post_hoc	0.5279125767526308	1.338417306911554	0.0
+EducationalAttainment	none above the myocytes	SAN_P_cell			False	False	post_hoc	0.6742982823184915	8.35766040833327	1.0
+HRV_RMSSD	SAN_P_cell	AVN_P_cell			False	False	post_hoc	0.6479615827214437	5.685824694848234	2.0
+HRV_RMSSDc	SAN_P_cell	SAN_P_cell			True	False	post_hoc	0.6427388357091515	6.844374483037571	2.0
+HRV_SDNN	SAN_P_cell	SAN_P_cell			True	False	post_hoc	0.6661936653774572	7.969041339735579	2.0
+HRV_SDNNc	SAN_P_cell	SAN_P_cell			True	False	post_hoc	0.6986630408873695	9.52595865740962	2.0
+HeartFailure	none above the myocytes	AVN_P_cell			False	False	post_hoc	0.5894797299119289	3.4385010532052225	2.0
+PRinterval	AVN_P_cell	SAN_P_cell			False	False	post_hoc	0.608071214776833	5.182050568750755	2.0
+QRSduration	Purkinje or AVN_bundle_cell	SAN_P_cell			False	True	post_hoc	0.5693310204235544	3.324445409074533	1.0
+QTinterval	none above the myocytes	SAN_P_cell			True	True	post_hoc	0.49179707252730587	-0.39333309117580445	0.0
+RestingHeartRate	SAN_P_cell	AVN_P_cell			False	False	post_hoc	0.6225844866452894	4.710641022847526	2.0
+RheumatoidArthritis	none above the myocytes	AVN_P_cell			True	False	post_hoc	0.5120056991652917	0.46135151799130664	0.0
+RheumatoidArthritis_noMHC	none above the myocytes	AVN_P_cell			True	False	post_hoc	0.49861777725639395	-0.0531156538394944	0.0

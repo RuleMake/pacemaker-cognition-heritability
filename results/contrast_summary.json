@@ -1,0 +1,83 @@
+{
+  "n_sections": 16,
+  "control": "EducationalAttainment",
+  "winners": {
+    "AVN|AtrialFibrillation": {
+      "myocardium_ventricular": 4,
+      "myocardium_atrial": 1,
+      "fibrosis": 1,
+      "AV_bundle": 1,
+      "node": 1
+    },
+    "AVN|PRinterval": {
+      "myocardium_ventricular": 7,
+      "myocardium_atrial": 1
+    },
+    "AVN|RestingHeartRate": {
+      "myocardium_ventricular": 4,
+      "myocardium_atrial": 1,
+      "node": 2,
+      "AV_bundle": 1
+    },
+    "SAN|AtrialFibrillation": {
+      "myocardium_atrial": 7,
+      "fibrosis": 1
+    },
+    "SAN|PRinterval": {
+      "endocardium": 1,
+      "myocardium_atrial": 7
+    },
+    "SAN|RestingHeartRate": {
+      "node": 2,
+      "myocardium_atrial": 5,
+      "fibrosis": 1
+    }
+  },
+  "head_to_head": {
+    "AVN|AtrialFibrillation": {
+      "predicted": "myocardium_atrial",
+      "rival": "node",
+      "wins": 0,
+      "losses": 2,
+      "n": 2,
+      "p": 0.5,
+      "verdict": "FAIL"
+    },
+    "AVN|PRinterval": {
+      "predicted": "AV_bundle",
+      "rival": "myocardium_ventricular",
+      "wins": 1,
+      "losses": 5,
+      "n": 6,
+      "p": 0.21875,
+      "verdict": "FAIL"
+    },
+    "AVN|RestingHeartRate": {
+      "predicted": "node",
+      "rival": "myocardium_atrial",
+      "wins": 2,
+      "losses": 0,
+      "n": 2,
+      "p": 0.5,
+      "verdict": "PASS"
+    },
+    "SAN|AtrialFibrillation": {
+      "predicted": "myocardium_atrial",
+      "rival": "node",
+      "wins": 8,
+      "losses": 0,
+      "n": 8,
+      "p": 0.0078125,
+      "verdict": "PASS"
+    },
+    "SAN|RestingHeartRate": {
+      "predicted": "node",
+      "rival": "myocardium_atrial",
+      "wins": 2,
+      "losses": 6,
+      "n": 8,
+      "p": 0.2890625,
+      "verdict": "FAIL"
+    }
+  }
+}

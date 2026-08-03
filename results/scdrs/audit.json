@@ -1,0 +1,98 @@
+[
+  {
+    "check": "donor",
+    "item": "SAN_P_cell",
+    "value": 0.43673469387755104,
+    "passed": true
+  },
+  {
+    "check": "donor",
+    "item": "AVN_P_cell",
+    "value": 0.5870967741935483,
+    "passed": false
+  },
+  {
+    "check": "donor",
+    "item": "AVN_bundle_cell",
+    "value": 0.6842105263157895,
+    "passed": false
+  },
+  {
+    "check": "assay",
+    "item": "not applicable (single assay dataset)",
+    "value": 1.0,
+    "passed": true
+  },
+  {
+    "check": "control_fdr",
+    "item": "SAN_P_cell",
+    "value": 0.0206460206666666,
+    "passed": false
+  },
+  {
+    "check": "control_fdr",
+    "item": "AVN_P_cell",
+    "value": 0.2079349357142857,
+    "passed": true
+  },
+  {
+    "check": "control_fdr",
+    "item": "AVN_bundle_cell",
+    "value": 0.3664668874999999,
+    "passed": true
+  },
+  {
+    "check": "fragility",
+    "item": "EducationalAttainment/SAN_P_cell",
+    "value": 1.0327406681655646,
+    "passed": true
+  },
+  {
+    "check": "fragility",
+    "item": "EducationalAttainment/AVN_P_cell",
+    "value": 1.1291671197030233,
+    "passed": true
+  },
+  {
+    "check": "fragility",
+    "item": "HRV_RMSSD/SAN_P_cell",
+    "value": 0.6744797392912658,
+    "passed": true
+  },
+  {
+    "check": "fragility",
+    "item": "HRV_RMSSD/AVN_P_cell",
+    "value": 0.6386935485415941,
+    "passed": true
+  },
+  {
+    "check": "fragility",
+    "item": "PRinterval/SAN_P_cell",
+    "value": 0.9433950175490237,
+    "passed": true
+  },
+  {
+    "check": "fragility",
+    "item": "PRinterval/AVN_P_cell",
+    "value": 0.9831448926973677,
+    "passed": true
+  },
+  {
+    "check": "fragility",
+    "item": "RestingHeartRate/SAN_P_cell",
+    "value": 0.8888028376640487,
+    "passed": true
+  },
+  {
+    "check": "fragility",
+    "item": "RestingHeartRate/AVN_P_cell",
+    "value": 0.9218179793023739,
+    "passed": true
+  },
+  {
+    "check": "independence",
+    "item": "HRV",
+    "value": 1.0,
+    "passed": true
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "attack1": {
+    "Res-Atr": {
+      "effect": 1.1169580444022982,
+      "pos": 7,
+      "n": 8,
+      "p": 0.0703125
+    },
+    "Res-PRi": {
+      "effect": 1.3142604738101482,
+      "pos": 8,
+      "n": 8,
+      "p": 0.0078125
+    },
+    "PRi-Atr": {
+      "effect": -0.19730242940785012,
+      "pos": 2,
+      "n": 8,
+      "p": 0.2890625
+    },
+    "Res-Edu": {
+      "effect": 0.6346535096397244,
+      "pos": 6,
+      "n": 8,
+      "p": 0.2890625
+    }
+  },
+  "attack2": {
+    "Res-Atr": 1.3657156451866,
+    "Res-PRi": 1.2820489018783094,
+    "PRi-Atr": 0.08366671350596824,
+    "Res-Edu": 0.9242464909782254
+  },
+  "attack3": {
+    "RestingHeartRate-AtrialFibrillation": {
+      "mean": 0.08176658448554039,
+      "p": 0.0078125
+    },
+    "RestingHeartRate-PRinterval": {
+      "mean": 0.10348027795338272,
+      "p": 0.0078125
+    },
+    "PRinterval-AtrialFibrillation": {
+      "mean": -0.02171369346784233,
+      "p": 0.4609375
+    },
+    "RestingHeartRate-EducationalAttainment": {
+      "mean": 0.010955194150707934,
+      "p": 0.640625
+    }
+  }
+}

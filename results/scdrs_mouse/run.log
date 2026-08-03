@@ -1,0 +1,59 @@
+predictions already registered in results/mouse_predictions.json (not overwritten)
+cells 15,193   genes 18,432
+cell_class
+working_CM              7135
+fibroblast              3583
+endothelium             2083
+non_myocyte_purkinje    1404
+immune                   391
+erythroid                317
+nodal                    209
+non_myocyte_nodal         71
+covariates: ['const', 'n_genes', 'pct_mt', 'sample_LPF', 'sample_RPF', 'sample_SAN']
+
+preprocessing...
+
+gene sets after human -> mouse orthologue mapping:
+  RestingHeartRate          834 mouse genes present
+  HRV_SDNN                  736 mouse genes present
+  HRV_RMSSD                 732 mouse genes present
+  EducationalAttainment     806 mouse genes present
+  Intelligence              805 mouse genes present
+  ReactionTime              818 mouse genes present
+  RheumatoidArthritis       719 mouse genes present
+  QTinterval                810 mouse genes present
+=== EducationalAttainment: cached
+=== HRV_RMSSD: cached
+=== HRV_SDNN: cached
+=== Intelligence: cached
+=== QTinterval: cached
+=== ReactionTime: cached
+=== RestingHeartRate  (834 genes, 200 control sets)
+=== RheumatoidArthritis  (719 genes, 200 control sets)
+
+================================================================================================
+MOUSE: nodal cells vs working_CM in the same dissection zone
+================================================================================================
+trait                          AUC       z  zones  cells   per-zone AUC
+RestingHeartRate             0.810   15.17      4    209   sino 0.76  atri 0.87  purk 0.88  purk 0.90
+HRV_SDNN                     0.856   17.41      4    209   sino 0.85  atri 0.87  purk 0.87  purk 0.80
+HRV_RMSSD                    0.803   14.85      4    209   sino 0.81  atri 0.80  purk 0.85  purk 0.52
+EducationalAttainment        0.742   11.85      4    209   sino 0.71  atri 0.79  purk 0.79  purk 0.70
+Intelligence                 0.626    6.17      4    209   sino 0.57  atri 0.72  purk 0.58  purk 0.47
+ReactionTime                 0.759   12.68      4    209   sino 0.72  atri 0.85  purk 0.64  purk 0.50
+RheumatoidArthritis          0.497   -0.13      4    209   sino 0.56  atri 0.44  purk 0.33  purk 0.43
+QTinterval                   0.582    3.99      4    209   sino 0.51  atri 0.70  purk 0.61  purk 0.34
+
+================================================================================================
+VERDICT AGAINST THE REGISTERED PREDICTIONS
+================================================================================================
+  P1 gate      3/3 cardiac traits above 0.55   ['RestingHeartRate', 'HRV_SDNN', 'HRV_RMSSD']
+  P2 test      3/3 cognitive traits above 0.55   ['EducationalAttainment', 'Intelligence', 'ReactionTime']
+  P3 negative  rheumatoid arthritis 0.497 (flat as predicted)
+  P4 signed    QT interval 0.582 (EXCEEDS myocytes)
+
+  The cognitive enrichment is present in mouse pacemaker cells, in a
+  different species, laboratory, developmental stage and protocol. No
+  artefact of the human atlas can produce that.
+
+wrote results/mouse_replication.json

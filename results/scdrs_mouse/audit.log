@@ -1,0 +1,46 @@
+============================================================================================
+1. DID THE ORTHOLOGUE MAPPING COLLAPSE THE GENE SETS INTO EACH OTHER?
+============================================================================================
+pair                                            human |A&B|  mouse |A&B|   Jaccard
+EducationalAttainment x RestingHeartRate                136          123     0.081
+EducationalAttainment x HRV_SDNN                         93           71     0.048
+EducationalAttainment x HRV_RMSSD                        98           75     0.051
+Intelligence x RestingHeartRate                         134          112     0.073
+Intelligence x HRV_SDNN                                  93           76     0.052
+Intelligence x HRV_RMSSD                                115           91     0.063
+ReactionTime x RestingHeartRate                         103           86     0.055
+ReactionTime x HRV_SDNN                                  94           81     0.055
+ReactionTime x HRV_RMSSD                                 95           78     0.053
+
+  mean Jaccard 0.059 — sets are largely disjoint
+
+============================================================================================
+2. DO THE COGNITIVE AND CARDIAC SCORES MOVE TOGETHER, CELL BY CELL?
+============================================================================================
+pair                                             mouse rho   human rho   (within pacemaker cells)
+EducationalAttainment x RestingHeartRate             0.338       0.209
+EducationalAttainment x HRV_SDNN                     0.203       0.277
+EducationalAttainment x HRV_RMSSD                    0.126       0.273
+Intelligence x RestingHeartRate                      0.291       0.226
+Intelligence x HRV_SDNN                              0.140       0.300
+Intelligence x HRV_RMSSD                             0.198       0.295
+ReactionTime x RestingHeartRate                      0.237       0.242
+ReactionTime x HRV_SDNN                              0.134       0.313
+ReactionTime x HRV_RMSSD                             0.203       0.375
+
+============================================================================================
+3. THE DECIDING TEST: rescore the cognitive traits on the DISJOINT remainder
+============================================================================================
+  union of the three cardiac gene sets: 1752 mouse genes
+
+preprocessing for rescoring...
+
+trait                       full set       z   disjoint       z  n genes kept       verdict
+EducationalAttainment          0.742   11.85      0.663    7.97           615      survives
+Intelligence                   0.626    6.17      0.555    2.70           620      survives
+ReactionTime                   0.759   12.68      0.678    8.69           655      survives
+
+  The cognitive enrichment survives on genes that appear in NO cardiac set.
+  It is not the cardiac signal relabelled by orthologue mapping.
+
+wrote results/mouse_audit.json

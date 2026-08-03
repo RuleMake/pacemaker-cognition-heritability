@@ -1,0 +1,93 @@
+{
+  "assay_effect_sd": null,
+  "assay_effect_ok": true,
+  "assay_note": "single-assay dataset; comparison not applicable",
+  "multiome_only_ranks": {
+    "SAN_P_cell": {
+      "AVblock": 7,
+      "AtrialFibrillation": 6,
+      "AtrialFlutter": 9,
+      "Brugada": 9,
+      "EducationalAttainment": 2,
+      "HRV_RMSSD": 1,
+      "HRV_RMSSDc": 1,
+      "HRV_SDNN": 1,
+      "HRV_SDNNc": 5,
+      "HeartFailure": 2,
+      "PRinterval": 1,
+      "RestingHeartRate": 3,
+      "RheumatoidArthritis": 59,
+      "RheumatoidArthritis_noMHC": 60
+    },
+    "AVN_P_cell": {
+      "AVblock": 5,
+      "AtrialFibrillation": 3,
+      "AtrialFlutter": 1,
+      "Brugada": 8,
+      "EducationalAttainment": 11,
+      "HRV_RMSSD": 3,
+      "HRV_RMSSDc": 3,
+      "HRV_SDNN": 3,
+      "HRV_SDNNc": 17,
+      "HeartFailure": 1,
+      "PRinterval": 2,
+      "RestingHeartRate": 1,
+      "RheumatoidArthritis": 54,
+      "RheumatoidArthritis_noMHC": 54
+    },
+    "AVN_bundle_cell": {
+      "AVblock": 13,
+      "AtrialFibrillation": 11,
+      "AtrialFlutter": 11,
+      "Brugada": 5,
+      "EducationalAttainment": 16,
+      "HRV_RMSSD": 7,
+      "HRV_RMSSDc": 7,
+      "HRV_SDNN": 5,
+      "HRV_SDNNc": 32,
+      "HeartFailure": 3,
+      "PRinterval": 6,
+      "RestingHeartRate": 6,
+      "RheumatoidArthritis": 60,
+      "RheumatoidArthritis_noMHC": 58
+    }
+  },
+  "donor_dropout_ranks": {
+    "SAN_P_cell": {
+      "RestingHeartRate": [
+        3,
+        4
+      ],
+      "PRinterval": [
+        1,
+        4
+      ],
+      "HRV_RMSSD": [
+        1,
+        1
+      ],
+      "EducationalAttainment": [
+        2,
+        2
+      ]
+    },
+    "AVN_P_cell": {
+      "RestingHeartRate": [
+        1,
+        9
+      ],
+      "PRinterval": [
+        2,
+        11
+      ],
+      "HRV_RMSSD": [
+        3,
+        14
+      ],
+      "EducationalAttainment": [
+        12,
+        31
+      ]
+    }
+  }
+}

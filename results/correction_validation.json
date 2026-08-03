@@ -1,0 +1,83 @@
+{
+  "part1": {
+    "RestingHeartRate": {
+      "raw": 0.7611425431290627,
+      "delta": 0.714696590850721
+    },
+    "AtrialFibrillation": {
+      "raw": 0.6899395753673827,
+      "delta": 0.5335758734629032
+    },
+    "PRinterval": {
+      "raw": 0.7548090587593004,
+      "delta": 0.6517776375718868
+    },
+    "HRV_RMSSD": {
+      "raw": 0.5524980798096457,
+      "delta": -0.15861702996772425
+    },
+    "HRV_RMSSDc": {
+      "raw": 0.4507471774220764,
+      "delta": -0.32042427886365715
+    },
+    "HRV_SDNN": {
+      "raw": 0.1890687587430293,
+      "delta": -0.4196242252031651
+    },
+    "HRV_SDNNc": {
+      "raw": 0.026058934682485473,
+      "delta": -0.46593226451128933
+    }
+  },
+  "part2": {
+    "HRV_RMSSD": {
+      "plain": 0.37654558272170485,
+      "given_umi": 0.1384267448129107,
+      "given_umi_acm": 0.06403362319464341
+    },
+    "EducationalAttainment": {
+      "plain": 0.42684398487453173,
+      "given_umi": 0.22030170951392414,
+      "given_umi_acm": 0.19704689254312802
+    },
+    "HRV_RMSSDc": {
+      "plain": 0.2785212667277994,
+      "given_umi": 0.07083053556528802,
+      "given_umi_acm": 0.023725439911669914
+    },
+    "HRV_SDNNc": {
+      "plain": -0.014842425366042779,
+      "given_umi": -0.027998854748437246,
+      "given_umi_acm": 0.04243048365787948
+    },
+    "RestingHeartRate": {
+      "plain": 0.5606460641942226,
+      "given_umi": 0.3219102628411149,
+      "given_umi_acm": 0.20800208669383596
+    },
+    "HRV_SDNN": {
+      "plain": 0.11773188485064545,
+      "given_umi": 0.024321623168361083,
+      "given_umi_acm": 0.0687782045404311
+    },
+    "PRinterval": {
+      "plain": 0.4948019600278505,
+      "given_umi": 0.22293888233504178,
+      "given_umi_acm": 0.10452180874045325
+    },
+    "AtrialFibrillation": {
+      "plain": 0.49047426146918194,
+      "given_umi": 0.22290067318767104,
+      "given_umi_acm": 0.12623550220829557
+    }
+  },
+  "part3": {
+    "RestingHeartRate": 5,
+    "AtrialFibrillation": 6,
+    "PRinterval": 6,
+    "HRV_RMSSD": 13,
+    "HRV_RMSSDc": 13,
+    "HRV_SDNN": 12,
+    "HRV_SDNNc": 12
+  }
+}

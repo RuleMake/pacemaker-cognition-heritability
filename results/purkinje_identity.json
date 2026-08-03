@@ -1,0 +1,60 @@
+{
+  "panel_means": {
+    "Purkinje": {
+      "ventricular conduction": 0.2634243071079254,
+      "pacemaker / nodal": 0.05242031440138817,
+      "ventricular identity": 1.0614792108535767,
+      "atrial identity": 0.35033029317855835,
+      "working myocyte": 3.5366640090942383
+    },
+    "SAN_P_cell": {
+      "ventricular conduction": 0.18077032268047333,
+      "pacemaker / nodal": 0.678930938243866,
+      "ventricular identity": 0.16532453894615173,
+      "atrial identity": 1.9602491855621338,
+      "working myocyte": 3.612180709838867
+    },
+    "AVN_P_cell": {
+      "ventricular conduction": 0.1419581025838852,
+      "pacemaker / nodal": 0.4261390268802643,
+      "ventricular identity": 0.7578801512718201,
+      "atrial identity": 1.6700853109359741,
+      "working myocyte": 3.6969919204711914
+    },
+    "AVN_bundle_cell": {
+      "ventricular conduction": 0.26087549328804016,
+      "pacemaker / nodal": 0.2828296422958374,
+      "ventricular identity": 0.9583109021186829,
+      "atrial identity": 1.2660820484161377,
+      "working myocyte": 3.7230427265167236
+    },
+    "vCM*": {
+      "ventricular conduction": 0.22623558342456818,
+      "pacemaker / nodal": 0.037321195006370544,
+      "ventricular identity": 1.153940200805664,
+      "atrial identity": 0.1777152121067047,
+      "working myocyte": 3.684934616088867
+    },
+    "aCM*": {
+      "ventricular conduction": 0.21966713666915894,
+      "pacemaker / nodal": 0.11923554539680481,
+      "ventricular identity": 0.17329831421375275,
+      "atrial identity": 2.166651964187622,
+      "working myocyte": 3.6442363262176514
+    },
+    "all other cells": {
+      "ventricular conduction": 0.022049643099308014,
+      "pacemaker / nodal": 0.021749144420027733,
+      "ventricular identity": 0.05682084336876869,
+      "atrial identity": 0.1122809424996376,
+      "working myocyte": 0.1647852510213852
+    }
+  },
+  "checks": {
+    "ventricular conduction panel should mark Purkinje": true,
+    "pacemaker panel should mark a nodal cell, not Purkinje": true,
+    "Purkinje should look ventricular, not atrial": true,
+    "Purkinje must be separable from ordinary ventricular myocytes": true
+  },
+  "usable": true
+}

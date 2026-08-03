@@ -1,0 +1,251 @@
+{
+  "verdict": "replicated",
+  "results": {
+    "RestingHeartRate": {
+      "auc": 0.8100429263731924,
+      "z": 15.17324648506245,
+      "n_zones": 4,
+      "n_cells": 209,
+      "per_zone": {
+        "sinoatrial": {
+          "auc": 0.7576512659954904,
+          "n_focus": 116,
+          "n_comp": 2401
+        },
+        "atrioventricular": {
+          "auc": 0.8734998610775009,
+          "n_focus": 77,
+          "n_comp": 1449
+        },
+        "purkinje_left": {
+          "auc": 0.8793833032639002,
+          "n_focus": 13,
+          "n_comp": 2345
+        },
+        "purkinje_right": {
+          "auc": 0.8978723404255319,
+          "n_focus": 3,
+          "n_comp": 940
+        }
+      }
+    },
+    "HRV_SDNN": {
+      "auc": 0.8558283309186447,
+      "z": 17.41394662524315,
+      "n_zones": 4,
+      "n_cells": 209,
+      "per_zone": {
+        "sinoatrial": {
+          "auc": 0.8474737537520286,
+          "n_focus": 116,
+          "n_comp": 2401
+        },
+        "atrioventricular": {
+          "auc": 0.8683731727209988,
+          "n_focus": 77,
+          "n_comp": 1449
+        },
+        "purkinje_left": {
+          "auc": 0.8704608824011809,
+          "n_focus": 13,
+          "n_comp": 2345
+        },
+        "purkinje_right": {
+          "auc": 0.7950354609929078,
+          "n_focus": 3,
+          "n_comp": 940
+        }
+      }
+    },
+    "HRV_RMSSD": {
+      "auc": 0.803488630958611,
+      "z": 14.852484644033858,
+      "n_zones": 4,
+      "n_cells": 209,
+      "per_zone": {
+        "sinoatrial": {
+          "auc": 0.8069338924873257,
+          "n_focus": 116,
+          "n_comp": 2401
+        },
+        "atrioventricular": {
+          "auc": 0.8023088023088023,
+          "n_focus": 77,
+          "n_comp": 1449
+        },
+        "purkinje_left": {
+          "auc": 0.8454977857962933,
+          "n_focus": 13,
+          "n_comp": 2345
+        },
+        "purkinje_right": {
+          "auc": 0.5230496453900709,
+          "n_focus": 3,
+          "n_comp": 940
+        }
+      }
+    },
+    "EducationalAttainment": {
+      "auc": 0.7422361874098826,
+      "z": 11.854840302815985,
+      "n_zones": 4,
+      "n_cells": 209,
+      "per_zone": {
+        "sinoatrial": {
+          "auc": 0.7077223570638671,
+          "n_focus": 116,
+          "n_comp": 2401
+        },
+        "atrioventricular": {
+          "auc": 0.78761886836421,
+          "n_focus": 77,
+          "n_comp": 1449
+        },
+        "purkinje_left": {
+          "auc": 0.7909791700836477,
+          "n_focus": 13,
+          "n_comp": 2345
+        },
+        "purkinje_right": {
+          "auc": 0.699290780141844,
+          "n_focus": 3,
+          "n_comp": 940
+        }
+      }
+    },
+    "Intelligence": {
+      "auc": 0.6261639124154215,
+      "z": 6.174358379957993,
+      "n_zones": 4,
+      "n_cells": 209,
+      "per_zone": {
+        "sinoatrial": {
+          "auc": 0.5720209969983772,
+          "n_focus": 116,
+          "n_comp": 2401
+        },
+        "atrioventricular": {
+          "auc": 0.7230692013300709,
+          "n_focus": 77,
+          "n_comp": 1449
+        },
+        "purkinje_left": {
+          "auc": 0.5788748564867968,
+          "n_focus": 13,
+          "n_comp": 2345
+        },
+        "purkinje_right": {
+          "auc": 0.4652482269503546,
+          "n_focus": 3,
+          "n_comp": 940
+        }
+      }
+    },
+    "ReactionTime": {
+      "auc": 0.7591129944647579,
+      "z": 12.68077739585009,
+      "n_zones": 4,
+      "n_cells": 209,
+      "per_zone": {
+        "sinoatrial": {
+          "auc": 0.720576196699651,
+          "n_focus": 116,
+          "n_comp": 2401
+        },
+        "atrioventricular": {
+          "auc": 0.8492556442867002,
+          "n_focus": 77,
+          "n_comp": 1449
+        },
+        "purkinje_left": {
+          "auc": 0.6392652123995407,
+          "n_focus": 13,
+          "n_comp": 2345
+        },
+        "purkinje_right": {
+          "auc": 0.499645390070922,
+          "n_focus": 3,
+          "n_comp": 940
+        }
+      }
+    },
+    "RheumatoidArthritis": {
+      "auc": 0.49725572916169686,
+      "z": -0.1343023636708367,
+      "n_zones": 4,
+      "n_cells": 209,
+      "per_zone": {
+        "sinoatrial": {
+          "auc": 0.5573144810352009,
+          "n_focus": 116,
+          "n_comp": 2401
+        },
+        "atrioventricular": {
+          "auc": 0.4388516935100786,
+          "n_focus": 77,
+          "n_comp": 1449
+        },
+        "purkinje_left": {
+          "auc": 0.32967032967032966,
+          "n_focus": 13,
+          "n_comp": 2345
+        },
+        "purkinje_right": {
+          "auc": 0.4269503546099291,
+          "n_focus": 3,
+          "n_comp": 940
+        }
+      }
+    },
+    "QTinterval": {
+      "auc": 0.5816032334573132,
+      "z": 3.9935953053659734,
+      "n_zones": 4,
+      "n_cells": 209,
+      "per_zone": {
+        "sinoatrial": {
+          "auc": 0.5099850636947248,
+          "n_focus": 116,
+          "n_comp": 2401
+        },
+        "atrioventricular": {
+          "auc": 0.6952578132702356,
+          "n_focus": 77,
+          "n_comp": 1449
+        },
+        "purkinje_left": {
+          "auc": 0.6070854518615713,
+          "n_focus": 13,
+          "n_comp": 2345
+        },
+        "purkinje_right": {
+          "auc": 0.3432624113475177,
+          "n_focus": 3,
+          "n_comp": 940
+        }
+      }
+    }
+  },
+  "gate_ok": [
+    "RestingHeartRate",
+    "HRV_SDNN",
+    "HRV_RMSSD"
+  ],
+  "test_ok": [
+    "EducationalAttainment",
+    "Intelligence",
+    "ReactionTime"
+  ],
+  "bar": 0.55,
+  "n_ctrl": 200,
+  "gene_counts": {
+    "EducationalAttainment": 806,
+    "HRV_RMSSD": 732,
+    "HRV_SDNN": 736,
+    "Intelligence": 805,
+    "QTinterval": 810,
+    "ReactionTime": 818,
+    "RestingHeartRate": 834,
+    "RheumatoidArthritis": 719
+  }
+}

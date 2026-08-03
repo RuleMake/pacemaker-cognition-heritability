@@ -1,0 +1,88 @@
+{
+  "AVblock": {
+    "status": "accepted",
+    "n_snp": 27411285,
+    "n_gws": 436,
+    "n_eff": 617488.0,
+    "lambda_gc": 1.0099135130323713,
+    "accession": "GCST90480156"
+  },
+  "AVblockComplete": {
+    "status": "rejected",
+    "reason": "only 117 genome-wide significant SNPs; a MAGMA gene set from this would be noise",
+    "n_snp": 27516089,
+    "n_gws": 117,
+    "lambda_gc": 1.0169804531136173
+  },
+  "AtrialFlutter": {
+    "status": "accepted",
+    "n_snp": 27411469,
+    "n_gws": 3675,
+    "n_eff": 620415.0,
+    "lambda_gc": 1.0183981664516708,
+    "accession": "GCST90480169"
+  },
+  "Brugada": {
+    "status": "accepted",
+    "n_snp": 6970246,
+    "n_gws": 1266,
+    "n_eff": 8798.945480071756,
+    "lambda_gc": 1.0536160493040279,
+    "accession": "GCST90086158"
+  },
+  "HeartFailure": {
+    "status": "accepted",
+    "n_snp": 18466099,
+    "n_gws": 924,
+    "n_eff": 59170.90746927335,
+    "lambda_gc": 1.1750703647111804,
+    "accession": "GCST90162626"
+  },
+  "DCM": {
+    "status": "rejected",
+    "reason": "only 0 genome-wide significant SNPs; a MAGMA gene set from this would be noise",
+    "n_snp": 9530467,
+    "n_gws": 0,
+    "lambda_gc": 1.0096468064820807
+  },
+  "QRSduration": {
+    "status": "accepted",
+    "n_snp": 12080981,
+    "n_gws": 1285,
+    "n_eff": 30864.0,
+    "lambda_gc": 1.0284275409690782,
+    "accession": "GCST90624624"
+  },
+  "QTinterval": {
+    "status": "accepted",
+    "n_snp": 9963125,
+    "n_gws": 7301,
+    "n_eff": 117532.0,
+    "lambda_gc": 1.121574151753469,
+    "accession": "GCST90165291"
+  },
+  "BundleBranchBlock": {
+    "status": "accepted",
+    "n_snp": 19655081,
+    "n_gws": 219,
+    "n_eff": 435856.0,
+    "lambda_gc": 1.067470895816316,
+    "accession": "GCST90475956"
+  },
+  "Intelligence": {
+    "status": "accepted",
+    "n_snp": 9294800,
+    "n_gws": 12144,
+    "n_eff": 269867.0,
+    "lambda_gc": 1.456575071444268,
+    "accession": "GCST006250"
+  },
+  "ReactionTime": {
+    "status": "accepted",
+    "n_snp": 7380235,
+    "n_gws": 5338,
+    "n_eff": 432297.0,
+    "lambda_gc": 1.4963497113882536,
+    "accession": "GCST90179115"
+  }
+}

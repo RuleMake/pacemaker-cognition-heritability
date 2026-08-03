@@ -1,0 +1,35 @@
+{
+  "ordering_holds": true,
+  "arms": [
+    {
+      "label": "Conduction axis: per-cell scoring of 19 gene sets in the human atlas",
+      "pred": "results/axis_predictions.json",
+      "pred_time": "2026-08-01 11:59:50",
+      "first_out": "results/scdrs_axis/AVblock.score.tsv",
+      "first_out_time": "2026-08-01 12:12:18",
+      "gap_min": 12.5,
+      "sha256": "6701e33b339293910b113590b089a1848b13506533ccda99dee6e7cbb13e713f",
+      "n_bytes": 2756
+    },
+    {
+      "label": "Cross-species replication: mouse embryonic conduction zones",
+      "pred": "results/mouse_predictions.json",
+      "pred_time": "2026-08-02 00:28:02",
+      "first_out": "results/scdrs_mouse/EducationalAttainment.score.tsv",
+      "first_out_time": "2026-08-02 00:46:48",
+      "gap_min": 18.8,
+      "sha256": "63349f3cd7c9b384d0d20bd7a5fe886972a0f6a0f473287ddc2a522b160b91c9",
+      "n_bytes": 721
+    },
+    {
+      "label": "Bidirectional Mendelian randomization, re-specified stopping rules",
+      "pred": "results/mr_predictions_v2.json",
+      "pred_time": "2026-08-03 00:11:34",
+      "first_out": "results/mr_v2_estimates.tsv",
+      "first_out_time": "2026-08-03 00:35:32",
+      "gap_min": 24.0,
+      "sha256": "b83bdd4b2e490ae7fa9f33a9b4fd8455e04a2b6d8539c613da49816c7c2c4fab",
+      "n_bytes": 24770
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "level": "0_uninterpretable",
+  "stop_conditions_fired": [
+    "S2_N1_negative_control_family",
+    "S4_N3_detector_broken",
+    "S5_N4_specificity",
+    "S6_N5_stability"
+  ],
+  "bonferroni_survivors": [
+    "EducationalAttainment->HRV_RMSSD"
+  ],
+  "detail": {
+    "S1_weak_instruments": {
+      "fires": false,
+      "detail": {}
+    },
+    "S2_N1_negative_control_family": {
+      "fires": true,
+      "detail": {
+        "min_p": 0.002960437372863488,
+        "bonferroni_threshold": 0.008333333333333333,
+        "bonferroni_fires": true,
+        "permutation_family_p": 0.0216978302169783,
+        "permutation_fires": true
+      }
+    },
+    "S3_N2_matched_null_pleiotropy": {
+      "fires": false,
+      "detail": {
+        "n2_min_p": 0.0219780219780219,
+        "n3_confirms_detector": false
+      }
+    },
+    "S4_N3_detector_broken": {
+      "fires": true,
+      "detail": {
+        "n3_p": [
+          0.7952047952047953,
+          0.2487512487512487,
+          0.1098901098901098,
+          0.4575424575424575
+        ],
+        "n3_exposures": [
+          "EducationalAttainment",
+          "Intelligence",
+          "ReactionTime",
+          "RestingHeartRate"
+        ]
+      }
+    },
+    "S5_N4_specificity": {
+      "fires": true,
+      "detail": {
+        "EducationalAttainment": 0.1016,
+        "Intelligence": 0.1231,
+        "ReactionTime": 0.9028
+      }
+    },
+    "S6_N5_stability": {
+      "fires": true,
+      "detail": {
+        "EducationalAttainment->HRV_RMSSD": {
+          "primary_p": 0.0006603943583885,
+          "sensitivity_p": 0.0020985064029743
+        }
+      }
+    },
+    "S7_presso_sign_flip": {
+      "fires": false,
+      "detail": {}
+    },
+    "S8_ivw_median_sign": {
+      "fires": false,
+      "detail": {}
+    }
+  }
+}

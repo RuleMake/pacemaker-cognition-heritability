@@ -1,0 +1,97 @@
+{
+  "intercept": {
+    "AtrialFibrillation": 1.0365221798258022,
+    "EducationalAttainment": 0.5156951404832462,
+    "HRV_RMSSD": 1.0199774802183004,
+    "HRV_SDNN": 1.0019842333057285,
+    "Intelligence": 0.9349947490473709,
+    "PRinterval": 1.009866524073172,
+    "QTinterval": 1.0073842371683075,
+    "ReactionTime": 0.9761627118661602,
+    "RestingHeartRate": 1.0148030445240768,
+    "RheumatoidArthritis": 1.0280941896707143
+  },
+  "h2_grid": [
+    {
+      "assumed_h2": 0.05841602029657626,
+      "scale": 1.0,
+      "HRV_RMSSD": 0.2559007867608231,
+      "HRV_SDNN": 0.23370867761686842,
+      "RestingHeartRate": -0.08211182577689512,
+      "PRinterval": 0.06150334470940767,
+      "AtrialFibrillation": -0.03494438412037456,
+      "QTinterval": 0.04134532401811228
+    },
+    {
+      "assumed_h2": 0.08,
+      "scale": 0.8545175561140937,
+      "HRV_RMSSD": 0.21867171491053242,
+      "HRV_SDNN": 0.199708168039823,
+      "RestingHeartRate": -0.07016599669093866,
+      "PRinterval": 0.05255568781392572,
+      "AtrialFibrillation": -0.029860589718454615,
+      "QTinterval": 0.03533030523670265
+    },
+    {
+      "assumed_h2": 0.11,
+      "scale": 0.7287350204078813,
+      "HRV_RMSSD": 0.1864838650625413,
+      "HRV_SDNN": 0.17031169795262757,
+      "RestingHeartRate": -0.059837763033254054,
+      "PRinterval": 0.04481964116196316,
+      "AtrialFibrillation": -0.025465196475102,
+      "QTinterval": 0.030129785542109516
+    },
+    {
+      "assumed_h2": 0.13,
+      "scale": 0.6703387220512894,
+      "HRV_RMSSD": 0.1715402063691697,
+      "HRV_SDNN": 0.15666397628598835,
+      "RestingHeartRate": -0.055042736356581995,
+      "PRinterval": 0.041228073494384274,
+      "AtrialFibrillation": -0.023424573794121252,
+      "QTinterval": 0.027715371665097868
+    },
+    {
+      "assumed_h2": 0.15,
+      "scale": 0.6240513883571676,
+      "HRV_RMSSD": 0.15969524125978315,
+      "HRV_SDNN": 0.14584622473792444,
+      "RestingHeartRate": -0.05124199887661326,
+      "PRinterval": 0.03838124765451532,
+      "AtrialFibrillation": -0.021807091425605902,
+      "QTinterval": 0.025801606855579914
+    }
+  ],
+  "ordering_invariant": [
+    "HRV_RMSSD",
+    "HRV_SDNN",
+    "PRinterval",
+    "QTinterval",
+    "AtrialFibrillation",
+    "RestingHeartRate"
+  ],
+  "shape_all": {
+    "traits": [
+      "EducationalAttainment",
+      "Intelligence",
+      "ReactionTime"
+    ],
+    "hits": 3,
+    "k": 3,
+    "mean_rg": 0.325977312335089,
+    "k_eff": 1.8160305102804908,
+    "p": 0.05378351059111165
+  },
+  "shape_eur_only": {
+    "traits": [
+      "Intelligence",
+      "ReactionTime"
+    ],
+    "hits": 2,
+    "k": 2,
+    "mean_rg": 0.18498228655772708,
+    "k_eff": 1.6877889422379724,
+    "p": 0.06611289209887689
+  }
+}

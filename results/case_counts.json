@@ -1,0 +1,74 @@
+{
+  "GCST90480156": {
+    "label": "AV block (PheCode 426.2)",
+    "cases": 0,
+    "controls": 0,
+    "total": 617488,
+    "n_eff": null,
+    "verdict": "unknown split — inspect the file header before committing"
+  },
+  "GCST90480154": {
+    "label": "Complete AV block (PheCode 426.21)",
+    "cases": 0,
+    "controls": 0,
+    "total": 630658,
+    "n_eff": null,
+    "verdict": "unknown split — inspect the file header before committing"
+  },
+  "GCST90481992": {
+    "label": "Mobitz II AV block",
+    "cases": 0,
+    "controls": 0,
+    "total": 450991,
+    "n_eff": null,
+    "verdict": "unknown split — inspect the file header before committing"
+  },
+  "GCST90480169": {
+    "label": "Atrial flutter (PheCode 427.22)",
+    "cases": 0,
+    "controls": 0,
+    "total": 620415,
+    "n_eff": null,
+    "verdict": "unknown split — inspect the file header before committing"
+  },
+  "GCST90086158": {
+    "label": "Brugada syndrome (Barc 2022)",
+    "cases": 0,
+    "controls": 0,
+    "total": 12821,
+    "n_eff": null,
+    "verdict": "unknown split — inspect the file header before committing"
+  },
+  "GCST90162626": {
+    "label": "Heart failure (Levin 2022)",
+    "cases": 0,
+    "controls": 0,
+    "total": 1665481,
+    "n_eff": null,
+    "verdict": "unknown split — inspect the file header before committing"
+  },
+  "GCST90018834": {
+    "label": "Dilated cardiomyopathy",
+    "cases": 0,
+    "controls": 0,
+    "total": 533543,
+    "n_eff": null,
+    "verdict": "unknown split — inspect the file header before committing"
+  },
+  "GCST90084003": {
+    "label": "Sick sinus syndrome ICD10 I49.5",
+    "cases": 0,
+    "controls": 0,
+    "total": 387930,
+    "n_eff": null,
+    "verdict": "unknown split — inspect the file header before committing"
+  },
+  "GCST90204201": {
+    "label": "Atrial fibrillation  [in use]",
+    "cases": 0,
+    "controls": 0,
+    "total": 2339188,
+    "n_eff": null,
+    "verdict": "unknown split — inspect the file header before committing"
+  }
+}

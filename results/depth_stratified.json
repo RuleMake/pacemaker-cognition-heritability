@@ -1,0 +1,461 @@
+{
+  "SAN": {
+    "RestingHeartRate": {
+      "adipose_tissue": {
+        "mean": -1.3142574507432983,
+        "pos": 0,
+        "n": 8
+      },
+      "endocardium": {
+        "mean": 0.07327028934354934,
+        "pos": 1,
+        "n": 1
+      },
+      "epicardium_subepicardium": {
+        "mean": -0.589370370411462,
+        "pos": 0,
+        "n": 2
+      },
+      "fibrosis": {
+        "mean": -1.110792168350202,
+        "pos": 1,
+        "n": 6
+      },
+      "haemorrhage": {
+        "mean": -0.44581860179318256,
+        "pos": 0,
+        "n": 2
+      },
+      "myocardium_atrial": {
+        "mean": 1.543003973911055,
+        "pos": 7,
+        "n": 8
+      },
+      "nerve": {
+        "mean": -1.3916412167188006,
+        "pos": 0,
+        "n": 1
+      },
+      "node": {
+        "mean": 0.6346535096397244,
+        "pos": 6,
+        "n": 8
+      },
+      "vessel": {
+        "mean": -1.8049642371786951,
+        "pos": 0,
+        "n": 3
+      }
+    },
+    "AtrialFibrillation": {
+      "adipose_tissue": {
+        "mean": -0.42203094607555186,
+        "pos": 1,
+        "n": 8
+      },
+      "endocardium": {
+        "mean": 0.5359679640620255,
+        "pos": 1,
+        "n": 1
+      },
+      "epicardium_subepicardium": {
+        "mean": -0.5463648870888107,
+        "pos": 0,
+        "n": 2
+      },
+      "fibrosis": {
+        "mean": -0.5662875274804473,
+        "pos": 2,
+        "n": 6
+      },
+      "haemorrhage": {
+        "mean": -0.25891714488364487,
+        "pos": 0,
+        "n": 2
+      },
+      "myocardium_atrial": {
+        "mean": 1.2637874055818932,
+        "pos": 8,
+        "n": 8
+      },
+      "nerve": {
+        "mean": -0.20566842129969098,
+        "pos": 0,
+        "n": 1
+      },
+      "node": {
+        "mean": -0.48230453476257384,
+        "pos": 3,
+        "n": 8
+      },
+      "vessel": {
+        "mean": -0.7299567375732016,
+        "pos": 1,
+        "n": 3
+      }
+    },
+    "PRinterval": {
+      "adipose_tissue": {
+        "mean": -0.8196139312854918,
+        "pos": 0,
+        "n": 8
+      },
+      "endocardium": {
+        "mean": 0.6639659231658481,
+        "pos": 1,
+        "n": 1
+      },
+      "epicardium_subepicardium": {
+        "mean": -0.9353505886917013,
+        "pos": 0,
+        "n": 2
+      },
+      "fibrosis": {
+        "mean": -0.9809565146192044,
+        "pos": 1,
+        "n": 6
+      },
+      "haemorrhage": {
+        "mean": -0.6804064502941461,
+        "pos": 0,
+        "n": 2
+      },
+      "myocardium_atrial": {
+        "mean": 2.372347632940546,
+        "pos": 8,
+        "n": 8
+      },
+      "nerve": {
+        "mean": -1.1892297217335908,
+        "pos": 0,
+        "n": 1
+      },
+      "node": {
+        "mean": -0.6796069641704239,
+        "pos": 2,
+        "n": 8
+      },
+      "vessel": {
+        "mean": -2.265911582961883,
+        "pos": 0,
+        "n": 3
+      }
+    },
+    "HRV_RMSSD": {
+      "adipose_tissue": {
+        "mean": 0.4985366523365224,
+        "pos": 8,
+        "n": 8
+      },
+      "endocardium": {
+        "mean": 0.5996204423649747,
+        "pos": 1,
+        "n": 1
+      },
+      "epicardium_subepicardium": {
+        "mean": -0.3019257180455445,
+        "pos": 1,
+        "n": 2
+      },
+      "fibrosis": {
+        "mean": 0.0874094679810341,
+        "pos": 2,
+        "n": 6
+      },
+      "haemorrhage": {
+        "mean": 0.1025156281541293,
+        "pos": 2,
+        "n": 2
+      },
+      "myocardium_atrial": {
+        "mean": 0.4522720864881541,
+        "pos": 8,
+        "n": 8
+      },
+      "nerve": {
+        "mean": 0.6499476252972047,
+        "pos": 1,
+        "n": 1
+      },
+      "node": {
+        "mean": -0.7264690877522904,
+        "pos": 0,
+        "n": 8
+      },
+      "vessel": {
+        "mean": -0.4680811013478691,
+        "pos": 2,
+        "n": 3
+      }
+    },
+    "HRV_RMSSDc": {
+      "adipose_tissue": {
+        "mean": 0.5856471000003922,
+        "pos": 8,
+        "n": 8
+      },
+      "endocardium": {
+        "mean": 0.47888143975111575,
+        "pos": 1,
+        "n": 1
+      },
+      "epicardium_subepicardium": {
+        "mean": -0.24812175375177314,
+        "pos": 1,
+        "n": 2
+      },
+      "fibrosis": {
+        "mean": 0.12626478563045704,
+        "pos": 3,
+        "n": 6
+      },
+      "haemorrhage": {
+        "mean": 0.20475105957658274,
+        "pos": 2,
+        "n": 2
+      },
+      "myocardium_atrial": {
+        "mean": 0.3116434186093749,
+        "pos": 7,
+        "n": 8
+      },
+      "nerve": {
+        "mean": 0.9137401781515453,
+        "pos": 1,
+        "n": 1
+      },
+      "node": {
+        "mean": -0.7909739427043125,
+        "pos": 0,
+        "n": 8
+      },
+      "vessel": {
+        "mean": -0.13573413324845396,
+        "pos": 2,
+        "n": 3
+      }
+    },
+    "HRV_SDNN": {
+      "adipose_tissue": {
+        "mean": 0.6724899359918404,
+        "pos": 8,
+        "n": 8
+      },
+      "endocardium": {
+        "mean": 0.7052728768091387,
+        "pos": 1,
+        "n": 1
+      },
+      "epicardium_subepicardium": {
+        "mean": -0.2671941585095902,
+        "pos": 1,
+        "n": 2
+      },
+      "fibrosis": {
+        "mean": 0.21347140553512733,
+        "pos": 4,
+        "n": 6
+      },
+      "haemorrhage": {
+        "mean": 0.2841534613455569,
+        "pos": 1,
+        "n": 2
+      },
+      "myocardium_atrial": {
+        "mean": 0.021737396073488,
+        "pos": 4,
+        "n": 8
+      },
+      "nerve": {
+        "mean": 1.1578545296536564,
+        "pos": 1,
+        "n": 1
+      },
+      "node": {
+        "mean": -0.6843649907099234,
+        "pos": 0,
+        "n": 8
+      },
+      "vessel": {
+        "mean": -0.034598288787897356,
+        "pos": 2,
+        "n": 3
+      }
+    },
+    "HRV_SDNNc": {
+      "adipose_tissue": {
+        "mean": 0.7041085196031294,
+        "pos": 8,
+        "n": 8
+      },
+      "endocardium": {
+        "mean": 0.555315201753511,
+        "pos": 1,
+        "n": 1
+      },
+      "epicardium_subepicardium": {
+        "mean": -0.2597962554616947,
+        "pos": 0,
+        "n": 2
+      },
+      "fibrosis": {
+        "mean": 0.2794612888539487,
+        "pos": 5,
+        "n": 6
+      },
+      "haemorrhage": {
+        "mean": 0.4404495649850634,
+        "pos": 1,
+        "n": 2
+      },
+      "myocardium_atrial": {
+        "mean": -0.0731672777216052,
+        "pos": 3,
+        "n": 8
+      },
+      "nerve": {
+        "mean": 1.2973157331780514,
+        "pos": 1,
+        "n": 1
+      },
+      "node": {
+        "mean": -0.7285195009929881,
+        "pos": 0,
+        "n": 8
+      },
+      "vessel": {
+        "mean": 0.3063166197375651,
+        "pos": 2,
+        "n": 3
+      }
+    }
+  },
+  "AVN": {
+    "RestingHeartRate": {
+      "AV_bundle": {
+        "mean": 0.4729015432291184,
+        "pos": 2,
+        "n": 6
+      },
+      "adipose_tissue": {
+        "mean": -2.397274101715046,
+        "pos": 0,
+        "n": 1
+      },
+      "cardiac_skeleton": {
+        "mean": -0.694746019988352,
+        "pos": 1,
+        "n": 5
+      },
+      "fibrosis": {
+        "mean": -0.3295497445498377,
+        "pos": 1,
+        "n": 5
+      },
+      "membraneous_septum": {
+        "mean": -0.9492872872953545,
+        "pos": 0,
+        "n": 3
+      },
+      "myocardium_atrial": {
+        "mean": -0.34352246364137295,
+        "pos": 1,
+        "n": 5
+      },
+      "myocardium_ventricular": {
+        "mean": 1.0338757134345256,
+        "pos": 8,
+        "n": 8
+      },
+      "node": {
+        "mean": 0.0149084944211757,
+        "pos": 1,
+        "n": 2
+      }
+    },
+    "AtrialFibrillation": {
+      "AV_bundle": {
+        "mean": 0.06588059722064442,
+        "pos": 4,
+        "n": 6
+      },
+      "adipose_tissue": {
+        "mean": -0.7934911260893969,
+        "pos": 0,
+        "n": 1
+      },
+      "cardiac_skeleton": {
+        "mean": -0.6156215373632057,
+        "pos": 0,
+        "n": 5
+      },
+      "fibrosis": {
+        "mean": -0.023027043723828366,
+        "pos": 1,
+        "n": 5
+      },
+      "membraneous_septum": {
+        "mean": -0.3939670132749578,
+        "pos": 0,
+        "n": 3
+      },
+      "myocardium_atrial": {
+        "mean": -0.37054276943101516,
+        "pos": 2,
+        "n": 5
+      },
+      "myocardium_ventricular": {
+        "mean": 0.834121629034611,
+        "pos": 8,
+        "n": 8
+      },
+      "node": {
+        "mean": -0.1716705806520554,
+        "pos": 0,
+        "n": 2
+      }
+    },
+    "PRinterval": {
+      "AV_bundle": {
+        "mean": 0.08851031292697287,
+        "pos": 3,
+        "n": 6
+      },
+      "adipose_tissue": {
+        "mean": -2.3198307570872796,
+        "pos": 0,
+        "n": 1
+      },
+      "cardiac_skeleton": {
+        "mean": -1.038081583436828,
+        "pos": 1,
+        "n": 5
+      },
+      "fibrosis": {
+        "mean": -0.3188154473424702,
+        "pos": 1,
+        "n": 5
+      },
+      "membraneous_septum": {
+        "mean": -0.7335233081462577,
+        "pos": 1,
+        "n": 3
+      },
+      "myocardium_atrial": {
+        "mean": -0.857801116557442,
+        "pos": 1,
+        "n": 5
+      },
+      "myocardium_ventricular": {
+        "mean": 1.629845768370615,
+        "pos": 8,
+        "n": 8
+      },
+      "node": {
+        "mean": -1.4403903933332864,
+        "pos": 0,
+        "n": 2
+      }
+    }
+  }
+}

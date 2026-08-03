@@ -1,0 +1,380 @@
+{
+  "traits": {
+    "AVblock": {
+      "top5": [
+        "unclassified",
+        "aCM4",
+        "AVN_P_cell",
+        "aCM1",
+        "vCM4"
+      ],
+      "conduction_ranks": {
+        "SAN_P_cell": 9,
+        "AVN_P_cell": 3,
+        "AVN_bundle_cell": 15
+      },
+      "n_groups": 62,
+      "n_snp": 27411285,
+      "n_gws": 436,
+      "lambda_gc": 1.0099145500197846,
+      "max_z": 8.6889,
+      "median_z": 0.081567
+    },
+    "AtrialFibrillation": {
+      "top5": [
+        "unclassified",
+        "vCM4",
+        "aCM4",
+        "AVN_P_cell",
+        "vCM1"
+      ],
+      "conduction_ranks": {
+        "SAN_P_cell": 8,
+        "AVN_P_cell": 4,
+        "AVN_bundle_cell": 12
+      },
+      "n_groups": 62,
+      "n_snp": 5000609,
+      "n_gws": 11890,
+      "lambda_gc": 1.3488911604506482,
+      "max_z": 12.808,
+      "median_z": 0.625415
+    },
+    "AtrialFlutter": {
+      "top5": [
+        "unclassified",
+        "aCM4",
+        "vCM4",
+        "AVN_P_cell",
+        "aCM1"
+      ],
+      "conduction_ranks": {
+        "SAN_P_cell": 10,
+        "AVN_P_cell": 4,
+        "AVN_bundle_cell": 13
+      },
+      "n_groups": 62,
+      "n_snp": 27411469,
+      "n_gws": 3663,
+      "lambda_gc": 1.0188713018443614,
+      "max_z": 8.6113,
+      "median_z": 0.20023
+    },
+    "Brugada": {
+      "top5": [
+        "unclassified",
+        "vCM4",
+        "vCM1",
+        "vCM2",
+        "AVN_bundle_cell"
+      ],
+      "conduction_ranks": {
+        "SAN_P_cell": 8,
+        "AVN_P_cell": 12,
+        "AVN_bundle_cell": 5
+      },
+      "n_groups": 62,
+      "n_snp": 6970246,
+      "n_gws": 1266,
+      "lambda_gc": 1.0536169858518356,
+      "max_z": 8.4537,
+      "median_z": 0.1247
+    },
+    "BundleBranchBlock": {
+      "top5": [
+        "unclassified",
+        "vCM4",
+        "aCM4",
+        "vCM1",
+        "vCM3_stressed"
+      ],
+      "conduction_ranks": {
+        "SAN_P_cell": 8,
+        "AVN_P_cell": 10,
+        "AVN_bundle_cell": 12
+      },
+      "n_groups": 62,
+      "n_snp": 19655081,
+      "n_gws": 218,
+      "lambda_gc": 1.0674718707957793,
+      "max_z": 6.7355,
+      "median_z": 0.19908
+    },
+    "EducationalAttainment": {
+      "top5": [
+        "NC1_glial",
+        "SAN_P_cell",
+        "NC2_glial_NGF+",
+        "B",
+        "aCM2"
+      ],
+      "conduction_ranks": {
+        "SAN_P_cell": 2,
+        "AVN_P_cell": 11,
+        "AVN_bundle_cell": 23
+      },
+      "n_groups": 62,
+      "n_snp": 9061709,
+      "n_gws": 11099,
+      "lambda_gc": 1.0964806825675972,
+      "max_z": 8.0577,
+      "median_z": 0.27202499999999996
+    },
+    "HRV_RMSSD": {
+      "top5": [
+        "SAN_P_cell",
+        "aCM4",
+        "AVN_P_cell",
+        "aCM2",
+        "aCM1"
+      ],
+      "conduction_ranks": {
+        "SAN_P_cell": 1,
+        "AVN_P_cell": 3,
+        "AVN_bundle_cell": 11
+      },
+      "n_groups": 62,
+      "n_snp": 18344033,
+      "n_gws": 2459,
+      "lambda_gc": 1.0641350187403824,
+      "max_z": 8.37,
+      "median_z": 0.15086
+    },
+    "HRV_RMSSDc": {
+      "top5": [
+        "SAN_P_cell",
+        "AVN_P_cell",
+        "aCM2",
+        "aCM4",
+        "aCM1"
+      ],
+      "conduction_ranks": {
+        "SAN_P_cell": 1,
+        "AVN_P_cell": 2,
+        "AVN_bundle_cell": 7
+      },
+      "n_groups": 62,
+      "n_snp": 18344033,
+      "n_gws": 1585,
+      "lambda_gc": 1.0576813017454385,
+      "max_z": 7.7059,
+      "median_z": 0.1247
+    },
+    "HRV_SDNN": {
+      "top5": [
+        "SAN_P_cell",
+        "AVN_P_cell",
+        "aCM2",
+        "aCM4",
+        "vCM2"
+      ],
+      "conduction_ranks": {
+        "SAN_P_cell": 1,
+        "AVN_P_cell": 2,
+        "AVN_bundle_cell": 11
+      },
+      "n_groups": 62,
+      "n_snp": 18344033,
+      "n_gws": 920,
+      "lambda_gc": 1.0400552082743457,
+      "max_z": 7.1974,
+      "median_z": 0.094447
+    },
+    "HRV_SDNNc": {
+      "top5": [
+        "B",
+        "NK_CD56hi",
+        "SAN_P_cell",
+        "NK_CD16hi",
+        "PC1_vent"
+      ],
+      "conduction_ranks": {
+        "SAN_P_cell": 3,
+        "AVN_P_cell": 22,
+        "AVN_bundle_cell": 26
+      },
+      "n_groups": 62,
+      "n_snp": 18344033,
+      "n_gws": 362,
+      "lambda_gc": 1.03096346587162,
+      "max_z": 7.5956,
+      "median_z": 0.071651
+    },
+    "HeartFailure": {
+      "top5": [
+        "SMC2_art",
+        "SMC1_basic",
+        "AVN_P_cell",
+        "SAN_P_cell",
+        "AVN_bundle_cell"
+      ],
+      "conduction_ranks": {
+        "SAN_P_cell": 4,
+        "AVN_P_cell": 3,
+        "AVN_bundle_cell": 5
+      },
+      "n_groups": 62,
+      "n_snp": 18466099,
+      "n_gws": 923,
+      "lambda_gc": 1.1751311538382063,
+      "max_z": 7.1358,
+      "median_z": 0.53981
+    },
+    "PRinterval": {
+      "top5": [
+        "unclassified",
+        "AVN_P_cell",
+        "SAN_P_cell",
+        "aCM4",
+        "vCM4"
+      ],
+      "conduction_ranks": {
+        "SAN_P_cell": 3,
+        "AVN_P_cell": 2,
+        "AVN_bundle_cell": 11
+      },
+      "n_groups": 62,
+      "n_snp": 10602230,
+      "n_gws": 20063,
+      "lambda_gc": 1.2172389879643877,
+      "max_z": 11.257,
+      "median_z": 0.6087
+    },
+    "QRSduration": {
+      "top5": [
+        "unclassified",
+        "vCM4",
+        "vCM1",
+        "AVN_P_cell",
+        "AVN_bundle_cell"
+      ],
+      "conduction_ranks": {
+        "SAN_P_cell": 6,
+        "AVN_P_cell": 4,
+        "AVN_bundle_cell": 5
+      },
+      "n_groups": 62,
+      "n_snp": 12080981,
+      "n_gws": 1285,
+      "lambda_gc": 1.0284268549659263,
+      "max_z": 8.4086,
+      "median_z": 0.14705
+    },
+    "QTinterval": {
+      "top5": [
+        "unclassified",
+        "vCM4",
+        "vCM1",
+        "vCM2",
+        "vCM3_stressed"
+      ],
+      "conduction_ranks": {
+        "SAN_P_cell": 11,
+        "AVN_P_cell": 10,
+        "AVN_bundle_cell": 7
+      },
+      "n_groups": 62,
+      "n_snp": 9963125,
+      "n_gws": 7295,
+      "lambda_gc": 1.121977057366454,
+      "max_z": 11.399,
+      "median_z": 0.41216
+    },
+    "RestingHeartRate": {
+      "top5": [
+        "unclassified",
+        "AVN_P_cell",
+        "aCM4",
+        "vCM4",
+        "SAN_P_cell"
+      ],
+      "conduction_ranks": {
+        "SAN_P_cell": 5,
+        "AVN_P_cell": 2,
+        "AVN_bundle_cell": 9
+      },
+      "n_groups": 62,
+      "n_snp": 5143545,
+      "n_gws": 21717,
+      "lambda_gc": 1.626543841479446,
+      "max_z": 9.7578,
+      "median_z": 1.106
+    },
+    "RheumatoidArthritis": {
+      "top5": [
+        "DC",
+        "unclassified",
+        "B",
+        "CD4+T_naive",
+        "CD4+T_act"
+      ],
+      "conduction_ranks": {
+        "SAN_P_cell": 61,
+        "AVN_P_cell": 48,
+        "AVN_bundle_cell": 57
+      },
+      "n_groups": 62,
+      "n_snp": 12633529,
+      "n_gws": 33908,
+      "lambda_gc": 1.1402338122862168,
+      "max_z": 9.357,
+      "median_z": 0.40705
+    }
+  },
+  "conduction_ranks": {
+    "SAN_P_cell": {
+      "AVblock": 9,
+      "AtrialFibrillation": 8,
+      "AtrialFlutter": 10,
+      "Brugada": 8,
+      "BundleBranchBlock": 8,
+      "EducationalAttainment": 2,
+      "HRV_RMSSD": 1,
+      "HRV_RMSSDc": 1,
+      "HRV_SDNN": 1,
+      "HRV_SDNNc": 3,
+      "HeartFailure": 4,
+      "PRinterval": 3,
+      "QRSduration": 6,
+      "QTinterval": 11,
+      "RestingHeartRate": 5,
+      "RheumatoidArthritis": 61
+    },
+    "AVN_P_cell": {
+      "AVblock": 3,
+      "AtrialFibrillation": 4,
+      "AtrialFlutter": 4,
+      "Brugada": 12,
+      "BundleBranchBlock": 10,
+      "EducationalAttainment": 11,
+      "HRV_RMSSD": 3,
+      "HRV_RMSSDc": 2,
+      "HRV_SDNN": 2,
+      "HRV_SDNNc": 22,
+      "HeartFailure": 3,
+      "PRinterval": 2,
+      "QRSduration": 4,
+      "QTinterval": 10,
+      "RestingHeartRate": 2,
+      "RheumatoidArthritis": 48
+    },
+    "AVN_bundle_cell": {
+      "AVblock": 15,
+      "AtrialFibrillation": 12,
+      "AtrialFlutter": 13,
+      "Brugada": 5,
+      "BundleBranchBlock": 12,
+      "EducationalAttainment": 23,
+      "HRV_RMSSD": 11,
+      "HRV_RMSSDc": 7,
+      "HRV_SDNN": 11,
+      "HRV_SDNNc": 26,
+      "HeartFailure": 5,
+      "PRinterval": 11,
+      "QRSduration": 5,
+      "QTinterval": 7,
+      "RestingHeartRate": 9,
+      "RheumatoidArthritis": 57
+    }
+  }
+}

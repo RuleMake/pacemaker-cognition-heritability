@@ -1,0 +1,81 @@
+{
+  "depth_removal": {
+    "raw": 0.747164220378862,
+    "vs_control": 0.633350033961837,
+    "vs_cardiac": 0.4787855026707448
+  },
+  "hits": [
+    {
+      "region": "SAN",
+      "pair": "Res-Atr",
+      "compartment": "adipose_tissue",
+      "effect": -2.5377496605714356,
+      "pos": 0,
+      "n": 8,
+      "p": 0.0078125
+    },
+    {
+      "region": "SAN",
+      "pair": "PRi-Atr",
+      "compartment": "adipose_tissue",
+      "effect": -1.2902229315931868,
+      "pos": 0,
+      "n": 8,
+      "p": 0.0078125
+    },
+    {
+      "region": "SAN",
+      "pair": "Res-PRi",
+      "compartment": "adipose_tissue",
+      "effect": -1.2475267289782486,
+      "pos": 0,
+      "n": 8,
+      "p": 0.0078125
+    },
+    {
+      "region": "SAN",
+      "pair": "PRi-Atr",
+      "compartment": "myocardium_atrial",
+      "effect": 1.511999462125421,
+      "pos": 8,
+      "n": 8,
+      "p": 0.0078125
+    },
+    {
+      "region": "SAN",
+      "pair": "Res-Atr",
+      "compartment": "node",
+      "effect": 1.75034853768994,
+      "pos": 8,
+      "n": 8,
+      "p": 0.0078125
+    },
+    {
+      "region": "SAN",
+      "pair": "Res-PRi",
+      "compartment": "node",
+      "effect": 1.6762436111283237,
+      "pos": 8,
+      "n": 8,
+      "p": 0.0078125
+    },
+    {
+      "region": "AVN",
+      "pair": "Res-Atr",
+      "compartment": "myocardium_ventricular",
+      "effect": 1.2002958488755726,
+      "pos": 8,
+      "n": 8,
+      "p": 0.0078125
+    },
+    {
+      "region": "AVN",
+      "pair": "PRi-Atr",
+      "compartment": "myocardium_ventricular",
+      "effect": 1.2761671184000853,
+      "pos": 8,
+      "n": 8,
+      "p": 0.0078125
+    }
+  ]
+}

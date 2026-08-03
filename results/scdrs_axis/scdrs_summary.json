@@ -1,0 +1,613 @@
+{
+  "positive_control": {
+    "passes": true,
+    "top5": [
+      "unclassified",
+      "AVN_P_cell",
+      "vCM4",
+      "vCM1",
+      "vCM3_stressed"
+    ]
+  },
+  "conduction": {
+    "SAN_P_cell": {
+      "AVblock": {
+        "z": 3.7004125,
+        "p": 0.001998002,
+        "n": 245
+      },
+      "AtrialFibrillation": {
+        "z": 8.385966,
+        "p": 0.000999001,
+        "n": 245
+      },
+      "AtrialFlutter": {
+        "z": 5.0654254,
+        "p": 0.001998002,
+        "n": 245
+      },
+      "Brugada": {
+        "z": 3.3382742,
+        "p": 0.002997003,
+        "n": 245
+      },
+      "BundleBranchBlock": {
+        "z": 2.4113815,
+        "p": 0.016983017,
+        "n": 245
+      },
+      "EducationalAttainment": {
+        "z": 5.2718463,
+        "p": 0.000999001,
+        "n": 245
+      },
+      "HRV_RMSSD": {
+        "z": 6.4597673,
+        "p": 0.000999001,
+        "n": 245
+      },
+      "HRV_RMSSDc": {
+        "z": 5.170993,
+        "p": 0.000999001,
+        "n": 245
+      },
+      "HRV_SDNN": {
+        "z": 4.9141626,
+        "p": 0.000999001,
+        "n": 245
+      },
+      "HRV_SDNNc": {
+        "z": 2.5953445,
+        "p": 0.010989011,
+        "n": 245
+      },
+      "HeartFailure": {
+        "z": 2.8391054,
+        "p": 0.004995005,
+        "n": 245
+      },
+      "Intelligence": {
+        "z": 5.745630741119385,
+        "p": 0.0009990009712055326,
+        "n": 245
+      },
+      "PRinterval": {
+        "z": 13.218356,
+        "p": 0.000999001,
+        "n": 245
+      },
+      "QRSduration": {
+        "z": 3.919433,
+        "p": 0.000999001,
+        "n": 245
+      },
+      "QTinterval": {
+        "z": 3.9381835,
+        "p": 0.001998002,
+        "n": 245
+      },
+      "ReactionTime": {
+        "z": 6.851095199584961,
+        "p": 0.0009990009712055326,
+        "n": 245
+      },
+      "RestingHeartRate": {
+        "z": 9.356997,
+        "p": 0.000999001,
+        "n": 245
+      },
+      "RheumatoidArthritis": {
+        "z": -3.1783266,
+        "p": 1.0,
+        "n": 245
+      },
+      "RheumatoidArthritis_noMHC": {
+        "z": -1.0419104,
+        "p": 0.8651349,
+        "n": 245
+      }
+    },
+    "AVN_P_cell": {
+      "AVblock": {
+        "z": 4.125995,
+        "p": 0.000999001,
+        "n": 155
+      },
+      "AtrialFibrillation": {
+        "z": 9.837611,
+        "p": 0.000999001,
+        "n": 155
+      },
+      "AtrialFlutter": {
+        "z": 6.485911,
+        "p": 0.000999001,
+        "n": 155
+      },
+      "Brugada": {
+        "z": 2.9996996,
+        "p": 0.002997003,
+        "n": 155
+      },
+      "BundleBranchBlock": {
+        "z": 2.312899,
+        "p": 0.011988012,
+        "n": 155
+      },
+      "EducationalAttainment": {
+        "z": 2.8002074,
+        "p": 0.003996004,
+        "n": 155
+      },
+      "HRV_RMSSD": {
+        "z": 5.0850735,
+        "p": 0.000999001,
+        "n": 155
+      },
+      "HRV_RMSSDc": {
+        "z": 3.4757307,
+        "p": 0.002997003,
+        "n": 155
+      },
+      "HRV_SDNN": {
+        "z": 2.6768024,
+        "p": 0.005994006,
+        "n": 155
+      },
+      "HRV_SDNNc": {
+        "z": 0.92257935,
+        "p": 0.16783217,
+        "n": 155
+      },
+      "HeartFailure": {
+        "z": 3.0268757,
+        "p": 0.004995005,
+        "n": 155
+      },
+      "Intelligence": {
+        "z": 2.103708267211914,
+        "p": 0.025974025949835777,
+        "n": 155
+      },
+      "PRinterval": {
+        "z": 14.08453,
+        "p": 0.000999001,
+        "n": 155
+      },
+      "QRSduration": {
+        "z": 3.7886763,
+        "p": 0.002997003,
+        "n": 155
+      },
+      "QTinterval": {
+        "z": 4.6643763,
+        "p": 0.000999001,
+        "n": 155
+      },
+      "ReactionTime": {
+        "z": 4.291627883911133,
+        "p": 0.0009990009712055326,
+        "n": 155
+      },
+      "RestingHeartRate": {
+        "z": 10.234893,
+        "p": 0.000999001,
+        "n": 155
+      },
+      "RheumatoidArthritis": {
+        "z": -2.3645551,
+        "p": 0.994006,
+        "n": 155
+      },
+      "RheumatoidArthritis_noMHC": {
+        "z": -0.9226206,
+        "p": 0.8251748,
+        "n": 155
+      }
+    },
+    "AVN_bundle_cell": {
+      "AVblock": {
+        "z": 2.0739236,
+        "p": 0.025974026,
+        "n": 38
+      },
+      "AtrialFibrillation": {
+        "z": 7.2141576,
+        "p": 0.000999001,
+        "n": 38
+      },
+      "AtrialFlutter": {
+        "z": 3.922524,
+        "p": 0.001998002,
+        "n": 38
+      },
+      "Brugada": {
+        "z": 4.227722,
+        "p": 0.000999001,
+        "n": 38
+      },
+      "BundleBranchBlock": {
+        "z": 1.8344926,
+        "p": 0.04095904,
+        "n": 38
+      },
+      "EducationalAttainment": {
+        "z": 1.7916235,
+        "p": 0.043956045,
+        "n": 38
+      },
+      "HRV_RMSSD": {
+        "z": 2.9472027,
+        "p": 0.005994006,
+        "n": 38
+      },
+      "HRV_RMSSDc": {
+        "z": 2.269036,
+        "p": 0.018981019,
+        "n": 38
+      },
+      "HRV_SDNN": {
+        "z": 2.2281864,
+        "p": 0.01998002,
+        "n": 38
+      },
+      "HRV_SDNNc": {
+        "z": 0.48434946,
+        "p": 0.28971028,
+        "n": 38
+      },
+      "HeartFailure": {
+        "z": 3.3212948,
+        "p": 0.001998002,
+        "n": 38
+      },
+      "Intelligence": {
+        "z": 0.9816426038742065,
+        "p": 0.170829176902771,
+        "n": 38
+      },
+      "PRinterval": {
+        "z": 10.874342,
+        "p": 0.000999001,
+        "n": 38
+      },
+      "QRSduration": {
+        "z": 4.3791485,
+        "p": 0.001998002,
+        "n": 38
+      },
+      "QTinterval": {
+        "z": 5.2208576,
+        "p": 0.000999001,
+        "n": 38
+      },
+      "ReactionTime": {
+        "z": 3.4100899696350098,
+        "p": 0.001998001942411065,
+        "n": 38
+      },
+      "RestingHeartRate": {
+        "z": 7.036418,
+        "p": 0.000999001,
+        "n": 38
+      },
+      "RheumatoidArthritis": {
+        "z": -2.0187454,
+        "p": 0.985015,
+        "n": 38
+      },
+      "RheumatoidArthritis_noMHC": {
+        "z": -1.1083705,
+        "p": 0.8841159,
+        "n": 38
+      }
+    },
+    "Purkinje": {
+      "AVblock": {
+        "z": 3.094179,
+        "p": 0.003996004,
+        "n": 110
+      },
+      "AtrialFibrillation": {
+        "z": 8.477717,
+        "p": 0.000999001,
+        "n": 110
+      },
+      "AtrialFlutter": {
+        "z": 4.4566536,
+        "p": 0.001998002,
+        "n": 110
+      },
+      "Brugada": {
+        "z": 5.2492967,
+        "p": 0.000999001,
+        "n": 110
+      },
+      "BundleBranchBlock": {
+        "z": 2.979556,
+        "p": 0.004995005,
+        "n": 110
+      },
+      "EducationalAttainment": {
+        "z": 2.8524375,
+        "p": 0.006993007,
+        "n": 110
+      },
+      "HRV_RMSSD": {
+        "z": 2.5497375,
+        "p": 0.011988012,
+        "n": 110
+      },
+      "HRV_RMSSDc": {
+        "z": 0.4105129,
+        "p": 0.31968033,
+        "n": 110
+      },
+      "HRV_SDNN": {
+        "z": -0.10264107,
+        "p": 0.52747256,
+        "n": 110
+      },
+      "HRV_SDNNc": {
+        "z": -1.2311952,
+        "p": 0.8971029,
+        "n": 110
+      },
+      "HeartFailure": {
+        "z": 1.9226886,
+        "p": 0.02997003,
+        "n": 110
+      },
+      "Intelligence": {
+        "z": 0.9883570671081543,
+        "p": 0.1678321659564972,
+        "n": 110
+      },
+      "PRinterval": {
+        "z": 10.419772,
+        "p": 0.000999001,
+        "n": 110
+      },
+      "QRSduration": {
+        "z": 4.11624,
+        "p": 0.000999001,
+        "n": 110
+      },
+      "QTinterval": {
+        "z": 6.265649,
+        "p": 0.000999001,
+        "n": 110
+      },
+      "ReactionTime": {
+        "z": 2.532620429992676,
+        "p": 0.00799200776964426,
+        "n": 110
+      },
+      "RestingHeartRate": {
+        "z": 7.7652526,
+        "p": 0.000999001,
+        "n": 110
+      },
+      "RheumatoidArthritis": {
+        "z": -3.1807566,
+        "p": 1.0,
+        "n": 110
+      },
+      "RheumatoidArthritis_noMHC": {
+        "z": -0.89712167,
+        "p": 0.8251748,
+        "n": 110
+      }
+    }
+  },
+  "ranking": {
+    "AVblock": {
+      "top5": [
+        "unclassified",
+        "vCM1",
+        "AVN_P_cell",
+        "vCM3_stressed",
+        "aCM2"
+      ],
+      "san_rank": 12,
+      "n_groups": 76
+    },
+    "AtrialFibrillation": {
+      "top5": [
+        "unclassified",
+        "AVN_P_cell",
+        "vCM4",
+        "vCM1",
+        "vCM3_stressed"
+      ],
+      "san_rank": 8,
+      "n_groups": 76
+    },
+    "AtrialFlutter": {
+      "top5": [
+        "unclassified",
+        "aCM4",
+        "AVN_P_cell",
+        "vCM5",
+        "aCM2"
+      ],
+      "san_rank": 12,
+      "n_groups": 76
+    },
+    "Brugada": {
+      "top5": [
+        "unclassified",
+        "Purkinje",
+        "vCM4",
+        "vCM1",
+        "AVN_bundle_cell"
+      ],
+      "san_rank": 9,
+      "n_groups": 76
+    },
+    "BundleBranchBlock": {
+      "top5": [
+        "vCM1",
+        "vCM4",
+        "vCM5",
+        "Purkinje",
+        "vCM2"
+      ],
+      "san_rank": 9,
+      "n_groups": 76
+    },
+    "EducationalAttainment": {
+      "top5": [
+        "SAN_P_cell",
+        "NC1_glial",
+        "aCM1",
+        "NC6_schwann",
+        "NC2_glial_NGF+"
+      ],
+      "san_rank": 1,
+      "n_groups": 76
+    },
+    "HRV_RMSSD": {
+      "top5": [
+        "SAN_P_cell",
+        "aCM4",
+        "AVN_P_cell",
+        "aCM2",
+        "aCM1"
+      ],
+      "san_rank": 1,
+      "n_groups": 76
+    },
+    "HRV_RMSSDc": {
+      "top5": [
+        "SAN_P_cell",
+        "aCM2",
+        "AVN_P_cell",
+        "aCM4",
+        "aCM1"
+      ],
+      "san_rank": 1,
+      "n_groups": 76
+    },
+    "HRV_SDNN": {
+      "top5": [
+        "SAN_P_cell",
+        "aCM2",
+        "AVN_P_cell",
+        "aCM5",
+        "PC3_str"
+      ],
+      "san_rank": 1,
+      "n_groups": 76
+    },
+    "HRV_SDNNc": {
+      "top5": [
+        "SAN_P_cell",
+        "PC3_str",
+        "B",
+        "NC6_schwann",
+        "PC1_vent"
+      ],
+      "san_rank": 1,
+      "n_groups": 76
+    },
+    "HeartFailure": {
+      "top5": [
+        "AVN_bundle_cell",
+        "AVN_P_cell",
+        "SAN_P_cell",
+        "aCM4",
+        "aCM3"
+      ],
+      "san_rank": 3,
+      "n_groups": 76
+    },
+    "Intelligence": {
+      "top5": [
+        "SAN_P_cell",
+        "unclassified",
+        "NC1_glial",
+        "aCM1",
+        "NC6_schwann"
+      ],
+      "san_rank": 1,
+      "n_groups": 76
+    },
+    "PRinterval": {
+      "top5": [
+        "unclassified",
+        "AVN_P_cell",
+        "SAN_P_cell",
+        "aCM2",
+        "vCM4"
+      ],
+      "san_rank": 3,
+      "n_groups": 76
+    },
+    "QRSduration": {
+      "top5": [
+        "unclassified",
+        "AVN_bundle_cell",
+        "vCM1",
+        "vCM4",
+        "Purkinje"
+      ],
+      "san_rank": 7,
+      "n_groups": 76
+    },
+    "QTinterval": {
+      "top5": [
+        "unclassified",
+        "vCM1",
+        "vCM3_stressed",
+        "vCM4",
+        "vCM5"
+      ],
+      "san_rank": 14,
+      "n_groups": 76
+    },
+    "ReactionTime": {
+      "top5": [
+        "SAN_P_cell",
+        "NC1_glial",
+        "NC5_glial",
+        "aCM1",
+        "NC2_glial_NGF+"
+      ],
+      "san_rank": 1,
+      "n_groups": 76
+    },
+    "RestingHeartRate": {
+      "top5": [
+        "unclassified",
+        "AVN_P_cell",
+        "SAN_P_cell",
+        "aCM3",
+        "aCM4"
+      ],
+      "san_rank": 3,
+      "n_groups": 76
+    },
+    "RheumatoidArthritis": {
+      "top5": [
+        "unclassified",
+        "DC",
+        "T/NK_cycling",
+        "B",
+        "CD8+T_te"
+      ],
+      "san_rank": 59,
+      "n_groups": 76
+    },
+    "RheumatoidArthritis_noMHC": {
+      "top5": [
+        "CD4+T_act",
+        "CD4+T_naive",
+        "unclassified",
+        "CD4+T_reg",
+        "MAIT-like"
+      ],
+      "san_rank": 45,
+      "n_groups": 76
+    }
+  }
+}

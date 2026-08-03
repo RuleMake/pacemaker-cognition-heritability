@@ -1,0 +1,13 @@
+{
+  "san_marker_rho": 0.4420792595726273,
+  "ceiling_rho": 0.8350511669602537,
+  "ceiling_type": "aCM4",
+  "other_marker_rho_mean": 0.18332274764543335,
+  "other_marker_rho_max": 0.3008557266724728,
+  "other_best": "PC1_vent",
+  "node_concentration_rank": 1,
+  "n_celltypes": 16,
+  "frac_zero": 0.0,
+  "share": 0.05434967219612494,
+  "verdict": "USABLE"
+}

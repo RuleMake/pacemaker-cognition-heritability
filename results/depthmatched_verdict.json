@@ -1,0 +1,65 @@
+{
+  "Q1": {
+    "RestingHeartRate": {
+      "median": 6.073570018253999,
+      "max": 14.268080188523793,
+      "frac_sig": 0.9957823507601038,
+      "old_median": 5.468388473299198
+    },
+    "AtrialFibrillation": {
+      "median": 3.619583706717581,
+      "max": 13.47979595296702,
+      "frac_sig": 0.9839636633296255,
+      "old_median": 3.184847052434452
+    },
+    "PRinterval": {
+      "median": 4.775282900524836,
+      "max": 11.846238643055166,
+      "frac_sig": 0.9868372265480163,
+      "old_median": 3.963870855406597
+    },
+    "EducationalAttainment": {
+      "median": 2.3223023517394585,
+      "max": 10.5643725220397,
+      "frac_sig": 0.8448739340007415,
+      "old_median": 1.7187373400613128
+    }
+  },
+  "Q2": {
+    "RestingHeartRate": {
+      "old": 0.7840614901084849,
+      "new": 0.24958823565581018
+    },
+    "AtrialFibrillation": {
+      "old": 0.7378471319329305,
+      "new": 0.23569727211496014
+    },
+    "PRinterval": {
+      "old": 0.7670288826400609,
+      "new": 0.30724154044471225
+    },
+    "EducationalAttainment": {
+      "old": 0.5193542458085881,
+      "new": 0.0055172862679035845
+    }
+  },
+  "verdict": {
+    "AtrialFibrillation": {
+      "compartment": "myocardium_atrial",
+      "effect": 1.0772890951605547,
+      "pos": 8,
+      "n": 8,
+      "p": 0.0078125,
+      "result": "SURVIVES"
+    },
+    "RestingHeartRate": {
+      "compartment": "node",
+      "effect": 0.3652564649691206,
+      "pos": 4,
+      "n": 8,
+      "p": 1.0,
+      "result": "does not hold"
+    }
+  },
+  "signal_alive": true
+}

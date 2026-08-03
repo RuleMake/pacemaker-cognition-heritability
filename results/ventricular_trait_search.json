@@ -1,0 +1,311 @@
+{
+  "QRS duration": [
+    {
+      "accession": "GCST007103",
+      "trait": "QRS duration",
+      "n": 77898,
+      "sample": "77,898 European ancestry individuals",
+      "year": "2018",
+      "pmid": "30012220",
+      "ss": true
+    },
+    {
+      "accession": "GCST90624624",
+      "trait": "QRS duration",
+      "n": 30975,
+      "sample": "30,975 European ancestry individuals",
+      "year": "2025",
+      "pmid": "41068971",
+      "ss": true
+    },
+    {
+      "accession": "GCST008054",
+      "trait": "QRS duration",
+      "n": 17046,
+      "sample": "3,274 African American individuals, 13,420 Hispanic/Latino i",
+      "year": "2019",
+      "pmid": "31217584",
+      "ss": true
+    },
+    {
+      "accession": "GCST007105",
+      "trait": "QRS duration",
+      "n": 7695,
+      "sample": "7,695 African American individuals ",
+      "year": "2018",
+      "pmid": "30012220",
+      "ss": true
+    },
+    {
+      "accession": "GCST90012727",
+      "trait": "QRS duration",
+      "n": 6920,
+      "sample": "6,920 European ancestry individuals",
+      "year": "2021",
+      "pmid": "33441150",
+      "ss": true
+    },
+    {
+      "accession": "GCST90012728",
+      "trait": "QRS axis.horizontal plane Refe",
+      "n": 6798,
+      "sample": "6,798 European ancestry individuals",
+      "year": "2021",
+      "pmid": "33441150",
+      "ss": true
+    },
+    {
+      "accession": "GCST90012675",
+      "trait": "QRS axis from EKG",
+      "n": 6793,
+      "sample": "6,793 European ancestry individuals",
+      "year": "2021",
+      "pmid": "33441150",
+      "ss": true
+    }
+  ],
+  "QRS complex": [
+    {
+      "accession": "GCST90624625",
+      "trait": "Number of QRS complexes in a s",
+      "n": 30975,
+      "sample": "30,975 European ancestry individuals",
+      "year": "2025",
+      "pmid": "41068971",
+      "ss": true
+    }
+  ],
+  "QT interval": [
+    {
+      "accession": "GCST90165291",
+      "trait": "QT interval",
+      "n": 117532,
+      "sample": "86,165 European ancestry individuals, 13,975 Hispanic or Lat",
+      "year": "2022",
+      "pmid": "36271874",
+      "ss": true
+    },
+    {
+      "accession": "GCST90165290",
+      "trait": "QT interval",
+      "n": 76995,
+      "sample": "62,976 European ancestry individuals, 6,238 Hispanic or Lati",
+      "year": "2022",
+      "pmid": "36271874",
+      "ss": true
+    },
+    {
+      "accession": "GCST90624626",
+      "trait": "QT interval",
+      "n": 30975,
+      "sample": "30,975 European ancestry individuals",
+      "year": "2025",
+      "pmid": "41068971",
+      "ss": true
+    },
+    {
+      "accession": "GCST90624627",
+      "trait": "Corrected QT interval (QTc)",
+      "n": 30975,
+      "sample": "30,975 European ancestry individuals",
+      "year": "2025",
+      "pmid": "41068971",
+      "ss": true
+    },
+    {
+      "accession": "GCST004642",
+      "trait": "QT interval (ambient particula",
+      "n": 22158,
+      "sample": "14,889 European ancestry individuals, 5,707 African American",
+      "year": "2017",
+      "pmid": "28749367",
+      "ss": true
+    },
+    {
+      "accession": "GCST008043",
+      "trait": "QT interval",
+      "n": 17348,
+      "sample": "3,293 African American individuals, 13,698 Hispanic/Latino i",
+      "year": "2019",
+      "pmid": "31217584",
+      "ss": true
+    }
+  ],
+  "PR interval": [
+    {
+      "accession": "GCST010321",
+      "trait": "PR interval",
+      "n": 292566,
+      "sample": "271,570 European ancestry individuals, 8,173 African America",
+      "year": "2020",
+      "pmid": "32439900",
+      "ss": true
+    },
+    {
+      "accession": "GCST010320",
+      "trait": "PR interval",
+      "n": 271570,
+      "sample": "271,570 European ancestry individuals",
+      "year": "2020",
+      "pmid": "32439900",
+      "ss": true
+    },
+    {
+      "accession": "GCST90624623",
+      "trait": "PR interval",
+      "n": 30975,
+      "sample": "30,975 European ancestry individuals",
+      "year": "2025",
+      "pmid": "41068971",
+      "ss": true
+    },
+    {
+      "accession": "GCST008042",
+      "trait": "PR interval",
+      "n": 17422,
+      "sample": "3,360 African American individuals, 13,702 Hispanic/Latino i",
+      "year": "2019",
+      "pmid": "31217584",
+      "ss": true
+    }
+  ],
+  "bundle branch block": [
+    {
+      "accession": "GCST90480159",
+      "trait": "Bundle branch block (PheCode 4",
+      "n": 613537,
+      "sample": "2,051 African American or Afro-Caribbean cases, 117,100 Afri",
+      "year": "2024",
+      "pmid": "39024449",
+      "ss": true
+    },
+    {
+      "accession": "GCST90475956",
+      "trait": "Bundle branch block (PheCode 4",
+      "n": 435856,
+      "sample": "13,081 European ancestry cases, 422,775 European ancestry co",
+      "year": "2024",
+      "pmid": "39024449",
+      "ss": true
+    },
+    {
+      "accession": "GCST90083991",
+      "trait": "ICD10 I44: Atrioventricular an",
+      "n": 387371,
+      "sample": "5,320 European ancestry cases, 382,051 European ancestry con",
+      "year": "2021",
+      "pmid": "34662886",
+      "ss": true
+    },
+    {
+      "accession": "GCST90080005",
+      "trait": "ICD10 I44: Atrioventricular an",
+      "n": 387371,
+      "sample": "5,320 European ancestry cases, 382,051 European ancestry con",
+      "year": "2021",
+      "pmid": "34662886",
+      "ss": true
+    },
+    {
+      "accession": "GCST90436105",
+      "trait": "Bundle branch block (PheCode 4",
+      "n": 384272,
+      "sample": "3,353 British ancestry cases, 380,919 British ancestry contr",
+      "year": "2018",
+      "pmid": "30104761",
+      "ss": true
+    },
+    {
+      "accession": "GCST90477914",
+      "trait": "Bundle branch block (PheCode 4",
+      "n": 119151,
+      "sample": "2,051 African American or Afro-Caribbean cases, 117,100 Afri",
+      "year": "2024",
+      "pmid": "39024449",
+      "ss": true
+    },
+    {
+      "accession": "GCST90477913",
+      "trait": "Bundle branch block (PheCode 4",
+      "n": 58530,
+      "sample": "977 Hispanic or Latin American cases, 57,553 Hispanic or Lat",
+      "year": "2024",
+      "pmid": "39024449",
+      "ss": true
+    },
+    {
+      "accession": "GCST90726907",
+      "trait": "ICD10 I44: Atrioventricular an",
+      "n": 44026,
+      "sample": "493 British Bangladeshi or British Pakistani cases, 43,533 B",
+      "year": "2026",
+      "pmid": "41896352",
+      "ss": true
+    }
+  ],
+  "heart rate variability measurement": [
+    {
+      "accession": "GCST90281263",
+      "trait": "Heart rate variability (root m",
+      "n": 46075,
+      "sample": "46,075 European ancestry individuals",
+      "year": "2023",
+      "pmid": "37803156",
+      "ss": true
+    },
+    {
+      "accession": "GCST90281264",
+      "trait": "Heart rate variability (correc",
+      "n": 46075,
+      "sample": "46,075 European ancestry individuals",
+      "year": "2023",
+      "pmid": "37803156",
+      "ss": true
+    },
+    {
+      "accession": "GCST90281265",
+      "trait": "Heart rate variability (standa",
+      "n": 46075,
+      "sample": "46,075 European ancestry individuals",
+      "year": "2023",
+      "pmid": "37803156",
+      "ss": true
+    },
+    {
+      "accession": "GCST90281266",
+      "trait": "Heart rate variability (correc",
+      "n": 46075,
+      "sample": "46,075 European ancestry individuals",
+      "year": "2023",
+      "pmid": "37803156",
+      "ss": true
+    },
+    {
+      "accession": "GCST004734",
+      "trait": "Heart rate variability traits ",
+      "n": 27850,
+      "sample": "27,850 European ancestry individuals",
+      "year": "2017",
+      "pmid": "28613276",
+      "ss": true
+    },
+    {
+      "accession": "GCST004733",
+      "trait": "Heart rate variability traits ",
+      "n": 26523,
+      "sample": "26,523 European ancestry individuals",
+      "year": "2017",
+      "pmid": "28613276",
+      "ss": true
+    },
+    {
+      "accession": "GCST004732",
+      "trait": "Heart rate variability traits ",
+      "n": 24088,
+      "sample": "24,088 European ancestry individuals",
+      "year": "2017",
+      "pmid": "28613276",
+      "ss": true
+    }
+  ]
+}
