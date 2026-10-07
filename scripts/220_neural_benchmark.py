@@ -18,7 +18,7 @@ The comparator has to be strictly working cardiomyocytes for both arms, not the
 cardiomyocytes plus any other conduction population present, which makes sense when the
 focus cell is itself a conduction cell and makes no sense for glia. Running both arms
 against strict CM is the only apples-to-apples comparison available, and it is the
-comparator of the existing sensitivity analysis (Supplementary Table S2), so the
+comparator of the existing sensitivity analysis (Supplementary Table S6), so the
 conduction numbers this script prints are directly checkable against it.
 
 What each outcome would mean, written down before running:

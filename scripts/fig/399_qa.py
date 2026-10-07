@@ -8,6 +8,7 @@
 Writes its renderings to figures/qa/ and prints a pass/fail line per check.
 """
 
+import html
 import sys
 from pathlib import Path
 
@@ -18,7 +19,7 @@ import pandas as pd
 from PIL import Image
 
 from _style import (FIGDIR, MDE, MOUSE_CLASS, MOUSE_CLASS_HATCH, RESULTS,
-                    SE, SRCDIR, load)
+                    SE, SRCDIR, TRAIT_LABEL, load)
 
 QA = FIGDIR / "qa"
 QA.mkdir(parents=True, exist_ok=True)
@@ -70,9 +71,10 @@ AMB_KEY = {"Educational attainment": "EducationalAttainment",
            "Intelligence": "Intelligence", "Reaction time": "ReactionTime",
            "HRV, SDNN": "HRV_SDNN", "Rheumatoid arthritis": "RheumatoidArthritis"}
 bad = [r.trait for _, r in c.iterrows()
-       if abs(AMB[AMB_KEY[r.trait]]["clean"] - r.clean_125) > 5e-5
+       if abs(AMB[AMB_KEY[r.trait]]["clean"] - r.low_load_125) > 5e-5
        or abs(AMB[AMB_KEY[r.trait]]["all"] - r.all_245) > 5e-5]
-check("Fig2 c: ambient split matches ambient_stratified.json", not bad, str(bad))
+check("Fig2 d: ambient split matches ambient_stratified.json",
+      not bad and len(c) == len(AMB_KEY), f"{len(c)} rows, mismatches {bad}")
 
 b = pd.read_excel(SRCDIR / "Fig2.xlsx", sheet_name="b_forest")
 bad = [r.trait for _, r in b.iterrows()
@@ -296,13 +298,32 @@ for f, letters in panels.items():
 check("every drawn panel letter is described in its legend, and vice versa",
       not missing, str(missing))
 
+# Canvas strings follow one rule: a string that names a thing takes sentence
+# case, a string that reads as running text does not. Trait names are where that
+# drifts, so check them and only them: a drawn string that is a trait name, or is
+# one after a multiplication or arrow sign. An axis label that opens with a trait
+# in running text is not a whole-string match and is left alone.
+CANON = {v.lower(): v for v in TRAIT_LABEL.values()}
+CANON["rheumatoid arthritis"] = "Rheumatoid arthritis"
+miscased = []
+for f in FIGS + EXTENDED:
+    svg = (FIGDIR / f"{f}.svg").read_text(encoding="utf-8")
+    for raw in re.findall(r"<text[^>]*>(.*?)</text>", svg, re.S):
+        drawn = " ".join(html.unescape(re.sub(r"<[^>]+>", "", raw)).split())
+        for part in re.split(r"\s*[\u00d7\u2192]\s*", drawn):
+            word = part.strip(" ,:;")
+            if word.lower() in CANON and word != CANON[word.lower()]:
+                miscased.append(f"{f}: {word!r}")
+check("trait names on the canvases are all in one case",
+      not miscased, str(sorted(set(miscased))))
+
 # submission requires both series to be cited in numerical order.
 # The manuscript file is chosen here rather than hard-coded, because during the
 # 2026-08-03 renumbering two manuscript files carried figure callouts under two
 # different numberings, and a check that silently read the stale one passed the
 # whole way through. Whichever file this resolves to is printed by every
 # manuscript check below, so it is never in doubt which prose was validated.
-CANDIDATES = ["MANUSCRIPT-v3.md", "MANUSCRIPT.md"]
+CANDIDATES = ["MANUSCRIPT-v4.md", "MANUSCRIPT-v3.md", "MANUSCRIPT.md"]
 MS = next((FIGDIR.parent / c for c in CANDIDATES
            if (FIGDIR.parent / c).exists()), None)
 assert MS is not None, CANDIDATES
@@ -427,7 +448,9 @@ check(f"{MS.name} carries the same figure legends as FIGURE-CAPTIONS.md",
 # Panels must also be cited in order, or a reordered figure silently leaves its
 # callouts pointing at the wrong panel. Figure 2 is a declared exception: its
 # Results paragraph opens on the cell-state ranking in e (see FIGURE-QA.md 7).
-PANEL_ORDER_EXEMPT = {2}
+# Figure 5 is the other: in v4 the Across-phenotypes paragraph cites the per-donor
+# QT reversal in B before the stability section opens on the ranges in A.
+PANEL_ORDER_EXEMPT = {2, 5}
 order_first = {n: [] for n in range(1, len(FIGS) + 1)}
 for m in re.finditer(r"(?:Figure |and )(\d)([A-F])\b", body):
     if m.group(2) not in order_first[int(m.group(1))]:
@@ -436,7 +459,7 @@ misordered = [f"Fig{n} cited {''.join(v)}" for n, v in order_first.items()
               if n not in PANEL_ORDER_EXEMPT and v != sorted(v)]
 check(f"{MS.name} cites panels in panel order, exceptions declared",
       not misordered, str(misordered) if misordered
-      else f"in order, Figure {sorted(PANEL_ORDER_EXEMPT)[0]} exempt")
+      else f"in order, Figures {sorted(PANEL_ORDER_EXEMPT)} exempt")
 
 print()
 print("FAILED:" if fails else "all checks passed", *fails, sep="\n  " if fails else "")

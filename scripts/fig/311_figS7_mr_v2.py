@@ -29,9 +29,18 @@ COG = ("EducationalAttainment", "Intelligence", "ReactionTime")
 AUT = ("HRV_RMSSD", "HRV_SDNN", "RestingHeartRate")
 NEG = ("AtrialFibrillation", "QTinterval")
 
+import matplotlib.pyplot as plt
+plt.rcParams.update({"mathtext.fontset": "custom", "mathtext.rm": "Arial",
+                     "mathtext.default": "regular"})
 BONF_N1 = 0.05 / 6          # negative-control family threshold
 BONF_ALL = 0.05 / 24        # threshold across the hypothesis tests
 
+
+
+def sci(p: float) -> str:
+    """P as 'm.m × 10^e' with a mathtext exponent, set in the figure's Arial."""
+    m, e = f"{p:.1e}".split("e")
+    return f"{m} × 10$^{{{int(e)}}}$"
 
 def main():
     df = pd.read_csv(RESULTS / "mr_v2_estimates.tsv", sep="\t")
@@ -62,7 +71,7 @@ def main():
 
     axf = ax_mm(fig, 56.0, 42.0, 60.0, 90.0)
     axf.set_ylim(len(order) + 0.6, -1.8)
-    axf.set_xlim(-0.30, 0.42)
+    axf.set_xlim(-0.30, 0.50)
     axf.set_yticks([])
     axf.spines["left"].set_visible(False)
     axf.tick_params(labelsize=FS_MIN)
@@ -100,7 +109,7 @@ def main():
         axf.text(-0.315, r, f"{PRETTY.get(a, a)} → {PRETTY.get(b, b)}",
                  fontsize=FS_MIN, ha="right", va="center", color=col,
                  clip_on=False)
-        axf.text(0.415, r, f"{int(v['n_iv'])}", fontsize=FS_MIN, ha="right",
+        axf.text(0.495, r, f"{int(v['n_iv'])}", fontsize=FS_MIN, ha="right",
                  va="center", color=GREY_TEXT)
         if trips:
             axf.text(hi + 0.012, r, f"P = {v['ivw_p']:.4f}", fontsize=FS_MIN,
@@ -134,7 +143,7 @@ def main():
         axf.text(-0.315, y - 0.75, title, fontsize=FS_MIN, ha="right",
                  va="center", color=tcol, fontweight="bold", clip_on=False)
         y += n + 1
-    axf.text(0.415, -0.75, "instruments", fontsize=FS_MIN, ha="right",
+    axf.text(0.495, -0.75, "instruments", fontsize=FS_MIN, ha="right",
              va="center", color=GREY_TEXT)
 
     # ---- panel B: the control that separates the two instrument sets --------
@@ -142,7 +151,8 @@ def main():
     ra = [(e, P[(e, "RheumatoidArthritis")])
           for e in COG + AUT if (e, "RheumatoidArthritis") in P]
     axr.set_ylim(len(ra) - 0.5, -0.5)
-    axr.set_xlim(-0.30, 0.42)
+    # widened 2026-10-01: with the RA sample size corrected to 97,173, EA -> RA is -0.31
+    axr.set_xlim(-0.45, 0.42)
     axr.set_yticks([])
     axr.spines["left"].set_visible(False)
     axr.tick_params(labelsize=FS_MIN)
@@ -155,10 +165,10 @@ def main():
         hi = v["ivw"] + 1.96 * v["ivw_se"]
         axr.plot([lo, hi], [r, r], color=col, linewidth=0.6)
         axr.scatter([v["ivw"]], [r], s=10, c=col, linewidths=0, zorder=4)
-        axr.text(-0.315, r, f"{PRETTY.get(e, e)} instruments", fontsize=FS_MIN,
+        axr.text(-0.465, r, f"{PRETTY.get(e, e)} instruments", fontsize=FS_MIN,
                  ha="right", va="center", color=col, clip_on=False)
         if col == ACC_FAIL:
-            axr.text(hi + 0.012, r, f"P = {v['ivw_p']:.1e}", fontsize=FS_MIN,
+            axr.text(hi + 0.012, r, f"P = {sci(v['ivw_p'])}", fontsize=FS_MIN,
                      ha="left", va="center", color=ACC_FAIL, clip_on=False)
         rows.append(dict(test=f"{PRETTY.get(e, e)} -> Rheumatoid arthritis",
                          group="instrument-quality control",
@@ -179,8 +189,8 @@ def main():
                          trips_negative_control=False))
 
     text_mm(fig, 5.0, 3.5,
-            "red, trips the negative-control family or the instrument control; "
-            "amber, fewer than 10 instruments",
+            "magenta, the negative-control outcome family; red, trips the negative-control "
+            "family or the instrument control; amber, fewer than 10 instruments",
             fontsize=FS_MIN, ha="left", va="center", color=GREY_TEXT)
     letter_mm(fig, 1.5, 138.0, "A")
     letter_mm(fig, 1.5, 33.0, "B")

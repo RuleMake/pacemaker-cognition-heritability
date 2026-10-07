@@ -116,7 +116,7 @@ axb.annotate("", xy=(0.02, san1), xytext=(0.02, san0),
 # band the label used to sit in
 axb.text(0.02, san1 - 0.012, f"{share * 100:.0f}% removed", fontsize=FS_MIN,
          va="center", ha="left", color=INK)
-axb.text(-0.32, 0.212, "educational attainment", fontsize=FS_MIN, va="top",
+axb.text(-0.32, 0.212, "Educational attainment", fontsize=FS_MIN, va="top",
          ha="left", color=FAMILY_COLOR["cognitive"])
 letter_mm(fig, 65.0, H - 2.0, "B")
 
@@ -132,7 +132,7 @@ axc.set_ylim(len(KO_ORDER) - 0.4, -0.6)
 axc.set_yticks([])
 axc.spines["left"].set_visible(False)
 axc.tick_params(labelsize=FS_MIN)
-axc.set_xlabel("loss in the score's z when the\nneural programme is deleted",
+axc.set_xlabel("loss in the score's z when the\nneural program is deleted",
                fontsize=6, labelpad=1.5, linespacing=1.4)
 axc.set_xticks([0, 0.02, 0.04, 0.06])
 
@@ -171,7 +171,7 @@ axd.set_ylim(-1.9, 1.5)
 axd.set_yticks([])
 axd.spines["left"].set_visible(False)
 axd.tick_params(labelsize=FS_MIN)
-axd.set_xlabel("AUC of the glutamatergic gene set\nin conduction cells",
+axd.set_xlabel("AUC of the glutamatergic gene set\nin SAN pacemaker cells",
                fontsize=6, labelpad=1.5, linespacing=1.4)
 axd.axvspan(0.46, GL["null_p95"], facecolor=GREY_FILL, edgecolor="none",
             zorder=0)
@@ -192,7 +192,7 @@ axd.annotate(f"observed {GL['observed']:.3f}\nP = {GL['p']:.3f}",
              linespacing=1.5,
              arrowprops=dict(arrowstyle="-", linewidth=0.4, color=GREY_RULE,
                              shrinkA=0, shrinkB=1))
-axd.text(0.620, -1.72, f"grey, {GL['n_null']} matched random sets",
+axd.text(0.620, -1.72, f"gray, {GL['n_null']} matched random sets",
          fontsize=FS_MIN, ha="right", va="bottom", color=GREY_TEXT)
 rows_d = [dict(quantity="observed", value=round(GL["observed"], 4)),
           dict(quantity="null mean", value=round(GL["null_mean"], 4)),

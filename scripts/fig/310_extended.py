@@ -650,7 +650,7 @@ def ed1():
     edu = strat["EducationalAttainment"]["SAN_P_cell"]["auc"]
     edu_adj = strat["EducationalAttainment_lenadj"]["SAN_P_cell"]["auc"]
     # label placed below-right of its point, inside the empty lower-right corner
-    ax.annotate("educational attainment,\nsinoatrial pacemaker",
+    ax.annotate("Educational attainment,\nsinoatrial pacemaker",
                 xy=(edu, edu_adj), xytext=(0.712, 0.462), fontsize=FS_MIN,
                 ha="right", va="center", color=INK, linespacing=1.4,
                 arrowprops=dict(arrowstyle="-", linewidth=0.4, color=GREY_RULE,

@@ -85,7 +85,7 @@ for j, (key, fam, mk) in enumerate(SHOW):
     lab = TRAIT_LABEL[key].replace(" (control)", "")
     axa.text(-0.32, yv, lab, fontsize=FS_MIN, color=FAMILY_COLOR[fam],
              va="center", ha="left")
-axa.text(-0.5, 0.845, "grey band, effects too small to detect at 80% power",
+axa.text(-0.5, 0.845, "gray band, effects too small to detect at 80% power",
          fontsize=FS_MIN, color=GREY_TEXT, ha="left", va="top")
 letter_mm(fig, 1.5, H - 2.0, "A")
 
@@ -199,7 +199,7 @@ axd.add_patch(Rectangle((i_und - 0.45, 0), 0.9, 0.36, fill=False,
 axd.add_patch(Rectangle((i_und - 0.45, 0), 0.9, 0.36, fill=False,
                         edgecolor=ACC_POWER, linewidth=0.6, zorder=2))
 axd.text(-0.55, 0.357, "line, minimum detectable effect at 80% power;"
-         "  dots, all 19 traits", fontsize=FS_MIN, color=GREY_TEXT, ha="left",
+         "  dots, all 19 gene sets", fontsize=FS_MIN, color=GREY_TEXT, ha="left",
          va="top")
 letter_mm(fig, 64.0, 48.0, "D")
 

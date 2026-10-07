@@ -302,17 +302,17 @@ for r, key in enumerate(FOREST):
     axc.scatter([d["clean"]], [r], s=13, c=col, zorder=5, linewidths=0)
     axc.text(0.408, r, FOREST_LAB[key].replace("\n", " "), ha="right",
              va="center", fontsize=6, color=col, clip_on=False)
-    rows_c.append(dict(trait=FOREST_LAB[key].replace("\n", " "),
+    rows_d.append(dict(trait=FOREST_LAB[key].replace("\n", " "),
                        all_245=round(d["all"], 4), z_all=round(d["z_all"], 3),
-                       clean_125=round(d["clean"], 4),
-                       z_clean=round(d["z_clean"], 3),
-                       carrying_120=round(d["carrying"], 4),
-                       z_carrying=round(d["z_carrying"], 3)))
+                       low_load_125=round(d["clean"], 4),
+                       z_low_load=round(d["z_clean"], 3),
+                       high_load_120=round(d["carrying"], 4),
+                       z_high_load=round(d["z_carrying"], 3)))
 
 for j, (lab, mk) in enumerate([
-        ("no detectable neural transcripts, n = 125", None),
+        ("low-neural-load half, n = 125", None),
         ("all sinoatrial pacemaker cells, n = 245", "o"),
-        ("carrying neural transcripts, n = 120", "s")]):
+        ("high-neural-load half, n = 120", "s")]):
     yv = 4.62 + j * 0.42
     if mk is None:
         axc.scatter([0.432], [yv], s=13, c=INK, linewidths=0, clip_on=False)

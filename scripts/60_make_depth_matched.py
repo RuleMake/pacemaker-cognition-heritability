@@ -112,6 +112,9 @@ with open(f"{DST}/manifest.tsv", "w") as f:
     for s in d.section:
         f.write(f"{s.split('__')[0]}\t{s.split('__')[1]}\t{s}\n")
 
+# Do not print an eyeballed "before" value here. An earlier version printed
+# "(was ~0.6-0.9 before)", which was a guess rather than a measurement, and it was
+# read back out of this log and quoted as data. Only umi_cv_after is computed.
 print(f"\nresidual depth variation after thinning: CV = {d.umi_cv_after.mean():.4f}"
-      f"  (was ~0.6-0.9 before)")
+      f"  (pre-thinning CV is not computed)")
 print(f"wrote {len(d)} sections to {DST}")

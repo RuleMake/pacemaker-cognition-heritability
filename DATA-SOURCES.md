@@ -3,8 +3,10 @@
 Every input to this study is public. None of it is redistributed from this
 repository; each item below is obtained from its originator under that
 originator's terms. Full per-trait detail, including sample sizes, ancestry
-composition and genome-wide-significant variant counts, is in Table S14 of the
-manuscript, and variant counts before and after harmonization are in Table S1.
+composition and genome-wide-significant variant counts, is in Table S2 of
+the manuscript. Table S15 adds the count surviving harmonization to the
+reference panel for all 18 traits, and the published count where it was
+recorded.
 
 ## Single-cell and spatial
 
@@ -33,7 +35,7 @@ indices and their corrected forms, resting heart rate, PR interval, QRS duration
 atrial fibrillation, atrial flutter, QT interval, bundle branch block,
 atrioventricular block, Brugada syndrome, heart failure, and the rheumatoid
 arthritis control with its MHC-free rebuild — are listed with their source
-publication and accession in Table S14.
+publication and accession in Table S2.
 
 ## Reference panels and tools
 
@@ -43,7 +45,7 @@ publication and accession in Table S14.
 | HapMap3 LD scores, no HLA | LD score regression weights |
 | NCBI b37 gene locations | MAGMA gene annotation |
 
-Software versions and parameters are in Supplementary Methods (Data S3). URLs for
+Software versions and parameters are in Supplementary Methods (Data S1). URLs for
 tools without a DOI are in the Web resources section of the manuscript.
 
 ## Terms

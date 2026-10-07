@@ -345,111 +345,187 @@ def stage4():
 
 
 # ----------------------------------------------------------------- estimators
-def weighted_median(bx, by, sy, n_boot=1000):
-    r = by / bx
-    w = (bx ** 2) / (sy ** 2)
+# Corrected 2026-10-01 (MR-AUDIT-2026-10-01.md, E5-E6 and minor items). The first
+# versions of the weighted median, weighted mode, MR-RAPS and MR-PRESSO departed from
+# their reference definitions: the median bootstrap ignored beta_x noise, the mode used a
+# weighted bandwidth, "MR-RAPS" kept a log-variance term that makes it identical to IVW
+# when every SNP has the same SE (true here, beta = Z/sqrt(N)), and MR-PRESSO's empirical
+# P had a floor of 1/1001, so no outlier could be declared once k > 50. Each is now a
+# transcription of the reference: TwoSampleMR 0.7.9 (weighted median, weighted mode,
+# Egger), Zhao et al. 2020 robust adjusted profile score with Huber loss (TwoSampleMR's
+# default for mr_raps), and MRPRESSO 1.0 with NbDistribution >= 2k/0.05.
+def _wmed(r, w):
     o = np.argsort(r)
-    cw = np.cumsum(w[o]) - 0.5 * w[o]
-    est = np.interp(0.5, cw / np.sum(w), r[o])
-    boots = np.empty(n_boot)
-    for i in range(n_boot):
-        byb = RNG.normal(by, sy)
-        rb = byb / bx
-        ob = np.argsort(rb)
-        cwb = (np.cumsum(w[ob]) - 0.5 * w[ob]) / np.sum(w)
-        boots[i] = np.interp(0.5, cwb, rb[ob])
-    return est, float(np.std(boots))
+    r, w = r[o], w[o]
+    cw = (np.cumsum(w) - 0.5 * w) / np.sum(w)
+    below = np.max(np.flatnonzero(cw < 0.5))
+    return r[below] + (r[below + 1] - r[below]) * (0.5 - cw[below]) / (cw[below + 1] - cw[below])
 
 
-def weighted_mode(bx, by, sy, phi=1.0, n_boot=1000):
-    """Hartwig's mode-based estimate: consistent if the largest homogeneous subset of
-    instruments is valid, which is a different failure mode from IVW and from the
-    median. Agreement across the three is the only thing that counts as evidence."""
-    def mode_of(R, w):
-        """R is (n_rep, k); returns one mode per row. Vectorised because the
-        bootstrap over a 300-instrument set is otherwise hours, not seconds."""
-        R = np.atleast_2d(R)
-        mu = (R * w).sum(1, keepdims=True) / w.sum()
-        s = np.sqrt((w * (R - mu) ** 2).sum(1) / w.sum())
-        iqr = (np.quantile(R, .75, axis=1) - np.quantile(R, .25, axis=1)) / 1.34
-        h = np.maximum(phi * 0.9 * np.minimum(s, iqr) * R.shape[1] ** -0.2, 1e-8)
-        lo, hi = R.min(1) - 3 * h, R.max(1) + 3 * h
-        g = np.linspace(0, 1, 512)[None, :] * (hi - lo)[:, None] + lo[:, None]
-        out = np.empty(len(R))
-        for i in range(len(R)):
-            d = (w[None, :] * np.exp(-0.5 * ((g[i][:, None] - R[i][None, :]) / h[i]) ** 2)).sum(1)
-            out[i] = g[i][np.argmax(d)]
-        return out
+def weighted_median(bx, by, sx, sy, n_boot=1000):
+    """TwoSampleMR::mr_weighted_median: second-order weights, parametric bootstrap of
+    both beta_x and beta_y, SE = SD of the bootstrap medians."""
     r = by / bx
-    w = 1.0 / (sy ** 2 / bx ** 2)
-    est = mode_of(r[None, :], w)[0]
-    boots = mode_of(RNG.normal(by, sy, size=(n_boot, len(by))) / bx[None, :], w)
-    return float(est), float(np.std(boots))
+    w = 1.0 / (sy ** 2 / bx ** 2 + by ** 2 * sx ** 2 / bx ** 4)
+    est = _wmed(r, w)
+    bxb = RNG.normal(bx, sx, size=(n_boot, len(bx)))
+    byb = RNG.normal(by, sy, size=(n_boot, len(by)))
+    boots = np.array([_wmed(byb[i] / bxb[i], w) for i in range(n_boot)])
+    return float(est), float(np.std(boots, ddof=1))
 
 
-def mr_raps(bx, by, sx, sy):
-    """Profile-likelihood RAPS with over-dispersion. Unlike IVW it does not assume the
-    instruments are strong, and unlike Egger it does not need I^2_GX near 1."""
-    def nll(par):
-        b, logt2 = par
-        v = sy ** 2 + b ** 2 * sx ** 2 + np.exp(logt2)
-        return 0.5 * np.sum((by - b * bx) ** 2 / v + np.log(v))
-    b0 = np.sum(by * bx / sy ** 2) / np.sum(bx ** 2 / sy ** 2)
-    res = optimize.minimize(nll, [b0, np.log(max(np.var(by - b0 * bx), 1e-8))],
-                            method="Nelder-Mead",
-                            options=dict(xatol=1e-10, fatol=1e-12, maxiter=5000))
-    b = res.x[0]
-    h = 1e-5
-    d2 = (nll([b + h, res.x[1]]) - 2 * nll([b, res.x[1]]) + nll([b - h, res.x[1]])) / h ** 2
-    return float(b), float(np.sqrt(1.0 / d2)) if d2 > 0 else np.nan
+def _mode(r, wn, phi=1.0):
+    sd = np.std(r, ddof=1)
+    mad = 1.4826 * np.median(np.abs(r - np.median(r)))
+    h = max(1e-8, phi * 0.9 * min(sd, mad) / len(r) ** 0.2)
+    g = np.linspace(r.min() - 3 * h, r.max() + 3 * h, 512)   # stats::density defaults
+    dens = (wn[None, :] * np.exp(-0.5 * ((g[:, None] - r[None, :]) / h) ** 2)).sum(1)
+    return g[np.argmax(dens)]
 
 
-def mr_presso(bx, by, sy, n_sim=1000, alpha=0.05):
-    """Global heterogeneity test and outlier removal with a simulated null.
+def weighted_mode(bx, by, sx, sy, n_boot=1000):
+    """TwoSampleMR weighted mode (Hartwig 2017): bandwidth from the unweighted SD and
+    MAD of the ratio estimates, second-order weights, SE = MAD of the bootstrap modes,
+    P from t(k - 1)."""
+    r = by / bx
+    se = np.sqrt(sy ** 2 / bx ** 2 + by ** 2 * sx ** 2 / bx ** 4)
+    wn = se ** -2 / np.sum(se ** -2)
+    est = _mode(r, wn)
+    boots = np.array([_mode(RNG.normal(r, se), wn) for _ in range(n_boot)])
+    s = 1.4826 * np.median(np.abs(boots - np.median(boots)))
+    p = float(2 * stats.t.sf(abs(est / s), len(r) - 1)) if s > 0 else np.nan
+    return float(est), float(s), p
 
-    Declared in advance: the global test carries essentially the same information as
-    Cochran's Q, so with Q/df of 3-5 it is expected to fire almost everywhere and its
-    firing is not news. The part that can change a conclusion is the distortion test
-    -- whether removing the outliers moves the estimate.
+
+def mr_raps(bx, by, sx, sy, k_huber=1.345):
+    """MR-RAPS (Zhao et al. 2020): robust adjusted profile score with over-dispersion and
+    Huber loss. beta solves the adjusted profile score at fixed tau2 (no log-variance
+    term); tau2 solves its own estimating equation; sandwich SE."""
+    from scipy import integrate
+    psi = lambda t: np.clip(t, -k_huber, k_huber)
+    rho = lambda t: np.where(np.abs(t) <= k_huber, 0.5 * t ** 2,
+                             k_huber * np.abs(t) - 0.5 * k_huber ** 2)
+    delta = integrate.quad(lambda z: z * psi(np.array(z)) * stats.norm.pdf(z), -np.inf, np.inf)[0]
+    c1 = integrate.quad(lambda z: psi(np.array(z)) ** 2 * stats.norm.pdf(z), -np.inf, np.inf)[0]
+    c2 = integrate.quad(lambda z: (z * psi(np.array(z)) - delta) ** 2 * stats.norm.pdf(z),
+                        -np.inf, np.inf)[0]
+
+    def eq_tau(b, t2):
+        v = sy ** 2 + b ** 2 * sx ** 2 + t2
+        t_ = (by - b * bx) / np.sqrt(v)
+        return np.sum((t_ * psi(t_) - delta) / v)
+
+    def obj(b, t2):
+        v = sy ** 2 + b ** 2 * sx ** 2 + t2
+        return np.sum(rho((by - b * bx) / np.sqrt(v)))
+
+    b = np.sum(bx * by / sy ** 2) / np.sum(bx ** 2 / sy ** 2)
+    t2 = 0.0
+    for _ in range(100):
+        hi = 10 * np.var(by) + 1e-6
+        t2n = (optimize.brentq(lambda x: eq_tau(b, x), 0, hi)
+               if eq_tau(b, 0) > 0 and eq_tau(b, hi) < 0 else 0.0)
+        wdt = max(10 * abs(b), 1.0)
+        bn = optimize.minimize_scalar(lambda x: obj(x, t2n), bounds=(b - wdt, b + wdt),
+                                      method="bounded", options=dict(xatol=1e-12)).x
+        done = abs(bn - b) < 1e-12 and abs(t2n - t2) < 1e-16
+        b, t2 = bn, t2n
+        if done:
+            break
+
+    def scores(bb, tt):
+        v = sy ** 2 + bb ** 2 * sx ** 2 + tt
+        t_ = (by - bb * bx) / np.sqrt(v)
+        return np.column_stack([psi(t_) * (bx * (sy ** 2 + tt) + bb * sx ** 2 * by) / v ** 1.5,
+                                (t_ * psi(t_) - delta) / v])
+
+    v = sy ** 2 + b ** 2 * sx ** 2 + t2
+    g = (bx * (sy ** 2 + t2) + b * sx ** 2 * by) / v ** 1.5
+    if t2 > 0:
+        h = np.array([1e-6 * max(abs(b), 1e-3), 1e-6 * t2])
+        th = np.array([b, t2])
+        A = np.column_stack([(scores(*(th + np.eye(2)[i] * h[i])).sum(0)
+                              - scores(*(th - np.eye(2)[i] * h[i])).sum(0)) / (2 * h[i])
+                             for i in range(2)])
+        B = np.diag([c1 * np.sum(g ** 2), c2 * np.sum(1 / v ** 2)])
+        Ai = np.linalg.inv(A)
+        se = float(np.sqrt((Ai @ B @ Ai.T)[0, 0]))
+    else:
+        hb = 1e-6 * max(abs(b), 1e-3)
+        a = (scores(b + hb, 0)[:, 0].sum() - scores(b - hb, 0)[:, 0].sum()) / (2 * hb)
+        se = float(np.sqrt(c1 * np.sum(g ** 2)) / abs(a))
+    return float(b), se
+
+
+def mr_presso(bx, by, sx, sy, alpha=0.05):
+    """MRPRESSO 1.0 mr_presso() for one exposure (Verbanck et al. 2018).
+
+    Global test: RSS of leave-one-out predictions against data simulated with beta_x
+    noise around the observed LOO fits. Outlier test only when the global test is
+    significant, with Bonferroni p*k. Distortion test by the package's resampling of
+    non-outlying instruments. NbDistribution = max(2000, 2k/alpha), above the k/alpha
+    the package requires for the outlier test to be able to fire at all.
     """
     k = len(bx)
-    w = 1.0 / sy ** 2
-    Sxx = float(np.sum(bx ** 2 * w))
-    b_all = float(np.sum(by * bx * w) / Sxx)
+    nb = int(max(2000, np.ceil(2 * k / alpha)))
+    s = np.sign(bx)
+    s[s == 0] = 1
+    bx, by = bx * s, by * s
+    w = 1 / sy ** 2
+    X, Y = bx * np.sqrt(w), by * np.sqrt(w)
 
-    def rss_rows(BY):
-        """Leave-one-out residual sum of squares for every row of BY at once.
+    def loo(Xm, Ym):
+        Sxx = (Xm * Xm).sum(-1, keepdims=True)
+        Sxy = (Xm * Ym).sum(-1, keepdims=True)
+        return (Sxy - Xm * Ym) / (Sxx - Xm * Xm)
 
-        The leave-one-out slope has a closed form -- b_(-i) = (Sxy - by_i bx_i w_i) /
-        (Sxx - bx_i^2 w_i) -- so the whole simulated null is one broadcast instead of
-        n_sim * k regressions. Same numbers, three orders of magnitude faster.
-        """
-        BY = np.atleast_2d(BY)
-        Sxy = (BY * bx * w).sum(1, keepdims=True)
-        num = Sxy - BY * bx * w
-        den = Sxx - bx ** 2 * w
-        b_loo = num / den
-        return (BY - b_loo * bx) ** 2 * w
+    bloo = loo(X[None], Y[None])[0]
+    rss_obs = np.sum((Y - bloo * X) ** 2)
+    bxr = RNG.normal(bx, sx, size=(nb, k))
+    byr = RNG.normal(bloo * bx, sy, size=(nb, k))
+    Xr, Yr = bxr * np.sqrt(w), byr * np.sqrt(w)
+    rss_exp = np.sum((Yr - loo(Xr, Yr) * Xr) ** 2, axis=1)
+    gp = float(np.mean(rss_exp > rss_obs))
+    b_all = float(np.sum(X * Y) / np.sum(X * X))
+    out = dict(global_p=gp, n_outliers=0, beta_outlier_corrected=np.nan,
+               distortion_p=np.nan, presso_nb=nb)
+    if gp < alpha:
+        p = np.mean((byr - bxr * bloo) ** 2 > ((by - bx * bloo) ** 2)[None, :], axis=0)
+        outl = np.minimum(p * k, 1) <= alpha
+        out["n_outliers"] = int(outl.sum())
+        if 0 < outl.sum() < k:
+            keep = ~outl
+            b_corr = float(np.sum(X[keep] * Y[keep]) / np.sum(X[keep] ** 2))
+            ref, non = np.flatnonzero(outl), np.flatnonzero(keep)
+            bexp = np.empty(nb)
+            for i in range(nb):
+                idx = np.concatenate([ref, RNG.choice(non, size=k - len(ref), replace=True)])[:k - len(ref)]
+                bexp[i] = np.sum(X[idx] * Y[idx]) / np.sum(X[idx] ** 2)
+            bias_obs = (b_all - b_corr) / abs(b_corr)
+            bias_exp = (b_all - bexp) / np.abs(bexp)
+            out.update(beta_outlier_corrected=b_corr,
+                       distortion_p=float(np.mean(np.abs(bias_exp) > abs(bias_obs))))
+    return out
 
-    obs = rss_rows(by)[0]
-    null = rss_rows(RNG.normal(b_all * bx, sy, size=(n_sim, k)))
-    gp = (1 + np.sum(null.sum(1) >= obs.sum())) / (n_sim + 1)
-    pj = (1 + (null >= obs[None, :]).sum(0)) / (n_sim + 1)
-    keep = pj >= alpha / k
-    if keep.sum() >= 5 and keep.sum() < k:
-        b_out = np.sum(by[keep] * bx[keep] / sy[keep] ** 2) / np.sum(bx[keep] ** 2 / sy[keep] ** 2)
-        se_a = np.sqrt(1 / np.sum(bx ** 2 / sy ** 2))
-        se_b = np.sqrt(1 / np.sum(bx[keep] ** 2 / sy[keep] ** 2))
-        dp = float(2 * stats.norm.sf(abs(b_all - b_out) / np.sqrt(se_a ** 2 + se_b ** 2)))
-    else:
-        b_out, dp = (b_all, np.nan)
-    return dict(global_p=float(gp), n_outliers=int((~keep).sum()),
-                beta_outlier_corrected=float(b_out), distortion_p=dp)
+
+def steiger_formal(m):
+    """Steiger directionality as a significance test (TwoSampleMR steiger_filtering,
+    continuous-trait form): r from beta and SE, Fisher z test of r_x against r_y. An
+    instrument is dropped only when it explains significantly more variance in the
+    outcome than in the exposure (P < 0.05). Registered as a sensitivity analysis."""
+    zx, zy = m.Z_x.to_numpy(), m.Z_y.to_numpy()
+    nx, ny = m.N_x.to_numpy(), m.N_y.to_numpy()
+    rx = np.abs(zx) / np.sqrt(zx ** 2 + nx - 2)
+    ry = np.abs(zy) / np.sqrt(zy ** 2 + ny - 2)
+    zd = (np.arctanh(rx) - np.arctanh(ry)) / np.sqrt(1 / (nx - 3) + 1 / (ny - 3))
+    p = 2 * stats.norm.sf(np.abs(zd))
+    return ~((ry > rx) & (p < 0.05))
 
 
 def stage5():
     data = outcomes2()
     frames = []
+    core = set(D.PAIRS)
     for r2, win, tag in [(0.001, 10_000_000, "primary"), (0.01, 1_000_000, "sensitivity")]:
         ivs = primary_instruments(r2, win)
         for ex, ou in PAIRS2:
@@ -462,33 +538,54 @@ def stage5():
             bx, by = m.beta_x.to_numpy(), m.beta_y.to_numpy()
             sx, sy = m.se_x.to_numpy(), m.se_y.to_numpy()
             b, sfe, sre, q, df = D.ivw(bx, by, sy)
-            wm, wmse = weighted_median(bx, by, sy)
-            mo, mose = weighted_mode(bx, by, sy)
+            wm, wmse = weighted_median(bx, by, sx, sy)
+            mo, mose, mop = weighted_mode(bx, by, sx, sy)
             rb, rse = mr_raps(bx, by, sx, sy)
-            pr = mr_presso(bx, by, sy) if len(bx) >= 10 else dict(
-                global_p=np.nan, n_outliers=0, beta_outlier_corrected=np.nan, distortion_p=np.nan)
+            pr = mr_presso(bx, by, sx, sy) if len(bx) >= 10 else dict(
+                global_p=np.nan, n_outliers=0, beta_outlier_corrected=np.nan,
+                distortion_p=np.nan, presso_nb=0)
             i2 = D.isq_gx(bx, sx)
             eb, ese, ei, esi = D.egger(bx, by, sy)
+            keep = steiger_formal(m)
+            bs, _, sres, _, _ = D.ivw(bx[keep], by[keep], sy[keep])
             nx, ny = float(m.N_x.iloc[0]), float(m.N_y.iloc[0])
             zb = float(np.median(np.abs(m.Z_x))) * np.sqrt(ny / nx)
             frames.append(dict(
                 spec=tag, exposure=ex, outcome=ou, n_iv=len(m),
                 F_mean=float((m.Z_x ** 2).mean()), F_min=float((m.Z_x ** 2).min()),
                 I2_gx=i2, steiger_z_bound=zb, steiger_null_cut=float(2 * stats.norm.sf(zb)),
-                ivw=b, ivw_se=sre, ivw_p=float(2 * stats.norm.sf(abs(b / sre))),
+                ivw=b, ivw_se=sre, ivw_se_fixed=sfe,
+                ivw_p=float(2 * stats.norm.sf(abs(b / sre))),
                 Q=q, Q_df=df, Q_over_df=q / df, Q_p=float(stats.chi2.sf(q, df)),
+                I2_higgins=max(0.0, (q - df) / q) if q > 0 else 0.0,
                 wmedian=wm, wmedian_se=wmse,
                 wmedian_p=float(2 * stats.norm.sf(abs(wm / wmse))) if wmse > 0 else np.nan,
-                wmode=mo, wmode_se=mose,
-                wmode_p=float(2 * stats.norm.sf(abs(mo / mose))) if mose > 0 else np.nan,
+                wmode=mo, wmode_se=mose, wmode_p=mop,
                 raps=rb, raps_se=rse,
                 raps_p=float(2 * stats.norm.sf(abs(rb / rse))) if rse == rse else np.nan,
                 egger=eb if i2 >= 0.9 else np.nan,
-                egger_intercept_p=(float(2 * stats.norm.sf(abs(ei / esi)))
+                egger_se=ese if i2 >= 0.9 else np.nan,
+                egger_intercept=ei if i2 >= 0.9 else np.nan,
+                egger_intercept_p=(float(2 * stats.t.sf(abs(ei / esi), len(m) - 2))
                                    if i2 >= 0.9 and esi > 0 else np.nan),
-                mde_80=2.802 * sre, **pr))
+                n_steiger_dropped=int((~keep).sum()), ivw_steiger=bs, ivw_steiger_se=sres,
+                ivw_steiger_p=float(2 * stats.norm.sf(abs(bs / sres))),
+                mde_80=2.802 * sre,
+                mde_80_bonf=float((stats.norm.isf(BONF_ALL / 2) + stats.norm.isf(0.2)) * sre),
+                **pr))
             print(f"  [{tag}] {ex:<24}->{ou:<24} nIV={len(m):>4} done", flush=True)
-    pd.DataFrame(frames).to_csv(OUTDIR / "mr_v2_estimates.tsv", sep="\t", index=False)
+    est = pd.DataFrame(frames)
+    # Benjamini-Hochberg across the 24-test core family within each specification,
+    # reported beside Bonferroni as registered
+    est["ivw_bh_q"] = np.nan
+    for tag, g in est.groupby("spec"):
+        g = g[[(e, o) in core for e, o in zip(g.exposure, g.outcome)]]
+        p = g.ivw_p.to_numpy()
+        o = np.argsort(p)
+        q = p[o] * len(p) / np.arange(1, len(p) + 1)
+        q = np.minimum.accumulate(q[::-1])[::-1].clip(max=1.0)
+        est.loc[g.index[o], "ivw_bh_q"] = q
+    est.to_csv(OUTDIR / "mr_v2_estimates.tsv", sep="\t", index=False)
     print(f"\nwrote {OUTDIR / 'mr_v2_estimates.tsv'}")
 
 
@@ -514,13 +611,17 @@ def stage6():
     n2 = mn[(mn.role == "N2 negative control") & mn.exposure.isin(COGNITIVE)]
     n2_fires = bool((n2.p < 0.05 / max(len(n2), 1)).any())
 
-    # N5: any test that would otherwise be called an effect must clear Bonferroni twice
+    # N5: any test that would otherwise be called an effect must clear Bonferroni under
+    # both clumping rules AND with the formal Steiger filter, as registered (the Steiger
+    # arm was not evaluated before 2026-10-01)
     cand = [k for k in core if P.loc[k, "ivw_p"] < BONF_ALL]
     n5_fail = {f"{e}->{o}": dict(primary_p=float(P.loc[(e, o), "ivw_p"]),
                                 sensitivity_p=float(S.loc[(e, o), "ivw_p"])
-                                if (e, o) in S.index else None)
+                                if (e, o) in S.index else None,
+                                steiger_p=float(P.loc[(e, o), "ivw_steiger_p"]))
                for e, o in cand
-               if (e, o) not in S.index or S.loc[(e, o), "ivw_p"] >= BONF_ALL}
+               if (e, o) not in S.index or S.loc[(e, o), "ivw_p"] >= BONF_ALL
+               or P.loc[(e, o), "ivw_steiger_p"] >= BONF_ALL}
 
     sign_disagree = {f"{e}->{o}": [float(P.loc[(e, o), "ivw"]), float(P.loc[(e, o), "wmedian"])]
                      for e, o in cand

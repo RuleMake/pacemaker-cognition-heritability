@@ -1,0 +1,8 @@
+{
+  "n_cells": 78134,
+  "n_traits": 19,
+  "max_abs_rho_norm_log_total_all_cells": 0.05,
+  "max_abs_rho_norm_any_covariate_all_cells": 0.216,
+  "max_abs_rho_within_conduction": 0.409,
+  "note": "Spearman correlations of the normalized per-cell scDRS score with the covariates regressed out during scoring. Not to be confused with the per-spot gsMap correlations in results/library_size_confound.json, which belong to the spatial arm."
+}

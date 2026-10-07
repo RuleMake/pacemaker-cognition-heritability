@@ -1,4 +1,4 @@
-# Cardiac pacemaker cells carry common-variant heritability for human cognitive traits but not for ventricular repolarization
+# Cardiac pacemaker cells are selectively enriched for the common-variant heritability of human cognitive traits
 
 Analysis code, pre-registered predictions and derived result tables for the study
 of the same name.
@@ -24,7 +24,7 @@ randomization.
 ## What is deliberately not here
 
 **Raw data.** Every input is public and is identified by accession in
-`DATA-SOURCES.md` and in Table S14 of the manuscript. The GWAS summary
+`DATA-SOURCES.md` and in Table S2 of the manuscript. The GWAS summary
 statistics, the human cell atlas and the mouse expression matrices are
 redistributed by their originators under their own terms, and re-hosting them
 here is not ours to do.
@@ -44,7 +44,7 @@ were written to disk before the corresponding results were computed, in three
 arms, with gaps of 12 to 24 minutes between each prediction file and the first
 output it predicts.
 
-**This repository was created at submission.** Its commit dates therefore record
+**This repository was created on 3 August 2026, after the original analysis.** Its commit dates therefore record
 the deposition, not the analysis, and no commit has been backdated. The ordering
 evidence is filesystem modification times on the analysis machine plus the
 analysis logs. `PREREGISTRATION.md` sets out what that does and does not
@@ -65,7 +65,7 @@ pip install numpy pandas scipy scikit-learn anndata scanpy matplotlib
 ```
 
 `scdrs` and MAGMA are external and are listed with their versions in
-Supplementary Methods (Data S3). LD score regression is re-implemented in
+Supplementary Methods (Data S1). LD score regression is re-implemented in
 `scripts/170_ldsc_rg.py` because the released version requires Python 2; it is
 validated against published estimates before use, and that check runs first and
 prints before anything else.
@@ -77,6 +77,32 @@ Two audits added after the first review round:
   a donor-cluster bootstrap)
 - `scripts/251_ea_ancestry_sensitivity.py` — exposure of the population-level
   estimates to the ancestry composition of the educational attainment GWAS
+
+## Changes in version 1.1.0
+
+A re-run of the Mendelian randomization and LD score regression on 2026-10-01 found
+errors in data intake and in several estimators. All are corrected here; both
+Mendelian randomization conclusions are unchanged.
+
+- QT interval summary statistics had their effect alleles inverted; the sign is
+  corrected, checked against established loci (`scripts/261_fix_qt_sign_ra_n.py`).
+- The rheumatoid arthritis GWAS carried a placeholder N of 250,000; the published
+  97,173 is used.
+- `scripts/170_ldsc_rg.py` now fits both heritabilities and the genetic covariance on
+  the pair-merged SNP set with a block-jackknife ratio estimator, as standard LD
+  score regression does (educational attainment with SDNN: +0.234 became +0.228).
+- The weighted median, weighted mode, MR-Egger, MR-RAPS and MR-PRESSO estimators in
+  `scripts/184_mr_v2.py` follow their reference implementations and were checked
+  against TwoSampleMR 0.7.9 and MRPRESSO in R on all 60 tests; a formal Steiger
+  test and deterministic tie-breaking in instrument clumping were added.
+- New: the effect full mediation would require and the share mediated
+  (`scripts/186_mr_rg_consistency.py`), four sensitivity analyses
+  (`scripts/187_mr_sensitivity.py`), and residual technical association of the
+  cell-level scores (`scripts/253_table_s11_depth.py`, Table S5).
+
+Supplemental table and data numbers cited in this repository follow the
+manuscript as revised; they were renumbered in order of first citation. Script and
+result file names keep the numbers they were created with.
 
 ## Citation
 

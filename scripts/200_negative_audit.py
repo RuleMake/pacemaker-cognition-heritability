@@ -109,17 +109,22 @@ print("=" * 92)
 print("Each registered prediction named a target cell state. Grade the prediction")
 print("by the power of the state it pointed at, not by whether it came true.\n")
 
-# the registered predictions, as written in results/axis_predictions.json
-PRED = {
-    "AVblock": ["AVN_P_cell"],
-    "PRinterval": ["AVN_P_cell"],
-    "Brugada": ["Purkinje", "AVN_bundle_cell"],
-    "BundleBranchBlock": ["Purkinje", "AVN_bundle_cell"],
-    "QRSduration": ["Purkinje", "AVN_bundle_cell"],
-    "HRV_RMSSD": ["SAN_P_cell"],
-    "HRV_SDNN": ["SAN_P_cell"],
-    "RestingHeartRate": ["SAN_P_cell"],
-}
+# The registered predictions, read from results/axis_predictions.json rather than
+# transcribed. An earlier hand-copied version of this dict omitted HRV_RMSSDc and
+# HRV_SDNNc, so the audit scored 11 of the 13 registered conduction slots. Reading
+# the registration file is the only way this cannot drift from what was registered.
+def _registered_conduction_slots(path):
+    pred = json.loads(Path(path).read_text(encoding="utf-8"))["predictions"]
+    out = {}
+    for trait, spec in pred.items():
+        target = spec.get("conduction")
+        if not target:
+            continue
+        out[trait] = target if isinstance(target, list) else [target]
+    return out
+
+
+PRED = _registered_conduction_slots(ROOT / "results/axis_predictions.json")
 # reference effects: the two sizes this project actually observes
 REF_BIG = 0.674     # EDU in SAN pacemaker cells
 REF_MOD = 0.600     # a modest but publishable cell-type effect

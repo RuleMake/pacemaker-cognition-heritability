@@ -251,7 +251,8 @@ for _s, _se, _mde in [("SAN_P_cell", 0.0209, 0.558), ("AVN_P_cell", 0.0260, 0.57
                       ("Purkinje", 0.0348, 0.598), ("AVN_bundle_cell", 0.0488, 0.637)]:
     assert abs(SE[_s] - _se) < 5e-5, f"SE drift for {_s}: {SE[_s]}"
     assert abs(MDE[_s] - _mde) < 5e-4, f"MDE drift for {_s}: {MDE[_s]}"
-assert abs(REFERENCE_RG - 0.234) < 5e-4, f"reference rg drift: {REFERENCE_RG}"
+# 0.228 since 2026-10-01: standard ldsc --rg (merged SNP set, ratio jackknife), was 0.234
+assert abs(REFERENCE_RG - 0.228) < 5e-4, f"reference rg drift: {REFERENCE_RG}"
 
 
 # --------------------------------------------------------------------------- #

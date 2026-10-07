@@ -150,13 +150,13 @@ axc.axvspan(REFERENCE_RG, 0.28, facecolor=GREY_FILL, edgecolor="none", zorder=0)
 axc.axvline(REFERENCE_RG, color=INK, linewidth=0.5, linestyle=(0, (2, 1.6)),
             zorder=1)
 # horizontal, above row 0: the rotated form was taller than the 18 mm panel
-axc.text(0.0, -0.72, f"grey, at or above the reference effect {REFERENCE_RG:.3f}",
+axc.text(0.0, -0.72, f"gray, at or above the reference effect {REFERENCE_RG:.3f}",
          fontsize=FS_MIN, ha="left", va="center", color=INK)
 
 rows_c = []
 LBL = {"EducationalAttainment": "Educational attainment",
        "Intelligence": "Intelligence", "ReactionTime": "Reaction time",
-       "AtrialFibrillation": "atrial fibrillation", "QTinterval": "QT interval"}
+       "AtrialFibrillation": "Atrial fibrillation", "QTinterval": "QT interval"}
 for r, (k, v) in enumerate(EQ.items()):
     a, b = k.split("|")
     axc.plot([abs(v["rg"]), v["upper"]], [r, r], color=INK, linewidth=0.7,
@@ -184,7 +184,7 @@ axd.set_yticks([])
 axd.spines["left"].set_visible(False)
 axd.tick_params(labelsize=FS_MIN)
 axd.set_xlabel("genetic correlation r$_g$", fontsize=6, labelpad=1.5)
-axd.text(-1.235, 0, "resting heart rate ×\nHRV, RMSSD", ha="right",
+axd.text(-1.235, 0, "Resting heart rate ×\nHRV, RMSSD", ha="right",
          va="center", fontsize=FS_MIN, linespacing=1.5, clip_on=False)
 axd.axvspan(-0.74, -0.55, facecolor=GREY_FILL, edgecolor="none", zorder=0)
 axd.text(-0.645, 1.45, "published\n−0.74 to −0.55", fontsize=FS_MIN,

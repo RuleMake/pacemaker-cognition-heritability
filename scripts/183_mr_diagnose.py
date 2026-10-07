@@ -156,11 +156,26 @@ def clean(d):
         ["SNP", "A1", "A2", "Z", "N", "beta", "se"]]
 
 
+def by_abs_z(d):
+    """Order by |Z| descending with ties broken by rsID, deterministically.
+
+    Added 2026-10-01. The educational-attainment and intelligence files carry Z computed
+    from rounded beta and SE, so 98% and 92% of their genome-wide-significant variants
+    share |Z| with another variant. Sorting on |Z| alone with pandas' default
+    (non-stable) sort left the lead variant of a tied LD block to the sort
+    implementation, and the published instrument sets could not be reproduced on a
+    different numpy build (MR-AUDIT-2026-10-01.md, E7).
+    """
+    return (d.assign(_absz=d.Z.abs())
+             .sort_values(["_absz", "SNP"], ascending=[False, True], kind="mergesort")
+             .drop(columns="_absz"))
+
+
 def prune_distance(sig, bim, window_bp):
     sig = sig.merge(bim, on="SNP").drop_duplicates("SNP")
     if sig.empty:
         return sig
-    sig = sig.sort_values("Z", key=np.abs, ascending=False)
+    sig = by_abs_z(sig)
     keep, taken = [], {}
     for r in sig.itertuples():
         w = taken.setdefault(r.chrom, [])
@@ -200,7 +215,10 @@ def ivw(bx, by, sy):
 
 
 def egger(bx, by, sy):
+    """MR-Egger as TwoSampleMR::mr_egger_regression: residual standard error floored at
+    1 (multiplicative random effects never shrink the fixed-effect SE), P from t(k - 2)."""
     s = np.sign(bx)
+    s[s == 0] = 1
     bx, by = bx * s, by * s
     w = 1.0 / sy ** 2
     X = np.column_stack([np.ones(len(bx)), bx])
@@ -208,7 +226,8 @@ def egger(bx, by, sy):
     coef = np.linalg.solve(A, X.T @ (by * w))
     resid = by - X @ coef
     dof = max(len(bx) - 2, 1)
-    cov = np.linalg.inv(A) * (np.sum(w * resid ** 2) / dof)
+    sigma2 = np.sum(w * resid ** 2) / dof
+    cov = np.linalg.inv(A) * max(1.0, sigma2)
     return coef[1], np.sqrt(cov[1, 1]), coef[0], np.sqrt(cov[0, 0])
 
 
@@ -445,7 +464,7 @@ def clump_r2(sig, bim_idx, r2_thresh, window_bp):
     d = sig.merge(bim_idx, on="SNP").drop_duplicates("SNP")
     keep = []
     for chrom, sub in d.groupby("chrom"):
-        sub = sub.sort_values("Z", key=np.abs, ascending=False).reset_index(drop=True)
+        sub = by_abs_z(sub).reset_index(drop=True)
         G = read_dosages(chrom, sub.row.to_numpy())
         bp = sub.bp.to_numpy()
         alive = np.ones(len(sub), dtype=bool)

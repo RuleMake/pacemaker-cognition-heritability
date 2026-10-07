@@ -1,56 +1,222 @@
 [
   {
     "test": "HRV_RMSSD->EducationalAttainment",
-    "beta_needed": 0.2253226625559506,
-    "se_needed": 0.058940982585270425,
+    "exposure": "HRV_RMSSD",
+    "outcome": "EducationalAttainment",
+    "rg": 0.23484649196357205,
+    "beta_needed": 0.1899708132475091,
+    "se_needed": 0.04795633650712772,
+    "needed_ci95": [
+      0.11050304478157442,
+      0.3157174322551509
+    ],
     "ivw": -0.0009039698006811,
     "ivw_se": 0.0091747134763359,
-    "z": -3.792517993704465,
-    "p": 0.00014912744105197962
-  },
-  {
-    "test": "HRV_SDNN->EducationalAttainment",
-    "beta_needed": 0.20985901242801128,
-    "se_needed": 0.05315455889481289,
-    "ivw": -0.0075628352987933,
-    "ivw_se": 0.011281917700631,
-    "z": -4.00123762506649,
-    "p": 6.301203907446305e-05
+    "z": -3.9092797015284186,
+    "p": 9.257173144338007e-05,
+    "share_mediated": -0.004758466762488068,
+    "share_mediated_ci95": [
+      -0.11526946324243251,
+      0.1026675632767482
+    ],
+    "analysis": "primary"
   },
   {
     "test": "HRV_RMSSD->Intelligence",
-    "beta_needed": 0.2106349556454957,
-    "se_needed": 0.11148170799650654,
+    "exposure": "HRV_RMSSD",
+    "outcome": "Intelligence",
+    "rg": 0.12718866145048066,
+    "beta_needed": 0.18516516570283442,
+    "se_needed": 0.09674837458318332,
+    "needed_ci95": [
+      -0.001331714300749727,
+      0.4068953933266392
+    ],
     "ivw": -0.0228994653342654,
     "ivw_se": 0.013827192115744,
-    "z": -2.0788932716119075,
-    "p": 0.03762716128835522
-  },
-  {
-    "test": "HRV_SDNN->Intelligence",
-    "beta_needed": 0.2800349027615683,
-    "se_needed": 0.10880766356169412,
-    "ivw": -0.0291959338578446,
-    "ivw_se": 0.0207181275963236,
-    "z": -2.791834977395485,
-    "p": 0.0052410077782603474
+    "z": -2.1289421099612067,
+    "p": 0.03325905023300023,
+    "share_mediated": -0.12367048222782902,
+    "share_mediated_ci95": [
+      NaN,
+      NaN
+    ],
+    "analysis": "primary"
   },
   {
     "test": "HRV_RMSSD->ReactionTime",
-    "beta_needed": 0.12887646630125194,
-    "se_needed": 0.08345935309361516,
+    "exposure": "HRV_RMSSD",
+    "outcome": "ReactionTime",
+    "rg": 0.11348165150593062,
+    "beta_needed": 0.1064858734755357,
+    "se_needed": 0.08923280852115216,
+    "needed_ci95": [
+      -0.02186556864892573,
+      0.34362792665683134
+    ],
     "ivw": -0.004002954534025,
     "ivw_se": 0.0121325557736208,
-    "z": -1.57558422831153,
-    "p": 0.11512165321989448
+    "z": -1.2269197550719024,
+    "p": 0.2198527527399644,
+    "share_mediated": -0.03759141380330272,
+    "share_mediated_ci95": [
+      NaN,
+      NaN
+    ],
+    "analysis": "primary"
+  },
+  {
+    "test": "HRV_SDNN->EducationalAttainment",
+    "exposure": "HRV_SDNN",
+    "outcome": "EducationalAttainment",
+    "rg": 0.22765000800603652,
+    "beta_needed": 0.19932553285606322,
+    "se_needed": 0.053432740113208144,
+    "needed_ci95": [
+      0.11264556415616372,
+      0.34603459948551674
+    ],
+    "ivw": -0.0075628352987933,
+    "ivw_se": 0.011281917700631,
+    "z": -3.7884149545966497,
+    "p": 0.00015161147343893886,
+    "share_mediated": -0.0379421300945653,
+    "share_mediated_ci95": [
+      -0.1856665501293368,
+      0.08084703133118121
+    ],
+    "analysis": "primary"
+  },
+  {
+    "test": "HRV_SDNN->Intelligence",
+    "exposure": "HRV_SDNN",
+    "outcome": "Intelligence",
+    "rg": 0.17561162877730963,
+    "beta_needed": 0.2761329731579023,
+    "se_needed": 0.10558674185035376,
+    "needed_ci95": [
+      0.08165434739339741,
+      0.5286989511822413
+    ],
+    "ivw": -0.0291959338578446,
+    "ivw_se": 0.0207181275963236,
+    "z": -2.837624239424252,
+    "p": 0.004545065458346083,
+    "share_mediated": -0.10573142904288133,
+    "share_mediated_ci95": [
+      -0.5275943206192895,
+      0.045169875090444934
+    ],
+    "analysis": "primary"
   },
   {
     "test": "HRV_SDNN->ReactionTime",
-    "beta_needed": 0.16527502009238754,
-    "se_needed": 0.07759876369129064,
+    "exposure": "HRV_SDNN",
+    "outcome": "ReactionTime",
+    "rg": 0.15515410858580236,
+    "beta_needed": 0.16142490034027415,
+    "se_needed": 0.10220235828946556,
+    "needed_ci95": [
+      0.014656966432742738,
+      0.44679926484709476
+    ],
     "ivw": -0.0069071545530826,
     "ivw_se": 0.0211003719177315,
-    "z": -2.141133178537482,
-    "p": 0.0322632997668329
+    "z": -1.6130282130374742,
+    "p": 0.10673837845800452,
+    "share_mediated": -0.04278865613993087,
+    "share_mediated_ci95": [
+      NaN,
+      NaN
+    ],
+    "analysis": "primary"
+  },
+  {
+    "test": "RestingHeartRate->EducationalAttainment",
+    "exposure": "RestingHeartRate",
+    "outcome": "EducationalAttainment",
+    "rg": -0.08242959057617572,
+    "beta_needed": -0.052985226131097275,
+    "se_needed": 0.015331042114762427,
+    "needed_ci95": [
+      -0.085061179615225,
+      -0.02435702938429497
+    ],
+    "ivw": -0.0112347776895951,
+    "ivw_se": 0.0070902004003741,
+    "z": 2.4717314429885686,
+    "p": 0.013446048364675731,
+    "share_mediated": 0.21203604306222554,
+    "share_mediated_ci95": [
+      -0.05188103500093924,
+      0.6769967863057131
+    ],
+    "analysis": "primary"
+  },
+  {
+    "test": "RestingHeartRate->Intelligence",
+    "exposure": "RestingHeartRate",
+    "outcome": "Intelligence",
+    "rg": -0.03125128486546536,
+    "beta_needed": -0.03580768049609161,
+    "se_needed": 0.030651194778035788,
+    "needed_ci95": [
+      -0.09814944290578026,
+      0.022423515849212906
+    ],
+    "ivw": 0.0020808834824019,
+    "ivw_se": 0.0150415834429459,
+    "z": 1.1097020018803994,
+    "p": 0.26712745997802423,
+    "share_mediated": -0.05811276948332433,
+    "share_mediated_ci95": [
+      NaN,
+      NaN
+    ],
+    "analysis": "primary"
+  },
+  {
+    "test": "RestingHeartRate->ReactionTime",
+    "exposure": "RestingHeartRate",
+    "outcome": "ReactionTime",
+    "rg": 0.04586998600868524,
+    "beta_needed": 0.03475841292296774,
+    "se_needed": 0.023838968696609158,
+    "needed_ci95": [
+      -0.010542323713428538,
+      0.08387789199710577
+    ],
+    "ivw": 0.0153710157823326,
+    "ivw_se": 0.010988362293664,
+    "z": -0.7385792822413357,
+    "p": 0.4601625084404719,
+    "share_mediated": 0.44222432757209423,
+    "share_mediated_ci95": [
+      NaN,
+      NaN
+    ],
+    "analysis": "primary"
+  },
+  {
+    "test": "HRV_RMSSDc->EducationalAttainment",
+    "exposure": "HRV_RMSSDc",
+    "outcome": "EducationalAttainment",
+    "rg": 0.22425559687357763,
+    "beta_needed": 0.1951358917896667,
+    "se_needed": 0.05538744958567493,
+    "needed_ci95": [
+      0.10729519031664696,
+      0.35693291562225304
+    ],
+    "ivw": -0.0078936408235459,
+    "ivw_se": 0.0078321513247381,
+    "z": -3.629515448793941,
+    "p": 0.000283953737693547,
+    "share_mediated": -0.040452019109095044,
+    "share_mediated_ci95": [
+      -0.15870418175269002,
+      0.041538797207073506
+    ],
+    "analysis": "sensitivity"
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "title": "Analysis code and pre-registered predictions for: Cardiac pacemaker cells carry common-variant heritability for human cognitive traits but not for ventricular repolarization",
+  "title": "Analysis code and pre-registered predictions for: Cardiac pacemaker cells are selectively enriched for the common-variant heritability of human cognitive traits",
   "description": "Analysis pipeline, pre-registered prediction files and derived result tables for a study of single-cell heritability enrichment in the human cardiac conduction system. Single-cell heritability for eighteen traits was scored in a human heart atlas that dissected sinoatrial and atrioventricular nodal tissue, with each conduction population compared only against the myocyte lineage of the same donor, region and sequencing chemistry. Genome-wide genetic correlations were estimated by LD score regression and causal structure tested by bidirectional Mendelian randomization. Raw data are not redistributed; every input is public and identified by accession in DATA-SOURCES.md. Per-cell score matrices are archived separately as a companion dataset.",
   "upload_type": "software",
   "license": "mit",

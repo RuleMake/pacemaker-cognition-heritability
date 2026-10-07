@@ -222,7 +222,7 @@ for r, t in enumerate(order):
     axh.scatter([human], [r], s=12, c=GREY_TEXT, linewidths=0, zorder=4)
     axm.scatter([mouse], [r], s=14, c=col, linewidths=0, zorder=4)
     # outside the axis: the largest mouse AUC is 0.856, so nothing reaches here
-    axm.text(0.925, r, "pass" if passed else "FAIL", fontsize=FS_MIN,
+    axm.text(0.925, r, "pass" if passed else "fail", fontsize=FS_MIN,
              ha="left", va="center", color=col, clip_on=False,
              fontweight="normal" if passed else "bold")
     axh.text(0.420, r, LAB[t], fontsize=6, ha="right", va="center",
@@ -305,9 +305,9 @@ axe3.set_ylabel("mouse AUC", fontsize=6, labelpad=2)
 axe3.set_title("cardiovascular\ngenes removed", fontsize=6, pad=2.5,
                linespacing=1.4)
 zero_line(axe3, 0.5)
-SHORT = {"ReactionTime": ("react. time", "o"),
-         "EducationalAttainment": ("educ. attain.", "^"),
-         "Intelligence": ("intelligence", "s")}
+SHORT = {"ReactionTime": ("React. time", "o"),
+         "EducationalAttainment": ("Educ. attain.", "^"),
+         "Intelligence": ("Intelligence", "s")}
 col = FAMILY_COLOR["cognitive"]
 for j, t in enumerate(SHORT):
     d = MAUD["subtraction"][t]

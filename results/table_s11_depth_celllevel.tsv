@@ -1,0 +1,96 @@
+Trait	Population	n	rho_norm_log_total	rho_norm_n_genes	rho_norm_pct_mt	rho_raw_log_total
+Educational attainment	All cells	78134	0.022	-0.004	-0.167	0.027
+Educational attainment	SAN pacemaker	245	0.071	0.073	0.041	-0.206
+Educational attainment	AVN pacemaker	155	0.126	0.084	-0.02	-0.103
+Educational attainment	AV bundle	38	-0.312	-0.388	-0.114	-0.379
+Educational attainment	Purkinje	110	0.045	0.057	0.228	-0.041
+Intelligence	All cells	78134	0.021	0.001	-0.157	0.02
+Intelligence	SAN pacemaker	245	0.112	0.127	-0.101	-0.152
+Intelligence	AVN pacemaker	155	0.122	0.082	0.125	-0.096
+Intelligence	AV bundle	38	-0.247	-0.27	-0.206	-0.278
+Intelligence	Purkinje	110	-0.137	-0.175	0.041	-0.224
+Reaction time	All cells	78134	0.012	0.002	-0.155	0.017
+Reaction time	SAN pacemaker	245	0.301	0.318	-0.01	-0.046
+Reaction time	AVN pacemaker	155	0.131	0.069	0.186	-0.126
+Reaction time	AV bundle	38	-0.136	-0.152	0.373	-0.296
+Reaction time	Purkinje	110	0.359	0.316	0.297	0.155
+HRV, SDNN corrected	All cells	78134	0.008	-0.014	0.02	0.014
+HRV, SDNN corrected	SAN pacemaker	245	0.184	0.186	-0.098	-0.051
+HRV, SDNN corrected	AVN pacemaker	155	0.122	0.091	-0.088	-0.126
+HRV, SDNN corrected	AV bundle	38	0.129	0.131	-0.101	-0.105
+HRV, SDNN corrected	Purkinje	110	0.093	0.084	-0.008	-0.0
+HRV, SDNN	All cells	78134	0.009	-0.005	-0.066	0.015
+HRV, SDNN	SAN pacemaker	245	0.227	0.225	-0.083	-0.055
+HRV, SDNN	AVN pacemaker	155	0.124	0.066	0.107	-0.16
+HRV, SDNN	AV bundle	38	-0.041	-0.064	0.193	-0.249
+HRV, SDNN	Purkinje	110	0.055	0.052	-0.06	-0.028
+HRV, RMSSD corrected	All cells	78134	0.013	0.028	-0.038	0.013
+HRV, RMSSD corrected	SAN pacemaker	245	0.278	0.288	-0.097	-0.029
+HRV, RMSSD corrected	AVN pacemaker	155	0.202	0.152	0.085	-0.079
+HRV, RMSSD corrected	AV bundle	38	0.027	0.002	0.162	-0.075
+HRV, RMSSD corrected	Purkinje	110	0.132	0.135	-0.147	0.057
+HRV, RMSSD	All cells	78134	0.01	0.043	-0.072	0.008
+HRV, RMSSD	SAN pacemaker	245	0.242	0.251	-0.044	-0.074
+HRV, RMSSD	AVN pacemaker	155	0.101	0.042	0.253	-0.16
+HRV, RMSSD	AV bundle	38	-0.112	-0.144	0.278	-0.197
+HRV, RMSSD	Purkinje	110	0.023	0.078	-0.142	-0.051
+Resting heart rate	All cells	78134	-0.001	0.029	-0.199	0.007
+Resting heart rate	SAN pacemaker	245	-0.228	-0.226	0.087	-0.435
+Resting heart rate	AVN pacemaker	155	-0.08	-0.133	0.3	-0.361
+Resting heart rate	AV bundle	38	-0.33	-0.363	0.355	-0.377
+Resting heart rate	Purkinje	110	-0.204	-0.085	-0.072	-0.308
+PR interval	All cells	78134	-0.05	-0.02	-0.216	-0.042
+PR interval	SAN pacemaker	245	-0.09	-0.092	-0.027	-0.346
+PR interval	AVN pacemaker	155	0.091	0.03	0.158	-0.213
+PR interval	AV bundle	38	-0.237	-0.265	0.326	-0.342
+PR interval	Purkinje	110	0.097	0.187	0.066	-0.081
+QRS duration	All cells	78134	0.016	0.039	-0.092	0.022
+QRS duration	SAN pacemaker	245	0.065	0.077	0.017	-0.168
+QRS duration	AVN pacemaker	155	0.077	0.031	0.182	-0.202
+QRS duration	AV bundle	38	-0.278	-0.308	0.204	-0.317
+QRS duration	Purkinje	110	0.103	0.227	0.101	0.02
+Heart failure	All cells	78134	0.02	0.031	-0.109	0.026
+Heart failure	SAN pacemaker	245	0.029	0.058	-0.082	-0.166
+Heart failure	AVN pacemaker	155	0.096	0.055	0.187	-0.169
+Heart failure	AV bundle	38	-0.057	-0.074	0.124	-0.195
+Heart failure	Purkinje	110	-0.088	-0.033	0.071	-0.104
+Atrial flutter	All cells	78134	0.001	0.035	-0.185	0.004
+Atrial flutter	SAN pacemaker	245	0.042	0.033	-0.023	-0.189
+Atrial flutter	AVN pacemaker	155	0.014	-0.024	0.25	-0.271
+Atrial flutter	AV bundle	38	-0.299	-0.287	0.222	-0.39
+Atrial flutter	Purkinje	110	0.109	0.272	0.116	-0.06
+Atrial fibrillation	All cells	78134	-0.036	-0.013	-0.198	-0.022
+Atrial fibrillation	SAN pacemaker	245	-0.004	0.004	0.017	-0.278
+Atrial fibrillation	AVN pacemaker	155	0.176	0.133	0.214	-0.239
+Atrial fibrillation	AV bundle	38	-0.114	-0.096	0.378	-0.253
+Atrial fibrillation	Purkinje	110	0.137	0.258	0.106	-0.027
+Bundle branch block	All cells	78134	0.02	0.059	-0.128	0.025
+Bundle branch block	SAN pacemaker	245	-0.177	-0.154	0.061	-0.319
+Bundle branch block	AVN pacemaker	155	-0.074	-0.134	0.257	-0.296
+Bundle branch block	AV bundle	38	-0.409	-0.48	0.226	-0.418
+Bundle branch block	Purkinje	110	-0.202	-0.084	-0.225	-0.164
+Atrioventricular block	All cells	78134	0.011	0.037	-0.125	0.021
+Atrioventricular block	SAN pacemaker	245	0.082	0.102	0.034	-0.174
+Atrioventricular block	AVN pacemaker	155	0.025	0.039	0.099	-0.275
+Atrioventricular block	AV bundle	38	-0.085	-0.074	0.197	-0.25
+Atrioventricular block	Purkinje	110	0.126	0.188	0.042	0.004
+Brugada syndrome	All cells	78134	0.016	0.028	-0.127	0.029
+Brugada syndrome	SAN pacemaker	245	-0.052	-0.035	0.035	-0.198
+Brugada syndrome	AVN pacemaker	155	-0.186	-0.175	0.056	-0.404
+Brugada syndrome	AV bundle	38	-0.219	-0.222	0.225	-0.373
+Brugada syndrome	Purkinje	110	0.211	0.355	0.197	0.075
+QT interval	All cells	78134	0.001	0.039	-0.147	0.005
+QT interval	SAN pacemaker	245	-0.137	-0.102	-0.045	-0.284
+QT interval	AVN pacemaker	155	-0.028	-0.008	0.226	-0.364
+QT interval	AV bundle	38	-0.24	-0.25	0.257	-0.387
+QT interval	Purkinje	110	0.131	0.273	0.098	-0.067
+Rheumatoid arthritis (control)	All cells	78134	-0.05	-0.053	0.215	-0.033
+Rheumatoid arthritis (control)	SAN pacemaker	245	0.206	0.222	-0.109	0.315
+Rheumatoid arthritis (control)	AVN pacemaker	155	0.147	0.199	-0.351	0.103
+Rheumatoid arthritis (control)	AV bundle	38	0.007	0.099	-0.117	-0.076
+Rheumatoid arthritis (control)	Purkinje	110	-0.083	0.024	-0.017	-0.121
+Rheumatoid arthritis, MHC-free	All cells	78134	-0.029	-0.041	0.158	-0.028
+Rheumatoid arthritis, MHC-free	SAN pacemaker	245	0.192	0.222	0.048	0.225
+Rheumatoid arthritis, MHC-free	AVN pacemaker	155	0.146	0.201	-0.237	0.038
+Rheumatoid arthritis, MHC-free	AV bundle	38	0.076	0.176	0.086	-0.089
+Rheumatoid arthritis, MHC-free	Purkinje	110	0.058	0.2	0.123	-0.017

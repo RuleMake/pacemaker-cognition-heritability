@@ -332,7 +332,7 @@ for r, gene in enumerate(DRIVERS):
 KO = CD["knockout"]
 LADDER = [("HRV_RMSSD", 0.0), ("RestingHeartRate", 1.0), ("PRinterval", 2.0),
           ("AtrialFibrillation", 3.0), ("EducationalAttainment", 4.3)]
-ARMS = [("neuronal", "neural programme", SUPPORT[1]),
+ARMS = [("neuronal", "neural program", SUPPORT[1]),
         ("vagal", "vagal panel", FAMILY_COLOR["vagal"])]
 axf2 = ax_mm(fig, 98.0, 10.0, 29.0, 32.0)
 axf2.set_xlim(0, 14.5)
@@ -429,7 +429,7 @@ axe.text(15.4, 0.88, "unclassified  #1", fontsize=FS_MIN, ha="right",
 axe.plot([15.6, af.assoc_mcz[0]], [0.88, 0.64], color=GREY_TEXT, linewidth=0.4,
          zorder=1)
 
-axe.text(-4.7, 1.22, "atrial fibrillation", fontsize=6, ha="left", va="top",
+axe.text(-4.7, 1.22, "Atrial fibrillation", fontsize=6, ha="left", va="top",
          color=INK)
 for xk, col, lab in [(4.0, INK, "cardiomyocyte"), (11.0, GREY_RULE, "other")]:
     axe.plot([xk, xk], [1.08, 1.22], color=col, linewidth=1.0 if col == INK

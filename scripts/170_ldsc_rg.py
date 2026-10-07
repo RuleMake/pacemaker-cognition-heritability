@@ -47,9 +47,16 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent.as_posix()
 GWAS = f"{ROOT}/data/gwas_gsmap"
-LD = os.path.expanduser(
-    "~/cardio/resource/gsMap_resource/LDSC_resource/weights_hm3_no_hla")
+# the HapMap3 weights ship with gsMap's LDSC resource; a copy lives in the project so the
+# script also runs from Windows, where the WSL home directory is not visible
+LD = f"{ROOT}/data/resource/ldsc_weights_hm3_no_hla"
+if not os.path.exists(f"{LD}/weights.1.l2.ldscore.gz"):
+    LD = os.path.expanduser(
+        "~/cardio/resource/gsMap_resource/LDSC_resource/weights_hm3_no_hla")
 OUT = f"{ROOT}/results/ldsc_rg.json"
+# per-block delete values for the cognition x autonomic pairs, read by
+# scripts/186_mr_rg_consistency.py to propagate rg and h2 uncertainty jointly
+OUT_JK = f"{ROOT}/results/ldsc_rg_jackknife.json"
 
 COG = ["EducationalAttainment", "Intelligence", "ReactionTime"]
 PAIRS = [
@@ -70,6 +77,8 @@ for c in COG:
     ]
 PAIRS.append(("EducationalAttainment", "RheumatoidArthritis",
               "reference only — education is pleiotropic, not a valid null"))
+# heart-rate-corrected HRV, for the MR sensitivity analysis on HRV not shared with heart rate
+PAIRS.append(("EducationalAttainment", "HRV_RMSSDc", "MR sensitivity: HR-corrected HRV"))
 # The three cognitive traits are NOT independent replicates, and the "shape test"
 # reported earlier — all three rank both HRV indices above the four other cardiac
 # traits, p = (1/15)^3 — silently assumed they were. Measuring rg among them is what
@@ -184,34 +193,65 @@ def merged(t1, t2=None):
     return d
 
 
-def h2(t):
-    d = merged(t)
-    N = d.N1.to_numpy()
-    x = d.L2.to_numpy() * N / M
-    y = (d.Z1.to_numpy() ** 2)
-    w = 1.0 / np.maximum(d.L2.to_numpy(), 1.0)
-    (_, s0), _, _ = _reg(x, y, w, d.block.to_numpy())
+def _h2_fit(z, n, l2, blocks):
+    """Univariate LDSC slope (= h2) with LDSC's one reweighting step; returns the full
+    fit, its jackknife SE and the per-block delete estimates."""
+    x = l2 * n / M
+    y = z ** 2
+    w = 1.0 / np.maximum(l2, 1.0)
+    (_, s0), _, _ = _reg(x, y, w, blocks)
     # one reweighting step, as LDSC does: down-weight SNPs the model expects to be noisy
     w = w / np.maximum(1.0 + max(s0, 0.0) * x, 1e-8) ** 2
-    (icept, s), se, _ = _reg(x, y, w, d.block.to_numpy())
+    return _reg(x, y, w, blocks)
+
+
+def h2(t):
+    d = merged(t)
+    (icept, s), se, _ = _h2_fit(d.Z1.to_numpy(), d.N1.to_numpy(), d.L2.to_numpy(),
+                                d.block.to_numpy())
     return dict(h2=float(s), se=float(se[1]), intercept=float(icept), n_snp=len(d))
 
 
-def rg(t1, t2, h1, h2_):
+JK = {}
+
+
+def rg(t1, t2, h1=None, h2_=None):
+    """Genetic correlation with ldsc --rg's estimand and jackknife.
+
+    Both heritabilities and the genetic covariance are fitted on the pair-merged SNP
+    set with shared blocks, and the ratio is jackknifed, as in ldsc --rg. The regression
+    weights are simplified (1 / LD score, with one reweighting step for each h2) rather
+    than ldsc's full heteroskedasticity weights.
+
+    Corrected 2026-10-01. The first version divided the genetic-covariance slope by
+    heritabilities estimated on each trait's own SNP set and took the SE of the
+    numerator alone, so the ratio was neither the standard estimator nor jackknifed as
+    a ratio (MR-AUDIT-2026-10-01.md, E3). Here h1, h2 and the genetic covariance are all
+    fitted on the pair-merged SNP set with the same 200 genomic blocks, and the ratio
+    rg = rho / sqrt(h1 h2) is jackknifed as a whole from its delete-one-block values.
+    """
     d = merged(t1, t2)
+    blocks = d.block.to_numpy()
+    l2 = d.L2.to_numpy()
     Nn = np.sqrt(d.N1.to_numpy() * d.N2.to_numpy())
-    x = d.L2.to_numpy() * Nn / M
+    x = l2 * Nn / M
     y = d.Z1.to_numpy() * d.Z2.to_numpy()
-    w = 1.0 / np.maximum(d.L2.to_numpy(), 1.0)
-    (icept, s), se, ests = _reg(x, y, w, d.block.to_numpy())
-    denom = np.sqrt(max(h1["h2"], 1e-6) * max(h2_["h2"], 1e-6))
-    # jackknife the ratio, not just the numerator, so the SE reflects both terms
-    r = float(s) / denom
-    rse = float(se[1]) / denom
+    w = 1.0 / np.maximum(l2, 1.0)
+    (icept, s), _, ests = _reg(x, y, w, blocks)
+    (_, s1), _, e1 = _h2_fit(d.Z1.to_numpy(), d.N1.to_numpy(), l2, blocks)
+    (_, s2), _, e2 = _h2_fit(d.Z2.to_numpy(), d.N2.to_numpy(), l2, blocks)
+    r = float(s) / np.sqrt(max(s1, 1e-6) * max(s2, 1e-6))
+    r_del = ests[:, 1] / np.sqrt(np.maximum(e1[:, 1], 1e-6) * np.maximum(e2[:, 1], 1e-6))
+    nb = len(r_del)
+    rse = float(np.sqrt((nb - 1) / nb * np.sum((r_del - r_del.mean()) ** 2)))
     z = r / rse if rse > 0 else np.nan
     from scipy.stats import norm
+    JK[f"{t1}|{t2}"] = dict(gencov=float(s), h2_1=float(s1), h2_2=float(s2),
+                            gencov_del=ests[:, 1].tolist(), h2_1_del=e1[:, 1].tolist(),
+                            h2_2_del=e2[:, 1].tolist(), n_snp=len(d))
     return dict(rg=r, se=rse, z=float(z), p=float(2 * norm.sf(abs(z))),
-                intercept=float(icept), n_snp=len(d))
+                intercept=float(icept), n_snp=len(d), h2_1_merged=float(s1),
+                h2_2_merged=float(s2), gencov=float(s))
 
 
 print("\n" + "=" * 96)
@@ -265,5 +305,11 @@ print("\n  " + ("CONTROLS BEHAVE — the estimates above can be read"
                 "QUANTITATIVE CONTROL FAILS — do not use these numbers"))
 
 with open(OUT, "w") as f:
-    json.dump(dict(h2=H, rg=res, controls_ok=bool(ok), M=M), f, indent=2)
-print(f"\nwrote {OUT}")
+    json.dump(dict(h2=H, rg=res, controls_ok=bool(ok), M=M,
+                   method="ldsc --rg: h1, h2 and gencov on the pair-merged SNP set, "
+                          "delete-one-block ratio jackknife over 200 blocks"), f, indent=2)
+with open(OUT_JK, "w") as f:
+    json.dump({k: v for k, v in JK.items()
+               if k.split("|")[0] in COG and k.split("|")[1] in
+               ("HRV_RMSSD", "HRV_SDNN", "RestingHeartRate", "HRV_RMSSDc")}, f)
+print(f"\nwrote {OUT}\nwrote {OUT_JK}")
